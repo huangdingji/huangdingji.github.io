@@ -1,0 +1,248 @@
+[
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "radio_button_on",
+      "texture": "c6t/KFmZRCXKH79juRCvr4",
+      "rect": [
+        153,
+        14,
+        32,
+        32
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        32,
+        32
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "CheckBox_Press",
+      "texture": "c6t/KFmZRCXKH79juRCvr4",
+      "rect": [
+        85,
+        1,
+        38,
+        38
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        40,
+        40
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "CheckBoxNode_Disable",
+      "texture": "c6t/KFmZRCXKH79juRCvr4",
+      "rect": [
+        219,
+        14,
+        30,
+        22
+      ],
+      "offset": [
+        -1,
+        0
+      ],
+      "originalSize": [
+        40,
+        40
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "CheckBox_Disable",
+      "texture": "c6t/KFmZRCXKH79juRCvr4",
+      "rect": [
+        1,
+        1,
+        40,
+        40
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        40,
+        40
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteAtlas",
+    "_name": "ui.plist",
+    "_spriteFrames": {
+      "CheckBoxNode_Disable": {
+        "__uuid__": "1euo151XJD97gfFlg4cAgi"
+      },
+      "CheckBoxNode_Normal": {
+        "__uuid__": "501zyizAxAY5sKOezcNiUf"
+      },
+      "CheckBox_Disable": {
+        "__uuid__": "2aZAHa+G1Dhr/hlGXWCmeF"
+      },
+      "CheckBox_Normal": {
+        "__uuid__": "98g2PnEYVJXKEfGX3MLipK"
+      },
+      "CheckBox_Press": {
+        "__uuid__": "1ahNYMWJtGpb7vxj7mI2Mx"
+      },
+      "radio_button_off": {
+        "__uuid__": "9cusrSZKJI87mjr+1XghK+"
+      },
+      "radio_button_on": {
+        "__uuid__": "17GxPImHxH2rI56Jzm0w0P"
+      },
+      "sliderProgress2": {
+        "__uuid__": "b6XX4yT71GE73YPIYSnbZk"
+      },
+      "sliderThumb": {
+        "__uuid__": "84aTitJtNGb7CIue+3nkVt"
+      },
+      "sliderTrack2": {
+        "__uuid__": "e2O8fnIoRBMar7378R9bAN"
+      }
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "CheckBoxNode_Normal",
+      "texture": "c6t/KFmZRCXKH79juRCvr4",
+      "rect": [
+        219,
+        38,
+        30,
+        22
+      ],
+      "offset": [
+        -1,
+        0
+      ],
+      "originalSize": [
+        40,
+        40
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "sliderThumb",
+      "texture": "c6t/KFmZRCXKH79juRCvr4",
+      "rect": [
+        125,
+        14,
+        26,
+        26
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        26,
+        26
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "CheckBox_Normal",
+      "texture": "c6t/KFmZRCXKH79juRCvr4",
+      "rect": [
+        43,
+        1,
+        40,
+        40
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        40,
+        40
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "radio_button_off",
+      "texture": "c6t/KFmZRCXKH79juRCvr4",
+      "rect": [
+        187,
+        14,
+        30,
+        32
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        32,
+        32
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "sliderProgress2",
+      "texture": "c6t/KFmZRCXKH79juRCvr4",
+      "rect": [
+        125,
+        1,
+        131,
+        11
+      ],
+      "offset": [
+        0,
+        1
+      ],
+      "originalSize": [
+        131,
+        13
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "sliderTrack2",
+      "texture": "c6t/KFmZRCXKH79juRCvr4",
+      "rect": [
+        1,
+        43,
+        131,
+        13
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        131,
+        13
+      ]
+    }
+  }
+]
