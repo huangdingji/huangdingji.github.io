@@ -1,6 +1,6 @@
 // Replace these two values with your real contact information before publishing.
-const CONTACT_EMAIL = "sales@example.com";
-const WHATSAPP_NUMBER = "8600000000000";
+const CONTACT_EMAIL = "fujianteflontape1@gmail.com";
+const WHATSAPP_NUMBER = "+852 6895 4159";
 
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
@@ -33,7 +33,16 @@ document.querySelectorAll("[data-inquiry]").forEach((link) => {
 
 document.querySelectorAll("[data-whatsapp]").forEach((link) => {
   const message = "Hello, I would like to request a PTFE thread seal tape quotation. I will provide size, quantity, packaging method and destination country.";
-  link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  const cleanNumber = WHATSAPP_NUMBER.replace(/\D/g, "");
+
+  if (cleanNumber.length >= 8) {
+    link.href = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
+    return;
+  }
+
+  link.href = "#inquiry";
+  link.textContent = "Send Inquiry";
+  link.title = "Add your WhatsApp number in assets/js/main.js to enable WhatsApp inquiry.";
 });
 
 const quoteForm = document.querySelector("#quoteForm");
