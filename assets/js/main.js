@@ -831,6 +831,47 @@ if (menuToggle && mainNav) {
   });
 }
 
+function trackEvent(eventName, params = {}) {
+  if (typeof window.gtag !== "function") return;
+  window.gtag("event", eventName, {
+    page_path: window.location.pathname,
+    transport_type: "beacon",
+    ...params,
+  });
+}
+
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a, button");
+  if (!link) return;
+
+  const label = (link.textContent || "").trim();
+  const href = link.getAttribute("href") || "";
+
+  if (link.matches("[data-whatsapp]") || href.includes("wa.me")) {
+    trackEvent("whatsapp_inquiry_click", { link_text: label });
+    return;
+  }
+
+  if (href.startsWith("mailto:")) {
+    trackEvent("email_inquiry_click", { link_text: label });
+    return;
+  }
+
+  if (link.matches("[data-inquiry]")) {
+    trackEvent("request_quote_click", {
+      link_text: label,
+      product: link.getAttribute("data-inquiry") || "",
+    });
+    return;
+  }
+
+  const isInquiryLink = href.includes("contact.html") || href === "#inquiry";
+
+  if (/get a quote|send inquiry|request quote/i.test(label) || (link.classList.contains("btn") && isInquiryLink)) {
+    trackEvent("inquiry_cta_click", { link_text: label, link_url: href });
+  }
+});
+
 document.querySelectorAll("[data-inquiry]").forEach((link) => {
   link.addEventListener("click", () => {
     const product = link.getAttribute("data-inquiry") || "PTFE tape";
@@ -887,6 +928,11 @@ if (quoteForm) {
     event.preventDefault();
     const data = new FormData(quoteForm);
     const subject = `PTFE tape inquiry - ${data.get("product") || "custom order"}`;
+    trackEvent("inquiry_form_submit", {
+      product: data.get("product") || "",
+      quantity: data.get("quantity") || "",
+      destination: data.get("destination") || "",
+    });
     const body = [
       "Hello,",
       "",
