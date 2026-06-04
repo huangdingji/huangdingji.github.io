@@ -1960,23 +1960,49 @@ document.addEventListener("click", (event) => {
 });
 
 document.querySelectorAll("[data-inquiry]").forEach((link) => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
     const product = link.getAttribute("data-inquiry") || "PTFE tape";
-    const body = [
-      "Hello,",
-      "",
-      `I would like to request a quotation for: ${product}`,
-      "Required size / density:",
-      "Quantity:",
-      "Packaging method:",
-      "Logo or private label requirement:",
-      "Destination country / port:",
-      "",
-      "Please send price, MOQ, carton details and lead time.",
-    ].join("\n");
-    link.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(product + " quotation")}&body=${encodeURIComponent(body)}`;
+    const baseHref = (link.getAttribute("href") || "contact/index.html").split("#")[0];
+    const separator = baseHref.includes("?") ? "&" : "?";
+    window.location.href = `${baseHref}${separator}product=${encodeURIComponent(product)}`;
   });
 });
+
+// Pre-fill Interested Product from URL parameter (?product=...) on contact page
+if (typeof window !== "undefined" && window.location.search) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const productParam = urlParams.get("product");
+  if (productParam) {
+    const productSelect = document.querySelector('#quoteForm select[name="product"]');
+    const messageField = document.querySelector('#quoteForm textarea[name="message"]');
+    const productMapping = {
+      "Gas PTFE Tape": "Gas line PTFE tape",
+      "High Density PTFE Tape": "High density PTFE tape",
+      "OEM PTFE Tape": "OEM branded PTFE tape",
+      "Standard PTFE Thread Seal Tape": "Standard PTFE thread seal tape",
+      "Plumbing Seal Tape": "Plumbing Seal Tape",
+      "Colored PTFE Tape": "Colored PTFE tape",
+    };
+    const targetText = productMapping[productParam] || "Other custom requirement";
+    if (productSelect) {
+      for (const opt of productSelect.options) {
+        if (opt.text === targetText || opt.text.toLowerCase() === targetText.toLowerCase()) {
+          opt.selected = true;
+          break;
+        }
+      }
+    }
+    if (messageField && !messageField.value) {
+      const intro = productMapping[productParam] ? "Product: " : "Product (SKU): ";
+      messageField.value = intro + productParam + "\n\n";
+    }
+    const formEl = document.querySelector("#quoteForm");
+    if (formEl) {
+      setTimeout(() => formEl.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+    }
+  }
+}
 
 document.querySelectorAll("[data-whatsapp]").forEach((link) => {
   const message = "Hello, I would like to request a PTFE thread seal tape quotation. I will provide size, quantity, packaging method and destination country.";
