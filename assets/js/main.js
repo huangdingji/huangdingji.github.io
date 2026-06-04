@@ -745,8 +745,6 @@ Object.assign(TRANSLATIONS.zh, {
   "Plumbing Seal Tape Supplier": "水暖密封带供应商",
   "Product Specifications": "产品规格",
   "Application Scenarios": "应用场景",
-  "Buyer Confirmation Before Order": "下单前采购确认",
-  "MOQ, OEM, Packing and Delivery": "MOQ、OEM、包装和交期",
   "Quick Inquiry": "快速询盘",
   "Product Center": "产品中心",
   "Home": "首页",
@@ -826,8 +824,6 @@ Object.assign(TRANSLATIONS.es, {
   "Plumbing Seal Tape Supplier": "Proveedor de cinta selladora para plomería",
   "Product Specifications": "Especificaciones del producto",
   "Application Scenarios": "Aplicaciones",
-  "Buyer Confirmation Before Order": "Confirmación del comprador antes del pedido",
-  "MOQ, OEM, Packing and Delivery": "MOQ, OEM, empaque y entrega",
   "Quick Inquiry": "Consulta rápida",
   "Product Center": "Centro de productos",
   "PTFE Tape Blog for Buyers and Plumbing Users": "Blog de cinta PTFE para compradores y usuarios de plomería",
@@ -892,8 +888,6 @@ Object.assign(TRANSLATIONS.ar, {
   "Plumbing Seal Tape Supplier": "مورد شريط إحكام السباكة",
   "Product Specifications": "مواصفات المنتج",
   "Application Scenarios": "مجالات الاستخدام",
-  "Buyer Confirmation Before Order": "تأكيد المشتري قبل الطلب",
-  "MOQ, OEM, Packing and Delivery": "MOQ و OEM والتغليف والتسليم",
   "Quick Inquiry": "استفسار سريع",
   "Product Center": "مركز المنتجات",
   "PTFE Tape Blog for Buyers and Plumbing Users": "مدونة شريط PTFE للمشترين ومستخدمي السباكة",
@@ -1479,6 +1473,37 @@ Object.assign(TRANSLATIONS.zh, {
   "Carton mark, carton quantity and packing list are prepared for shipment.": "为出货准备箱唛、装箱数量和装箱单。",
   "Important Notice for Gas Applications": "燃气应用重要提示",
   "Buyers should confirm local gas pipe standards and application requirements before use. Suitability for a specific gas application depends on the relevant national or regional regulations, pipe thread type, working pressure, temperature range and installation method. We supply the tape as a sealing component; final compliance and fitness for a specific gas installation is the responsibility of the buyer and the installer.": "买家使用前应确认当地燃气管道标准和应用要求。特定燃气用途的适用性取决于相关国家或地区的法规、管螺纹类型、工作压力、温度范围和安装方式。我们仅作为密封部件供应此胶带；针对特定燃气安装的最终合规性和适用性由买家和安装方负责。",
+  "Choosing the Standard SKU for First Orders": "首次下单选标准款的建议",
+  "For first-time buyers, we recommend starting with the standard 12mm x 10m or 19mm x 10m SKU before moving to custom specifications. Sample rolls can be sent in plain or factory-default packaging so you can test the tape in your local market without committing to full OEM artwork. Once the roll size, density and hand-feel match your customer expectations, the second order can be adjusted to your target width, length, thickness, color and packaging. This two-step approach helps reduce specification risk and avoids reworking large production runs.": "首次采购的买家，建议先从标准 12mm x 10m 或 19mm x 10m 规格开始，再过渡到定制规格。样品卷可使用素包装或工厂默认包装，方便在本地市场测试胶带，而无需承诺整套 OEM 设计稿。卷规格、密度和手感符合客户预期后，第二批订单可调整到目标宽度、长度、厚度、颜色和包装。两步走的方式有助于降低规格风险，避免大批量返工。",
+  "Pressure and Temperature Selection": "压力与温度选型",
+  "Selection of thickness and density depends on the working pressure, temperature range and pipe thread type of the target installation. As a general reference: 0.075mm to 0.1mm thickness is suitable for low-pressure water pipe fittings (under 10 bar, ambient temperature); 0.1mm to 0.15mm thickness is suitable for medium pressure and warm water lines (10 to 20 bar, up to 60 deg C); 0.15mm to 0.2mm thickness and higher density (around 0.4 to 0.5 g/cm3) is suitable for higher pressure, hot water and engineering applications. These ranges are a general reference, not a certification statement. Buyers should confirm suitability with the local installer or project specification before bulk order.": "厚度和密度的选择取决于目标安装场景的工作压力、温度范围和管螺纹类型。作为一般参考：0.075mm 至 0.1mm 厚度适用于低压水管配件（10 bar 以下，常温）；0.1mm 至 0.15mm 厚度适用于中压和温水管线（10 至 20 bar，60°C 以下）；0.15mm 至 0.2mm 厚度配合更高密度（约 0.4 至 0.5 g/cm3）适用于更高压力、热水和工程应用。以上为一般参考，不构成认证声明。买家在下批量订单前应与本地施工方或项目规格书确认适用性。",
+  "Artwork Confirmation Workflow": "设计稿确认流程",
+  "For OEM and private label orders, artwork confirmation follows a fixed five-step workflow to reduce sample changes and reprints. Step 1: the buyer sends the logo, label, blister card or carton artwork in a print-ready file (AI, PDF or high-resolution image). Step 2: the factory prepares a PDF layout proof with reference dimensions and Pantone or CMYK colors for the buyer's review. Step 3: the buyer marks corrections or sends written approval by email. Step 4: once the final proof is signed off, the factory keeps a digital record and uses it for printing plate or digital print setup. Step 5: a pre-production sample photo or scan is sent before bulk printing starts. This process usually takes 5 to 10 working days depending on artwork complexity.": "OEM 和自有品牌订单的设计稿确认采用固定的五步流程，以减少样品返工和重复印刷。步骤一：买家提供 logo、标签、吸塑卡或纸箱的可印刷文件（AI、PDF 或高分辨率图片）。步骤二：工厂准备带参考尺寸和 Pantone 或 CMYK 色值的 PDF 打样稿供买家审阅。步骤三：买家邮件标注修改点或发送书面确认。步骤四：终稿签字确认后，工厂留档数字文件并用于印版或数码印刷设置。步骤五：批量印刷前发送产前样品照片或扫描件。整个流程通常需要 5 至 10 个工作日，取决于设计稿复杂程度。",
+  "Drinking Water and Plumbing Applications": "饮用水与水暖应用",
+  "Standard PTFE thread seal tape is widely used in plumbing, faucet, valve, water pipe and general hardware channels. It is suitable for cold water, hot water, drainage and non-potable water systems. For potable water or drinking water installations, the buyer should check whether the local market requires third-party certification such as NSF/ANSI 61 in North America, WRAS in the United Kingdom, ACS in France, or DVGW in Germany. Our standard PTFE tape is produced for general plumbing supply; if your market requires a certified drinking-water-grade tape, please mention this in the inquiry so the factory can review material grade, density and any certificate request before quotation.": "标准 PTFE 螺纹密封带广泛用于水暖、水龙头、阀门、水管和通用五金渠道，适用于冷水、热水、排水和非饮用水系统。针对饮用水或直饮水安装场景，买家应核实当地市场是否要求第三方认证，如北美的 NSF/ANSI 61、英国的 WRAS、法国的 ACS 或德国的 DVGW。我厂标准 PTFE 生料带用于一般水暖供应；如果目标市场需要认证饮用水级胶带，请在询盘时说明，以便工厂在报价前评估材料等级、密度和任何证书申请需求。",
+  "Order, Packing and Delivery Reference": "下单、包装与交期参考",
+  "Before placing a bulk order, we recommend confirming both the product specification and the packaging structure in writing.": "在下批量订单前，建议以书面形式同时确认产品规格和包装结构。",
+  "Product specification: tape width, tape length, thickness, density, tape color and spool color.": "产品规格：胶带宽度、长度、厚度、密度、胶带颜色和轮芯颜色。",
+  "Packaging structure: single roll packing, inner box or display box, carton quantity, carton dimensions, carton mark, and any barcode or SKU label requirements.": "包装结构：单卷包装、内盒或展示盒、纸箱数量、纸箱尺寸、箱唛以及条码或 SKU 标签要求。",
+  "For OEM PTFE tape, artwork confirmation (logo file, label print, blister card, display box, export carton) is especially important because the label, box and carton design must match the buyer's market. A written approval email is enough to lock the artwork for production.": "对于 OEM PTFE 生料带，设计稿确认（logo 文件、标签印刷、吸塑卡、展示盒、出口纸箱）尤其重要，因为标签、盒子和纸箱设计必须匹配目标市场。买家邮件书面确认即可锁定设计稿用于生产。",
+  "MOQ": "MOQ",
+  "Depends on specification, packing method and whether OEM materials are required. Standard PTFE tape with common packing usually has a lower MOQ than fully customized private label packaging.": "起订量取决于规格、包装方式和是否需要 OEM 物料。常见包装的标准 PTFE 生料带起订量通常低于完全定制的自有品牌包装。",
+  "Packing Options": "包装选项",
+  "Loose spool, shrink wrap, individual bag, display box, blister card or custom carton. For export orders, we confirm roll quantity per carton, carton dimensions, carton mark, SKU label and destination country before production.": "可选散装轮、收缩膜、单独袋装、展示盒、吸塑卡或定制纸箱。出口订单在生产前需确认每箱卷数、纸箱尺寸、箱唛、SKU 标签和目的国家。",
+  "Delivery Time": "交期",
+  "Depends on order quantity, packaging material preparation and artwork confirmation. We can discuss sample checking before bulk production when needed. Standard specifications with common packaging can usually be prepared faster than custom display boxes or full private label programs.": "交期取决于订单数量、包装物料准备和设计稿确认。批量生产前可沟通样品确认事宜。标准规格加常见包装的交期通常快于定制展示盒或完整自有品牌方案。",
+  "Name": "姓名",
+  "Company": "公司",
+  "Country": "国家",
+  "Interested Product": "感兴趣的产品",
+  "Message": "留言",
+  "Thank you.": "感谢您的询盘。",
+  "We will contact you within 24 hours.": "我们将在 24 小时内联系您。",
+  "You can also reach us directly:": "您也可以直接联系我们：",
+  "Sending...": "发送中...",
+  "Sorry, the inquiry could not be sent right now. Please email us directly at fujianteflontape1@gmail.com or try again later.": "抱歉，询盘暂时无法发送。请直接发送邮件至 fujianteflontape1@gmail.com 或稍后重试。",
+  "Please include size, quantity, packing method, destination country or port, and any OEM artwork status.": "请说明尺寸、数量、包装方式、目的国家或港口，以及 OEM 设计稿状态。",
+  "+86 138 0000 0000": "+86 138 0000 0000",
 });
 
 Object.assign(TRANSLATIONS.es, {
@@ -1518,6 +1543,37 @@ Object.assign(TRANSLATIONS.es, {
   "Carton mark, carton quantity and packing list are prepared for shipment.": "Marca de cartón, cantidad por cartón y lista de empaque se preparan para el envío.",
   "Important Notice for Gas Applications": "Aviso importante para aplicaciones de gas",
   "Buyers should confirm local gas pipe standards and application requirements before use. Suitability for a specific gas application depends on the relevant national or regional regulations, pipe thread type, working pressure, temperature range and installation method. We supply the tape as a sealing component; final compliance and fitness for a specific gas installation is the responsibility of the buyer and the installer.": "Los compradores deben confirmar las normas locales de tuberías de gas y los requisitos de aplicación antes de usar. La idoneidad para una aplicación específica de gas depende de la normativa nacional o regional aplicable, el tipo de rosca de la tubería, la presión de trabajo, el rango de temperatura y el método de instalación. Suministramos la cinta como componente de sellado; el cumplimiento final y la idoneidad para una instalación de gas específica son responsabilidad del comprador y del instalador.",
+  "Choosing the Standard SKU for First Orders": "Cómo elegir el SKU estándar para los primeros pedidos",
+  "For first-time buyers, we recommend starting with the standard 12mm x 10m or 19mm x 10m SKU before moving to custom specifications. Sample rolls can be sent in plain or factory-default packaging so you can test the tape in your local market without committing to full OEM artwork. Once the roll size, density and hand-feel match your customer expectations, the second order can be adjusted to your target width, length, thickness, color and packaging. This two-step approach helps reduce specification risk and avoids reworking large production runs.": "Para los compradores primerizos, recomendamos comenzar con el SKU estándar de 12mm x 10m o 19mm x 10m antes de pasar a especificaciones personalizadas. Se pueden enviar rollos de muestra en empaque sencillo o empaque predeterminado de fábrica para que pueda probar la cinta en su mercado local sin comprometerse con un artwork OEM completo. Una vez que el tamaño del rollo, la densidad y el tacto coincidan con las expectativas del cliente, el segundo pedido se puede ajustar al ancho, largo, espesor, color y empaque objetivo. Este enfoque en dos pasos ayuda a reducir el riesgo de especificación y evita tener que rehacer grandes lotes de producción.",
+  "Pressure and Temperature Selection": "Selección de presión y temperatura",
+  "Selection of thickness and density depends on the working pressure, temperature range and pipe thread type of the target installation. As a general reference: 0.075mm to 0.1mm thickness is suitable for low-pressure water pipe fittings (under 10 bar, ambient temperature); 0.1mm to 0.15mm thickness is suitable for medium pressure and warm water lines (10 to 20 bar, up to 60 deg C); 0.15mm to 0.2mm thickness and higher density (around 0.4 to 0.5 g/cm3) is suitable for higher pressure, hot water and engineering applications. These ranges are a general reference, not a certification statement. Buyers should confirm suitability with the local installer or project specification before bulk order.": "La selección del espesor y la densidad depende de la presión de trabajo, el rango de temperatura y el tipo de rosca de la instalación objetivo. Como referencia general: espesor de 0.075mm a 0.1mm es adecuado para accesorios de tubería de agua de baja presión (menos de 10 bar, temperatura ambiente); espesor de 0.1mm a 0.15mm es adecuado para presión media y líneas de agua tibia (10 a 20 bar, hasta 60 grados C); espesor de 0.15mm a 0.2mm con mayor densidad (alrededor de 0.4 a 0.5 g/cm3) es adecuado para mayor presión, agua caliente y aplicaciones de ingeniería. Estos rangos son una referencia general, no una declaración de certificación. Los compradores deben confirmar la idoneidad con el instalador local o la especificación del proyecto antes del pedido al por mayor.",
+  "Artwork Confirmation Workflow": "Flujo de confirmación de artwork",
+  "For OEM and private label orders, artwork confirmation follows a fixed five-step workflow to reduce sample changes and reprints. Step 1: the buyer sends the logo, label, blister card or carton artwork in a print-ready file (AI, PDF or high-resolution image). Step 2: the factory prepares a PDF layout proof with reference dimensions and Pantone or CMYK colors for the buyer's review. Step 3: the buyer marks corrections or sends written approval by email. Step 4: once the final proof is signed off, the factory keeps a digital record and uses it for printing plate or digital print setup. Step 5: a pre-production sample photo or scan is sent before bulk printing starts. This process usually takes 5 to 10 working days depending on artwork complexity.": "Para pedidos OEM y de marca privada, la confirmación del artwork sigue un flujo fijo de cinco pasos para reducir cambios de muestra y reimpresiones. Paso 1: el comprador envía el logo, etiqueta, blister o artwork del cartón en un archivo listo para imprimir (AI, PDF o imagen de alta resolución). Paso 2: la fábrica prepara una prueba de maquetación en PDF con dimensiones de referencia y colores Pantone o CMYK para revisión del comprador. Paso 3: el comprador marca correcciones o envía aprobación escrita por correo electrónico. Paso 4: una vez firmada la prueba final, la fábrica conserva un registro digital y lo usa para la configuración de plancha o impresión digital. Paso 5: se envía una foto o escaneo de muestra de pre-producción antes de la impresión en masa. Este proceso suele tardar de 5 a 10 días hábiles según la complejidad del artwork.",
+  "Drinking Water and Plumbing Applications": "Aplicaciones de agua potable y plomería",
+  "Standard PTFE thread seal tape is widely used in plumbing, faucet, valve, water pipe and general hardware channels. It is suitable for cold water, hot water, drainage and non-potable water systems. For potable water or drinking water installations, the buyer should check whether the local market requires third-party certification such as NSF/ANSI 61 in North America, WRAS in the United Kingdom, ACS in France, or DVGW in Germany. Our standard PTFE tape is produced for general plumbing supply; if your market requires a certified drinking-water-grade tape, please mention this in the inquiry so the factory can review material grade, density and any certificate request before quotation.": "La cinta selladora de rosca PTFE estándar se utiliza ampliamente en plomería, grifos, válvulas, tuberías y canales generales de ferretería. Es adecuada para sistemas de agua fría, agua caliente, drenaje y agua no potable. Para instalaciones de agua potable o potable, el comprador debe verificar si el mercado local requiere certificación de terceros como NSF/ANSI 61 en América del Norte, WRAS en el Reino Unido, ACS en Francia o DVGW en Alemania. Nuestra cinta PTFE estándar se produce para suministro general de plomería; si su mercado requiere una cinta certificada de calidad para agua potable, indíquelo en la consulta para que la fábrica pueda revisar el grado del material, la densidad y cualquier solicitud de certificado antes de la cotización.",
+  "Order, Packing and Delivery Reference": "Referencia de pedido, empaque y entrega",
+  "Before placing a bulk order, we recommend confirming both the product specification and the packaging structure in writing.": "Antes de realizar un pedido al por mayor, recomendamos confirmar por escrito tanto la especificación del producto como la estructura del empaque.",
+  "Product specification: tape width, tape length, thickness, density, tape color and spool color.": "Especificación del producto: ancho de cinta, largo de cinta, espesor, densidad, color de cinta y color de carrete.",
+  "Packaging structure: single roll packing, inner box or display box, carton quantity, carton dimensions, carton mark, and any barcode or SKU label requirements.": "Estructura del empaque: empaque de rollo individual, caja interior o caja display, cantidad por cartón, dimensiones del cartón, marca del cartón y cualquier requisito de código de barras o etiqueta SKU.",
+  "For OEM PTFE tape, artwork confirmation (logo file, label print, blister card, display box, export carton) is especially important because the label, box and carton design must match the buyer's market. A written approval email is enough to lock the artwork for production.": "Para cinta PTFE OEM, la confirmación del artwork (archivo de logo, impresión de etiqueta, blister, caja display, cartón de exportación) es especialmente importante porque el diseño de etiqueta, caja y cartón debe coincidir con el mercado del comprador. Un correo electrónico de aprobación escrita es suficiente para fijar el artwork para producción.",
+  "MOQ": "MOQ",
+  "Depends on specification, packing method and whether OEM materials are required. Standard PTFE tape with common packing usually has a lower MOQ than fully customized private label packaging.": "Depende de la especificación, el método de empaque y si se requieren materiales OEM. La cinta PTFE estándar con empaque común suele tener un MOQ menor que el empaque de marca privada totalmente personalizado.",
+  "Packing Options": "Opciones de empaque",
+  "Loose spool, shrink wrap, individual bag, display box, blister card or custom carton. For export orders, we confirm roll quantity per carton, carton dimensions, carton mark, SKU label and destination country before production.": "Carrete suelto, film retráctil, bolsa individual, caja display, blister o cartón personalizado. Para pedidos de exportación, confirmamos la cantidad de rollos por cartón, las dimensiones del cartón, la marca del cartón, la etiqueta SKU y el país de destino antes de la producción.",
+  "Delivery Time": "Plazo de entrega",
+  "Depends on order quantity, packaging material preparation and artwork confirmation. We can discuss sample checking before bulk production when needed. Standard specifications with common packaging can usually be prepared faster than custom display boxes or full private label programs.": "Depende de la cantidad del pedido, la preparación del material de empaque y la confirmación del artwork. Podemos discutir la verificación de muestras antes de la producción en masa cuando sea necesario. Las especificaciones estándar con empaque común generalmente se pueden preparar más rápido que las cajas display personalizadas o los programas completos de marca privada.",
+  "Name": "Nombre",
+  "Company": "Empresa",
+  "Country": "País",
+  "Interested Product": "Producto de interés",
+  "Message": "Mensaje",
+  "Thank you.": "Gracias.",
+  "We will contact you within 24 hours.": "Nos pondremos en contacto con usted en 24 horas.",
+  "You can also reach us directly:": "También puede contactarnos directamente:",
+  "Sending...": "Enviando...",
+  "Sorry, the inquiry could not be sent right now. Please email us directly at fujianteflontape1@gmail.com or try again later.": "Lo sentimos, la consulta no se pudo enviar en este momento. Envíenos un correo directamente a fujianteflontape1@gmail.com o inténtelo de nuevo más tarde.",
+  "Please include size, quantity, packing method, destination country or port, and any OEM artwork status.": "Indique tamaño, cantidad, método de empaque, país o puerto de destino, y el estado del artwork OEM.",
+  "+86 138 0000 0000": "+34 600 000 000",
 });
 
 Object.assign(TRANSLATIONS.ar, {
@@ -1557,6 +1613,37 @@ Object.assign(TRANSLATIONS.ar, {
   "Carton mark, carton quantity and packing list are prepared for shipment.": "تجهز علامة الكرتون وكمية الكرتون وقائمة التعبئة للشحن.",
   "Important Notice for Gas Applications": "تنبيه مهم لتطبيقات الغاز",
   "Buyers should confirm local gas pipe standards and application requirements before use. Suitability for a specific gas application depends on the relevant national or regional regulations, pipe thread type, working pressure, temperature range and installation method. We supply the tape as a sealing component; final compliance and fitness for a specific gas installation is the responsibility of the buyer and the installer.": "يجب على المشترين التأكد من معايير أنابيب الغاز المحلية ومتطلبات التطبيق قبل الاستخدام. تعتمد ملاءمة الشريط لتطبيق غاز محدد على اللوائح الوطنية أو الإقليمية ذات الصلة ونوع قلاوظ الأنبوب وضغط العمل ونطاق الحرارة وطريقة التركيب. نحن نزوّد الشريط كمكوّن إحكام؛ الامتثال النهائي والملاءمة لتركيب غاز محدد هما مسؤولية المشتري والقائم بالتركيب.",
+  "Choosing the Standard SKU for First Orders": "اختيار SKU القياسي للطلبات الأولى",
+  "For first-time buyers, we recommend starting with the standard 12mm x 10m or 19mm x 10m SKU before moving to custom specifications. Sample rolls can be sent in plain or factory-default packaging so you can test the tape in your local market without committing to full OEM artwork. Once the roll size, density and hand-feel match your customer expectations, the second order can be adjusted to your target width, length, thickness, color and packaging. This two-step approach helps reduce specification risk and avoids reworking large production runs.": "بالنسبة للمشترين لأول مرة، نوصي بالبدء بـ SKU القياسي 12 مم × 10 م أو 19 مم × 10 م قبل الانتقال إلى المواصفات المخصصة. يمكن إرسال لفات العينة في تغليف بسيط أو التغليف الافتراضي للمصنع حتى تتمكن من اختبار الشريط في سوقك المحلي دون الالتزام بأعمال فنية كاملة لـ OEM. بمجرد تطابق حجم اللفة والكثافة والإحساس مع توقعات العملاء، يمكن تعديل الطلب الثاني إلى العرض والطول والسماكة واللون والتغليف المستهدف. يساعد هذا النهج ذو الخطوتين على تقليل مخاطر المواصفات وتجنب إعادة تشغيل دفعات إنتاج كبيرة.",
+  "Pressure and Temperature Selection": "اختيار الضغط ودرجة الحرارة",
+  "Selection of thickness and density depends on the working pressure, temperature range and pipe thread type of the target installation. As a general reference: 0.075mm to 0.1mm thickness is suitable for low-pressure water pipe fittings (under 10 bar, ambient temperature); 0.1mm to 0.15mm thickness is suitable for medium pressure and warm water lines (10 to 20 bar, up to 60 deg C); 0.15mm to 0.2mm thickness and higher density (around 0.4 to 0.5 g/cm3) is suitable for higher pressure, hot water and engineering applications. These ranges are a general reference, not a certification statement. Buyers should confirm suitability with the local installer or project specification before bulk order.": "يعتمد اختيار السماكة والكثافة على ضغط العمل ونطاق درجة الحرارة ونوع قلاوظ الأنبوب في التركيب المستهدف. كمرجع عام: سماكة 0.075 مم إلى 0.1 مم مناسبة لتركيبات أنابيب المياه منخفضة الضغط (أقل من 10 بار، درجة حرارة محيطة)؛ سماكة 0.1 مم إلى 0.15 مم مناسبة للضغط المتوسط وخطوط الماء الدافئ (10 إلى 20 بار، حتى 60 درجة مئوية)؛ سماكة 0.15 مم إلى 0.2 مم مع كثافة أعلى (نحو 0.4 إلى 0.5 جم/سم³) مناسبة للضغط الأعلى والماء الساخن وتطبيقات الهندسة. هذه النطاقات مرجع عام وليست بيان اعتماد. يجب على المشترين تأكيد الملاءمة مع القائم بالتركيب المحلي أو مواصفات المشروع قبل الطلب بالجملة.",
+  "Artwork Confirmation Workflow": "سير عمل تأكيد الأعمال الفنية",
+  "For OEM and private label orders, artwork confirmation follows a fixed five-step workflow to reduce sample changes and reprints. Step 1: the buyer sends the logo, label, blister card or carton artwork in a print-ready file (AI, PDF or high-resolution image). Step 2: the factory prepares a PDF layout proof with reference dimensions and Pantone or CMYK colors for the buyer's review. Step 3: the buyer marks corrections or sends written approval by email. Step 4: once the final proof is signed off, the factory keeps a digital record and uses it for printing plate or digital print setup. Step 5: a pre-production sample photo or scan is sent before bulk printing starts. This process usually takes 5 to 10 working days depending on artwork complexity.": "بالنسبة لطلبات OEM والعلامة الخاصة، يتبع تأكيد الأعمال الفنية سير عمل ثابت من خمس خطوات لتقليل تغييرات العينة وإعادة الطباعة. الخطوة 1: يرسل المشتري الشعار أو الملصق أو بطاقة البليستر أو أعمال الكرتون الفنية في ملف جاهز للطباعة (AI أو PDF أو صورة عالية الدقة). الخطوة 2: يُعدّ المصنع إثبات تخطيط PDF بأبعاد مرجعية وألوان Pantone أو CMYK لمراجعة المشتري. الخطوة 3: يحدد المشتري التصحيحات أو يرسل موافقة كتابية عبر البريد الإلكتروني. الخطوة 4: بمجرد التوقيع على الإثبات النهائي، يحتفظ المصنع بسجل رقمي ويستخدمه لإعداد لوحة الطباعة أو الطباعة الرقمية. الخطوة 5: تُرسل صورة عينة قبل الإنتاج أو مسح ضوئي قبل بدء الطباعة بالجملة. تستغرق هذه العملية عادة من 5 إلى 10 أيام عمل حسب تعقيد الأعمال الفنية.",
+  "Drinking Water and Plumbing Applications": "تطبيقات مياه الشرب والسباكة",
+  "Standard PTFE thread seal tape is widely used in plumbing, faucet, valve, water pipe and general hardware channels. It is suitable for cold water, hot water, drainage and non-potable water systems. For potable water or drinking water installations, the buyer should check whether the local market requires third-party certification such as NSF/ANSI 61 in North America, WRAS in the United Kingdom, ACS in France, or DVGW in Germany. Our standard PTFE tape is produced for general plumbing supply; if your market requires a certified drinking-water-grade tape, please mention this in the inquiry so the factory can review material grade, density and any certificate request before quotation.": "يُستخدم شريط إحكام القلاوظ PTFE القياسي على نطاق واسع في السباكة والحنفيات والصمامات وأنابيب المياه وقنوات العدد العامة. وهو مناسب لأنظمة الماء البارد والماء الساخن والصرف والمياه غير الصالحة للشرب. لتركيبات مياه الشرب، يجب على المشتري التحقق مما إذا كان السوق المحلي يتطلب شهادة طرف ثالث مثل NSF/ANSI 61 في أمريكا الشمالية، أو WRAS في المملكة المتحدة، أو ACS في فرنسا، أو DVGW في ألمانيا. يتم إنتاج شريط PTFE القياسي لدينا لتوريد السباكة العامة؛ إذا كان سوقك يتطلب شريطًا معتمدًا لدرجة مياه الشرب، فيرجى ذكر ذلك في الاستفسار حتى يتمكّن المصنع من مراجعة درجة المادة والكثافة وأي طلب شهادة قبل عرض السعر.",
+  "Order, Packing and Delivery Reference": "مرجع الطلب والتغليف والتسليم",
+  "Before placing a bulk order, we recommend confirming both the product specification and the packaging structure in writing.": "قبل تقديم طلب بالجملة، نوصي بتأكيد مواصفات المنتج وهيكل التغليف كتابيًا.",
+  "Product specification: tape width, tape length, thickness, density, tape color and spool color.": "مواصفات المنتج: عرض الشريط وطوله وسماكته وكثافته ولون الشريط ولون البكرة.",
+  "Packaging structure: single roll packing, inner box or display box, carton quantity, carton dimensions, carton mark, and any barcode or SKU label requirements.": "هيكل التغليف: تغليف لفة فردية، علبة داخلية أو علبة عرض، عدد الكراتين، أبعاد الكرتون، علامة الكرتون، وأي متطلبات باركود أو ملصق SKU.",
+  "For OEM PTFE tape, artwork confirmation (logo file, label print, blister card, display box, export carton) is especially important because the label, box and carton design must match the buyer's market. A written approval email is enough to lock the artwork for production.": "بالنسبة لشريط PTFE من OEM، فإن تأكيد الأعمال الفنية (ملف الشعار، طباعة الملصق، بطاقة البليستر، علبة العرض، كرتون التصدير) مهم بشكل خاص لأن تصميم الملصق والعلبة والكرتون يجب أن يتطابق مع سوق المشتري. يكفي بريد إلكتروني بموافقة كتابية لتثبيت الأعمال الفنية للإنتاج.",
+  "MOQ": "الحد الأدنى للطلب",
+  "Depends on specification, packing method and whether OEM materials are required. Standard PTFE tape with common packing usually has a lower MOQ than fully customized private label packaging.": "يعتمد على المواصفات وطريقة التغليف وما إذا كانت مواد OEM مطلوبة. عادة ما يكون لشريط PTFE القياسي ذو التغليف الشائع حد أدنى أدنى من تغليف العلامة الخاصة المخصص بالكامل.",
+  "Packing Options": "خيارات التغليف",
+  "Loose spool, shrink wrap, individual bag, display box, blister card or custom carton. For export orders, we confirm roll quantity per carton, carton dimensions, carton mark, SKU label and destination country before production.": "بكرة سائبة، غلاف شرنك، كيس فردي، علبة عرض، بطاقة بليستر، أو كرتون مخصص. لطلبات التصدير، نؤكد عدد اللفات لكل كرتون وأبعاد الكرتون وعلامة الكرتون وملصق SKU وبلد الوصول قبل الإنتاج.",
+  "Delivery Time": "مدة التسليم",
+  "Depends on order quantity, packaging material preparation and artwork confirmation. We can discuss sample checking before bulk production when needed. Standard specifications with common packaging can usually be prepared faster than custom display boxes or full private label programs.": "تعتمد على كمية الطلب وإعداد مواد التغليف وتأكيد الأعمال الفنية. يمكننا مناقشة فحص العينة قبل الإنتاج بالجملة عند الحاجة. عادة ما يمكن تحضير المواصفات القياسية ذات التغليف الشائع بشكل أسرع من صناديق العرض المخصصة أو برامج العلامة الخاصة الكاملة.",
+  "Name": "الاسم",
+  "Company": "الشركة",
+  "Country": "البلد",
+  "Interested Product": "المنتج المهتم به",
+  "Message": "الرسالة",
+  "Thank you.": "شكرًا لك.",
+  "We will contact you within 24 hours.": "سنتواصل معك خلال 24 ساعة.",
+  "You can also reach us directly:": "يمكنك أيضًا التواصل معنا مباشرة:",
+  "Sending...": "جاري الإرسال...",
+  "Sorry, the inquiry could not be sent right now. Please email us directly at fujianteflontape1@gmail.com or try again later.": "عذرًا، تعذّر إرسال الاستفسار الآن. يرجى مراسلتنا مباشرة على fujianteflontape1@gmail.com أو المحاولة لاحقًا.",
+  "Please include size, quantity, packing method, destination country or port, and any OEM artwork status.": "يرجى ذكر المقاس والكمية وطريقة التغليف وبلد أو ميناء الوصول وحالة أعمال OEM الفنية.",
+  "+86 138 0000 0000": "+966 5 0000 0000",
 });
 
 const ATTRIBUTE_TRANSLATIONS = {
@@ -1924,33 +2011,49 @@ if (quoteForm) {
     });
   });
 
-  quoteForm.addEventListener("submit", (event) => {
+  const successBox = document.querySelector(".form-success");
+  const errorBox = document.querySelector(".form-error");
+  const submitBtn = quoteForm.querySelector('button[type="submit"]');
+  const defaultBtnText = submitBtn ? submitBtn.textContent : "Send Inquiry";
+
+  quoteForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      const sendingLabel = getTranslation(localStorage.getItem("siteLanguage") || "en", "Sending...");
+      submitBtn.textContent = sendingLabel || "Sending...";
+    }
+    if (errorBox) errorBox.hidden = true;
+
     const data = new FormData(quoteForm);
-    const subject = `PTFE tape inquiry - ${data.get("product") || "custom order"}`;
+
     trackEvent("inquiry_form_submit", {
       product: data.get("product") || "",
-      quantity: data.get("quantity") || "",
-      destination: data.get("destination") || "",
+      country: data.get("country") || "",
     });
-    const body = [
-      "Hello,",
-      "",
-      "Please quote the following PTFE thread seal tape order:",
-      "",
-      `Name: ${data.get("name") || ""}`,
-      `Email: ${data.get("email") || ""}`,
-      `Product type: ${data.get("product") || ""}`,
-      `Size / density: ${data.get("size") || ""}`,
-      `Quantity: ${data.get("quantity") || ""}`,
-      `Packaging: ${data.get("packaging") || ""}`,
-      `Destination country / port: ${data.get("destination") || ""}`,
-      "",
-      "Additional requirement:",
-      data.get("message") || "",
-      "",
-      "Please send price, MOQ, carton details and lead time.",
-    ].join("\n");
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    try {
+      const response = await fetch(quoteForm.action, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        quoteForm.hidden = true;
+        if (successBox) successBox.hidden = false;
+        if (typeof successBox !== "undefined" && successBox && successBox.scrollIntoView) {
+          successBox.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      } else {
+        throw new Error("Formspree response not ok");
+      }
+    } catch (err) {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = defaultBtnText;
+      }
+      if (errorBox) errorBox.hidden = false;
+    }
   });
 }

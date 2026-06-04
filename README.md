@@ -64,6 +64,36 @@ http://localhost:8000
 
 ## 询盘表单说明
 
-当前询盘表单使用 `mailto:` 方式，不需要服务器后台。客户提交后会打开他的邮件客户端，并自动填入询盘内容。
+询盘表单已接入 **Formspree**（GitHub Pages 兼容，无需后端）。客户提交后浏览器把表单数据 POST 到 formspree，他们转发到工厂邮箱；前端用 `fetch` + AJAX 处理，提交成功时隐藏 form 并显示"感谢您的询盘"提示，无需页面跳转。
 
-如果后续想接入第三方表单服务，可以把 `contact.html` 的表单提交地址改成 Formspree、Basin、Getform 等服务提供的接口。
+### 字段
+
+| 字段 | 是否必填 | 用途 |
+|------|----------|------|
+| Name | 必填 | 联系人姓名 |
+| Company | 选填 | 公司名 |
+| Email | 必填 | 回复邮箱 |
+| WhatsApp | 选填 | WhatsApp 号码（含国家区号）|
+| Country | 选填 | 所在国家 |
+| Interested Product | 选填 | 感兴趣的产品（下拉选择）|
+| Message | 选填 | 询盘内容（建议说明尺寸、数量、包装、目的港、OEM 设计稿状态）|
+
+表单已包含 `_gotcha` honeypot 字段，formspree 会自动忽略机器人填充。
+
+### 接入步骤（首次配置）
+
+1. 打开 [formspree.io](https://formspree.io) 注册账号（免费版每月 50 封）
+2. 进入 dashboard，点击 **+ New Form**，命名为 "PTFE Tape Inquiry" 或类似
+3. 在 **Integration** 页面找到 form endpoint，形如 `https://formspree.io/f/xyzabc123`
+4. 打开 `contact/index.html`，找到：
+   ```html
+   <form class="form" id="quoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+   ```
+   把 `YOUR_FORM_ID` 替换成实际 form ID（如 `xyzabc123`）
+   > 当前已配置的 form ID 是 `mjgdvpzv`。如需更换，重新走一遍 Step 2-3 即可。
+5. 在 formspree dashboard **Settings** 里设置收件邮箱为 `fujianteflontape1@gmail.com`
+6. 提交测试询盘，验证邮件是否到达
+
+### 失败 fallback
+
+如果 formspree 服务不可用，JS 会显示错误提示并让用户直接发邮件到 `fujianteflontape1@gmail.com`，不会丢询盘。
