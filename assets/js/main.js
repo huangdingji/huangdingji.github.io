@@ -1476,7 +1476,9 @@ Object.assign(TRANSLATIONS.zh, {
   "Width and Length Check": "宽度和长度检查",
   "Width, length and winding condition are checked during production.": "生产过程中检查宽度、长度和绕卷状态。",
   "Packaging Inspection": "包装检查",
-  "Carton mark, carton quantity and packing list are prepared for shipment.": "为出货准备箱唛、装箱数量和装箱单。"
+  "Carton mark, carton quantity and packing list are prepared for shipment.": "为出货准备箱唛、装箱数量和装箱单。",
+  "Important Notice for Gas Applications": "燃气应用重要提示",
+  "Buyers should confirm local gas pipe standards and application requirements before use. Suitability for a specific gas application depends on the relevant national or regional regulations, pipe thread type, working pressure, temperature range and installation method. We supply the tape as a sealing component; final compliance and fitness for a specific gas installation is the responsibility of the buyer and the installer.": "买家使用前应确认当地燃气管道标准和应用要求。特定燃气用途的适用性取决于相关国家或地区的法规、管螺纹类型、工作压力、温度范围和安装方式。我们仅作为密封部件供应此胶带；针对特定燃气安装的最终合规性和适用性由买家和安装方负责。",
 });
 
 Object.assign(TRANSLATIONS.es, {
@@ -1513,7 +1515,9 @@ Object.assign(TRANSLATIONS.es, {
   "Width and Length Check": "Revisión de ancho y largo",
   "Width, length and winding condition are checked during production.": "Ancho, largo y condición de bobinado se revisan durante producción.",
   "Packaging Inspection": "Inspección de empaque",
-  "Carton mark, carton quantity and packing list are prepared for shipment.": "Marca de cartón, cantidad por cartón y lista de empaque se preparan para el envío."
+  "Carton mark, carton quantity and packing list are prepared for shipment.": "Marca de cartón, cantidad por cartón y lista de empaque se preparan para el envío.",
+  "Important Notice for Gas Applications": "Aviso importante para aplicaciones de gas",
+  "Buyers should confirm local gas pipe standards and application requirements before use. Suitability for a specific gas application depends on the relevant national or regional regulations, pipe thread type, working pressure, temperature range and installation method. We supply the tape as a sealing component; final compliance and fitness for a specific gas installation is the responsibility of the buyer and the installer.": "Los compradores deben confirmar las normas locales de tuberías de gas y los requisitos de aplicación antes de usar. La idoneidad para una aplicación específica de gas depende de la normativa nacional o regional aplicable, el tipo de rosca de la tubería, la presión de trabajo, el rango de temperatura y el método de instalación. Suministramos la cinta como componente de sellado; el cumplimiento final y la idoneidad para una instalación de gas específica son responsabilidad del comprador y del instalador.",
 });
 
 Object.assign(TRANSLATIONS.ar, {
@@ -1550,7 +1554,9 @@ Object.assign(TRANSLATIONS.ar, {
   "Width and Length Check": "فحص العرض والطول",
   "Width, length and winding condition are checked during production.": "يتم فحص العرض والطول وحالة اللف أثناء الإنتاج.",
   "Packaging Inspection": "فحص التغليف",
-  "Carton mark, carton quantity and packing list are prepared for shipment.": "تجهز علامة الكرتون وكمية الكرتون وقائمة التعبئة للشحن."
+  "Carton mark, carton quantity and packing list are prepared for shipment.": "تجهز علامة الكرتون وكمية الكرتون وقائمة التعبئة للشحن.",
+  "Important Notice for Gas Applications": "تنبيه مهم لتطبيقات الغاز",
+  "Buyers should confirm local gas pipe standards and application requirements before use. Suitability for a specific gas application depends on the relevant national or regional regulations, pipe thread type, working pressure, temperature range and installation method. We supply the tape as a sealing component; final compliance and fitness for a specific gas installation is the responsibility of the buyer and the installer.": "يجب على المشترين التأكد من معايير أنابيب الغاز المحلية ومتطلبات التطبيق قبل الاستخدام. تعتمد ملاءمة الشريط لتطبيق غاز محدد على اللوائح الوطنية أو الإقليمية ذات الصلة ونوع قلاوظ الأنبوب وضغط العمل ونطاق الحرارة وطريقة التركيب. نحن نزوّد الشريط كمكوّن إحكام؛ الامتثال النهائي والملاءمة لتركيب غاز محدد هما مسؤولية المشتري والقائم بالتركيب.",
 });
 
 const ATTRIBUTE_TRANSLATIONS = {
