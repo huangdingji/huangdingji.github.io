@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://www.qzjy.store/sitemapindex.xml
 Sitemap: https://www.qzjy.store/sitemap.xml
+Sitemap: https://www.qzjy.store/sitemap-en.xml
+Sitemap: https://www.qzjy.store/sitemap-zh.xml
+Sitemap: https://www.qzjy.store/sitemap-es.xml
+Sitemap: https://www.qzjy.store/sitemap-ar.xml
