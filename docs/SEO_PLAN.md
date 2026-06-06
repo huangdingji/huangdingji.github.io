@@ -524,7 +524,43 @@
 - ar dict 关闭: `    }` 4 空格，紧跟 `};` 0 缩进（**注意：ar 关闭缩进跟 zh/es 不同！**）
 - TRANSLATIONS 关闭: `};` 0 缩进，紧跟 `Object.assign` / `productNames` / `ATTRIBUTE_TRANSLATIONS`
 
-### 2026-06-05 段 19 (Products 6 页全部翻译)
+### 2026-06-06 段 22 (blog/index.html 翻译补全)
+
+**1) 范围** — 用户截图发现 `blog/index.html` 切 zh 时未翻译（H1/H3 card/Read Guide 按钮）
+
+**2) 修复**:
+- 21 段 × 3 语 = 63 条翻译
+- 包括 H1/H2/H3 card 标题、卡片描述段、"Read Guide" 按钮
+
+**3) 教训**:
+- 之前只翻译了"内容页"（产品页/博客文章/国页），漏了"list 页"（blog/index, products/index, markets/index）
+- 完整检查清单：每个页面都需扫, 包括 list 页面
+- blog/index 是用户点击第一个入口，未翻译直接导致信任损失
+
+**1) 范围** — 新博客 `blog/ptfe-tape-for-hot-water.html` (1800-2200 字) 4 语全翻译
+
+**2) 大纲**:
+- H1: PTFE Tape for Hot Water: Temperature, Pressure and Density Guide
+- H2: 为什么热水需要关注 / 温度压力极限 / 密度厚度变化 / 应用指南表格 / 压力方程 / 标准带 vs 高密度带 / 太阳能地热 / 蒸汽 vs 热水 / 常见错误 / FAQ
+- 7 FAQ + FAQPage schema
+- 7 行应用决策表 (温度/压力/密度/厚度)
+- Related Reading 链回 8 博客 + 2 产品页
+
+**3) 与已存在 `blog/ptfe-tape-temperature-range.html` 的区别**:
+- Temperature Range: chemistry/physics 角度, continuous/peak temperature
+- Hot Water: **应用 + 决策 + 工业** 角度, 给具体场景的密度选择
+
+**1) 范围** — 新博客 `blog/yellow-vs-white-ptfe-tape.html` (1500-2000 字) 4 语全翻译
+
+**2) 大纲**:
+- H1: Yellow vs White PTFE Tape: What's the Difference?
+- H2: 30 秒决策规则 / 什么是白色 PTFE 带 / 什么是黄色 PTFE 带 / 并排规格对比表 / 白色使用场景 / 黄色使用场景 / 为什么不能替代 / 两个例外 / 首个集装箱备 SKU / FAQ
+- 6 FAQ + FAQPage schema
+- Related Reading 链回 6 博客 + 2 产品页
+
+**3) 关键差异** vs 已存在的 `blog/ptfe-tape-colors.html`:
+- Color Guide: 7 色 encyclopedia 形式
+- Yellow vs White: **二元决策对比**, 帮买家快速选择
 
 **1) 范围** — products 6 页共 65 段 (p/h1/h2/h3/li/td) × 3 语 = 195 条翻译:
 - products/index.html (16 段)
