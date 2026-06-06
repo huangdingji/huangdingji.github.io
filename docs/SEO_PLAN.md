@@ -524,7 +524,33 @@
 - ar dict 关闭: `    }` 4 空格，紧跟 `};` 0 缩进（**注意：ar 关闭缩进跟 zh/es 不同！**）
 - TRANSLATIONS 关闭: `};` 0 缩进，紧跟 `Object.assign` / `productNames` / `ATTRIBUTE_TRANSLATIONS`
 
-### 2026-06-05 段 17 (技术 SEO 收尾)
+### 2026-06-05 段 19 (Products 6 页全部翻译)
+
+**1) 范围** — products 6 页共 65 段 (p/h1/h2/h3/li/td) × 3 语 = 195 条翻译:
+- products/index.html (16 段)
+- products/high-density-ptfe-tape.html (12 段)
+- products/oem-ptfe-tape.html (11 段)
+- products/gas-ptfe-tape.html (10 段)
+- products/plumbing-seal-tape.html (8 段)
+- products/ptfe-thread-seal-tape.html (8 段)
+
+**2) 浏览器验证**: 所有 6 页 4 语翻译生效, zh 切换后产品页全部中文
+
+**3) 修复次数**: 3 次 (错 en 替换, head 不匹配, head[:30] 二次替换)
+
+**4) 剩余 138 段 (unique 113)**: 4 blog + index + oem-odm + factory + quality + about + guides + contact + 4 markets (pakistan/iraq/uae/egypt 残余)
+
+### 2026-06-05 段 18 (剩余国页 P 段 + contact 表单 补全)
+
+**1) Batch 1 - contact 表单**:
+- 14 段 P + 2 段 label × 3 语 = 48 条翻译
+- 影响询盘转化路径
+
+**2) Batch 2 - 5 国页 P 段**:
+- uae 8 段 + iraq 10 段 + pakistan 11 段 + india 4 段 + saudi 1 段 = 34 段
+- × 3 语 = 102 条翻译
+
+**3) 总**: 18 段 21 段 + 18 段 + 22 段 + 1 段...
 
 **1) 范围** — 用户截图 240 段未翻译问题暂停, 先做技术 SEO 收尾确保翻译被搜索引擎发现
 
