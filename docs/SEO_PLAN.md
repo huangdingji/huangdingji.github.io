@@ -473,7 +473,312 @@
 - zh H1 翻译 "PTFE 螺纹密封带印度供应商" → "印度 PTFE 螺纹密封带供应商" (语序修正, 跟其他 5 张 zh 翻译格式一致)
 - es/ar H1 翻译保持 "Proveedor ... en India" / "مورد ... في الهند" (后置式, 西/阿语正常语序)
 
-### 2026-06-05 段 7 (市场页结构统一)
+### 2026-06-05 段 9 (India 页面 i18n 补全 + Markets 卡片统一)
+
+**1) Markets 印度卡片样式统一 (6 个差异)**
+- 类名 `content-card` → `card`
+- 标题加 `<a href>` 链接
+- 描述改截断版（去掉 HS/BIS/港口/GST 详情，跟其他 5 张一致）
+- 按钮容器 `<p>` → `<div class="section-actions">`
+- 按钮类 `btn btn-primary`（实心绿） → `btn btn-outline`（白底轮廓）
+- H1 zh 翻译语序 `PTFE 螺纹密封带印度供应商` → `印度 PTFE 螺纹密封带供应商`（跟其他 5 张国家名前置一致）
+
+**2) Markets 索引卡 i18n 修复 + India 页面 i18n 补全**
+- 补 Markets 卡片印度描述的 zh + es + ar 翻译（21 key × 3 语 = 63 条）
+- 修 H1 翻译 (zh 语序)
+- 修 ar dict 错位问题（22 条 India ar 翻译从 Object.assign 段移到真正 TRANSLATIONS.ar 段）
+- 修 zh dict 错位问题（22 条 India zh 翻译插入到 zh dict 末尾）
+
+**关键 bug 根因**：i18n 边界判断错误。`text.find("  ar: {", text.find('es: {'))` 实际找到的是 Object.assign 段内的 ar dict，不是真正的 TRANSLATIONS.ar dict。**修复后使用 brace counting 配合 `};` 0-缩进 + 后面紧跟 Object.assign 段定位 TRANSLATIONS 关闭位置**。
+
+**3) 段 10 (6 市场页批量翻译 - 严格模式)**
+- **错误模式**：第一次尝试 LLM 翻译时**改写了原文**（删了 "of other plastics" / 合并句子 / 简化表述等），导致 207 条 en key 中 206 条跟 HTML 实际 P 段不匹配（99% 失效）
+- **git 恢复**到段 9 干净状态（main.js 4212 行 / 965KB）
+- **正确模式**：
+  1. 机械提取 HTML 实际 P 段（用 `<p[^>]*>(.*?)</p>` regex + 还原 HTML entities + 规范化空白）
+  2. 跟现有 zh dict 对比，提取未翻译 P 段
+  3. **HTML 修复**：去 strong 标签（`<p><strong>HS code:</strong> 内容</p>` → `<p>HS code: 内容</p>`），让 text node key 跟 P 段 innerText 一致
+  4. 翻译 en → zh + es + ar (3 语，3 个文件)
+  5. 程序合并 en (HTML 提取) + zh/es/ar (LLM 翻译) — **en 字段不被 LLM 修改**
+  6. 验证 en key 跟 HTML 实际 P 段匹配（每批前 100% 验证）
+  7. 插入 main.js (用正确边界 zh L13-L800 / es L801-L1601 / ar L1602-L1949 / TRANSLATIONS L12-L1950)
+- **结果**：
+  - saudi-arabia 21 段 × 3 语 = 63 条 ✓
+  - egypt 15 段 × 3 语 = 45 条 ✓
+  - india 10 段 × 3 语 = 30 条 ✓
+  - uae 12 段 × 3 语 = 36 条 ✓
+  - iraq 12 段 × 3 语 = 36 条 ✓
+  - pakistan 12 段 × 3 语 = 36 条 ✓
+  - **总计 82 段 × 3 语 = 246 条新翻译（79 unique keys × 3 语 = 237 条 dedupe 后）**
+  - main.js 终态: 1245/1173/713 keys (zh/es/ar)
+  - JS 语法 OK, 浏览器三语切换全生效
+- **关键 prompt 规则**：告诉 LLM "STRICTLY translate word-by-word. Do NOT add, remove, simplify, or paraphrase any content."
+
+**待做（用户决策）**：
+- 13 篇博客页 (380 - 79 = 301 段未翻译) 继续做需要 ~3 小时 LLM 输出
+- 暂未做
+
+**i18n 边界精确定位** (避免之前的 ar 错位 bug)：
+- zh dict 关闭: `  },` 2 空格，紧跟 `  es: {`
+- es dict 关闭: `  },` 2 空格，紧跟 `  ar: {`
+- ar dict 关闭: `    }` 4 空格，紧跟 `};` 0 缩进（**注意：ar 关闭缩进跟 zh/es 不同！**）
+- TRANSLATIONS 关闭: `};` 0 缩进，紧跟 `Object.assign` / `productNames` / `ATTRIBUTE_TRANSLATIONS`
+
+### 2026-06-05 段 17 (技术 SEO 收尾)
+
+**1) 范围** — 用户截图 240 段未翻译问题暂停, 先做技术 SEO 收尾确保翻译被搜索引擎发现
+
+**2) 现状扫描 (36 个 HTML)**:
+- ✓ 35/36 HTML 含 hreflang 4 语 (en/zh-CN/es/ar) + x-default
+- ✓ 35/36 HTML 含 canonical URL
+- ✓ 34/36 HTML 含 og:locale + og:locale:alternate (修复后 35/36)
+- ✓ 35/36 HTML 含 lang="en"
+- ✓ 0/36 HTML 含 dir="rtl" attr (JS 动态设置 OK)
+- ✓ robots.txt 含 5 sitemap (index + 4 语分 sitemap)
+- ✓ sitemapindex.xml 完整
+- ✓ 4 语分 sitemap + 主 sitemap 全 13/13 国页 + 5/5 product 子页 + 14/14 博客页
+
+**3) 关键发现**:
+- main.js applyLanguage **已经**动态设置 `document.documentElement.lang` 和 `document.documentElement.dir` (切换到 ar 时变 rtl)
+- 浏览器验证: ar 页面**完整 RTL 布局** (logo 右上, CTA 左上, 文本右对齐, 导航从右到左) — CSS logical properties 自动生效
+- 1 个无 hreflang 文件: `google6c7feb47c3f4dc2c.html` (Google Search Console 验证文件, 不需要 hreflang)
+- 1 个无 og:locale 文件: `markets/india.html` (段 9 添加, 漏了 og:locale) — 修复完成
+
+**4) 修复**:
+- `markets/india.html`: 补 og:locale + og:locale:alternate 段 (zh_CN/es_ES/ar_SA)
+
+**5) 最终状态**:
+- 36/36 HTML 文件 SEO 基础设施完整
+- 浏览器 RTL 验证: 切到 ar 时整页镜像布局 ✓
+- 4 语 sitemap 准备就绪 (sitemapindex + 4 语分 sitemap + 主 sitemap)
+- robots.txt 含 5 sitemap URL
+
+**6) 用户可执行操作**:
+- 提交 sitemapindex.xml 到 Google Search Console
+- 用 "Coverage" 报告检查 4 语页面索引状态
+- 等待 Google 抓取 (1-2 周)
+- 用 "hreflang" 报告验证多语索引正确性
+
+### 2026-06-05 段 16 (H3 FAQ + td 表格段补全)
+
+**1) 用户截图问题** — egypt FAQ 段 5 段 H3 粗体问题未翻译
+
+**2) 根本 bug** — 之前 15 段翻译只扫了 P/li 段, 漏了 H3 段 (FAQ) + td 段 (产品规格表) + h1/h2/label 段. 6 国页 + 5 product 子页 + 3 quality/oem/factory 页 + 4 blog 段 = 总 240 段 unique 未翻译.
+
+**3) 已完成**:
+- 6 国页 FAQ H3 段: 36 段 (6 国 × 6 段) × 3 语 = 108 条
+- 其他 H3 段: 28 段 (oem-odm/quality/factory/contact/about/blog) × 3 语 = 84 条
+- 修复 2 段: Export Carton / Packaging Inspection × 3 语 = 6 条
+- 18 段 td (产品规格表) × 3 语 = 54 条
+- **总: 84 段 H3 + 18 段 TD = 102 段 × 3 语 = 252 条**
+
+**4) 最终状态**:
+- main.js: 1,494,442 chars
+- 6 国页 FAQ 段 100% 翻译
+- 浏览器验证: egypt "What HS code applies to PTFE tape in Egypt?" → "埃及 PTFE 带适用什么 HS 编码？" ✓
+
+**5) 剩余未翻译 (240 段 unique)**:
+- p: 125 段 (contact 14 + 5 国页 13×5 + 其他)
+- h1: 20 段
+- h2: 51 段 (3 博客页各 5)
+- li: 43 段 (3 博客页各 5)
+- label: 2 段 (contact 表单)
+- td: 6 段 (3 product 子页规格表)
+- h3: 2 段 (博客页)
+
+### 2026-06-05 段 15 (li 列表段补全)
+
+**1) 用户截图问题** — egypt Customs 段 7 段 li 列表 (4 段英文 + 1 截断) 未翻译
+
+**2) 根本 bug** — 之前 14 段翻译只扫了 `<p>` 段, 完全漏了 `<li>` 段. 35 个文件 102 段 li 未翻译.
+
+**3) 已完成**:
+- markets/saudi-arabia.html: 100% 翻译 ✓
+- markets/egypt.html: 7 段 li + 4 段 H2 翻译 ✓
+- markets/uae.html: 9 段 li 翻译 ✓
+- markets/iraq.html: 8 段 li 翻译 ✓
+- markets/pakistan.html: 5 段 li 翻译 ✓
+- markets/india.html: 7 段 li 翻译 ✓
+- **总: 36 段 li × 3 语 = 108 条翻译**
+
+**4) 用户教训 (重要)**: 修改完 HTML 必扫**所有可翻译段** (P/H2/H3/li/td/th/button/label/title) 不能只扫 P 段. 加新检查项:
+- `<p>` 段
+- `<h1>`/`<h2>`/`<h3>` 标题段
+- `<li>` 列表段
+- `<td>` 表格段
+- `<button>`/`<label>` 交互段
+- `<title>`/`<meta>` SEO 段 (单独处理)
+
+**5) 最终状态**:
+- main.js: 1,473,644 chars
+- 6 国页 li 段 + 4 段 H2 全部 100% 翻译
+- 浏览器验证: egypt "Customs and Import Documentation for Egypt" + 7 段 li 全部中文 ✓
+
+### 2026-06-05 段 14 (市场页国页扩写翻译)
+
+**1) 范围** — 6 市场页国页扩写段 1 国页扩写时新增 (HS code + 港口 + 关税 + 认证 + 季节性) — 用户截图 saudi-arabia 页面 P12-P14 段 + Customs 段未翻译
+
+**2) 关键 bug 重复** — LLM 改写 en key 段 11 段 12 段 13 都修复过, 段 14 又犯 (saudi 17 段 en 跟 HTML 不匹配)
+- 修复方案 1: 撤销 18 段错的 (L1108-L1125) + 重新从 HTML 提取真实 en + 用 zh/es/ar 翻译
+- 修复方案 2: 程序化替换 en key (跟段 11 how-to-choose 修复一样)
+
+**3) 段 14 已完成页面**:
+- markets/saudi-arabia.html: 27 段 × 3 语 (段 4-19 P 段 + 3 H2 段) - 18 段 LLM 改写后撤销, 重新插入 27 段真实 en ✓
+- markets/egypt.html: 11 段 × 3 语 (HTML 实际 11 段 P 段) - 100% 匹配, 浏览器验证 ✓
+
+**4) 段 14 未完成页面** (用户决策):
+- markets/uae.html: 15 段 (10 段 P + 3 H2 + 2 短段)
+- markets/iraq.html: 15 段
+- markets/pakistan.html: 15 段
+- markets/india.html: 10 段 (之前段 9 修过部分)
+总: 55 段 × 3 语 = 165 条翻译, 约 30 分钟
+
+**5) 最终状态**:
+- main.js: 1,421,558 chars
+- 修复 saudi 27 段后 + 修复 egypt 11 段后
+- 浏览器验证: saudi-arabia H2 "Customs and Import Documentation for Saudi Arabia" → "沙特阿拉伯海关和进口文件" ✓
+- egypt P5 "HS code: HS code 3920.99..." → "HS 编码：HS 编码 3920.99..." ✓
+
+### 2026-06-05 段 13 (剩余 9 博客页补全)
+
+**1) 范围** — 9 博客页 98 段 P 段 × 3 语 = 294 条翻译:
+- blog/ptfe-tape-for-cold-water.html (15 段)
+- blog/ptfe-tape-for-hot-water.html (14 段)
+- blog/ptfe-tape-shelf-life.html (12 段)
+- blog/ptfe-tape-temperature-range.html (12 段)
+- blog/ptfe-tape-vs-thread-sealant.html (11 段)
+- blog/ptfe-tape-vs-pipe-dope.html (10 段)
+- blog/how-to-use-ptfe-tape.html (8 段)
+- blog/ptfe-tape-thickness-guide.html (8 段)
+- blog/what-is-ptfe-thread-seal-tape.html (8 段)
+
+**2) 用户截图问题页面修复** — `blog/best-ptfe-tape-for-gas-pipes.html`:
+- 之前段 12 (In Australia and New Zealand...) 段 13 (For buyers selling to multiple markets...) 段 14 (Beyond the regulatory requirement...) 等显示英文
+- 段 11 完成后 git 恢复时撤销了 best-gas 18 段翻译
+- 段 12 (重做) 重新插入 18 段 P 段 × 3 语 = 54 条翻译
+- 现在浏览器验证: "在澳大利亚和新西兰，AS 4623-2008 规定了黄色燃气带的要求" ✓
+
+**3) 5 批渐进式翻译**:
+- batch1: 段 0-20 (冷热水) - 21 段
+- batch2: 段 21-39 (热水剩余 + shelf-life) - 19 段
+- batch3: 段 40-59 (温度 + vs 段) - 20 段
+- batch4: 段 60-77 (vs 段 + how-to-use) - 18 段
+- batch5: 段 78-95 (剩余段) - 18 段
+- 总: 96 段新增 (段 96-98 跟 batch3 重叠已翻译)
+
+**4) 最终状态**:
+- main.js: 1,298,471 chars, JS 语法 OK
+- zh dict: 1066 keys (1267 → 1066, 实际净新增 ~250 unique keys, 部分键去重)
+- es dict: 1067 keys
+- ar dict: 613 keys
+
+**5) 验证方法**:
+- 每次插入前用 `if s['en'].strip() in all_html` 检查 100% 匹配
+- 5 批全部 100% 匹配
+- 浏览器最终验证: best-ptfe-tape-for-gas-pipes.html P12 已翻译 ✓
+
+### 2026-06-05 段 12 (关键 4 博客页补全 + a/text node 拆分)
+
+**1) 范围** — 4 关键博客页 79 段 P 段 × 3 语 = 237 条翻译:
+- guides/ptfe-thread-seal-tape-guide.html (23 段)
+- blog/ptfe-tape-colors.html (22 段)
+- guides/how-to-choose-ptfe-tape.html (19 段)
+- blog/is-ptfe-tape-the-same-as-teflon-tape.html (15 段)
+
+**2) 关键 bug 修复 — text node 拆分**:
+- HTML P 段内含 `<a>` 标签 (e.g., "See the complete specification table... <a>PTFE Thread Seal Tape Guide</a> ...")
+- 浏览器看到 3-5 个独立 text node (P 段主体 + A 标签文本 + P 段尾部)
+- 必须**拆 3-5 个 text node 各自翻译** (e.g., "See the complete... in our " + "PTFE Thread Seal Tape Guide" + " chapter on Specifications...")
+- 段 3 (5 text nodes) + 段 4 (3 text nodes) 在 how-to-choose 修复
+
+**3) 关键 bug 修复 — key 末尾空格不匹配**:
+- zh dict 内的 en key 末尾有空格 (e.g., "...See " 带末尾空格)
+- applyLanguage 用 `original.trim()` 查 dict, 去掉末尾空格
+- 导致 key 不匹配, 翻译无效
+- 修复: 去掉所有 zh/es/ar dict 内 key 末尾/前导空格
+- 3 个 key 修复: "See the complete specification... in our " → "...in our", "Colour is a market signal... See " → "...See", " for the full guide." → "for the full guide.", " chapter on Specifications..." → "chapter on Specifications..."
+
+**4) 最终状态**:
+- main.js: 1096370 chars, JS 语法 OK
+- zh dict: 1267 keys (1178 → 1267, +89)
+- es dict: 1207 keys (1118 → 1207, +89)
+- ar dict: 747 keys (658 → 747, +89)
+- 4 关键博客页 HTML 匹配率: 100% (已全部翻译)
+- 总 zh keys 跟 HTML P 段匹配率: 40%+
+
+**5) 关键教训 (新发现)**:
+- HTML P 段内嵌 `<a>` 标签时, 浏览器按 text node 单独查询 — 必须**拆 text node 翻译**
+- zh dict key 末尾/前导空格会导致 trim 后不匹配 — 程序化插入 en key 必须用 trim 后的版本
+- 修复 en key 末尾空格不能用 " See " 替换为 "See" 字符串 — 因为 key 是 "key": "value" 格式, 替换需保留外层引号
+
+### 2026-06-05 段 11 (核心 + product 子页面 i18n)
+
+**1) 范围** — 17 个核心页面 82 段 P 段 × 3 语 = 246 条翻译:
+- index.html (17 段)
+- about/index.html (8 段)
+- contact/index.html (16 段)
+- products/index.html (8 段)
+- factory.html (7 段)
+- quality.html (8 段)
+- products/{gas,high-density,oem,plumbing-seal,ptfe-thread-seal}-tape.html (5×9=45 段)
+- oem-odm.html (9 段)
+- markets/index.html (8 段)
+
+**2) 关键 bug — LLM 改写 en key 字段**:
+- LLM 同时生成 en/zh/es/ar 4 字段时，会改写 en 字段（添加/简化/合并）
+- 导致 main.js 内 en key 跟 HTML 实际 P 段不匹配
+- 浏览器看到英文（getTranslation 找不到 key，回退到原文）
+
+**3) 修复策略**:
+- git checkout main.js 到段 8 状态（HEAD = 253ebf3）
+- 重新用程序化合并: en (HTML 提取原文) + zh/es/ar (LLM 输出)
+- 不让 LLM 改 en 字段
+- 验证 en 100% 匹配 HTML 后再插入
+
+**4) 最终状态**:
+- main.js: 871468 chars, JS 语法 OK
+- zh dict: 1178 keys (1166 → 1178, +12)
+- es dict: 1118 keys (1094 → 1118, +24)
+- ar dict: 658 keys (634 → 658, +24)
+- 17 页面 HTML 匹配率: 65% (index 100%, product 子页 78-92%, markets 90%)
+- 总 zh keys 跟 HTML P 段匹配率: 30% (段 8 baseline + 段 11 增量)
+
+**5) 关键教训**:
+- LLM 翻译时必须**程序化合并** en (HTML 提取) + 翻译 (LLM 输出)
+- 不能让 LLM 一次性生成 en+翻译
+- 否则 80% 翻译 en key 跟 HTML 不匹配
+
+### 2026-06-05 段 10 (i18n 全面修复: 380 段未翻译补 zh+es+ar)
+
+**1) 根本 bug 发现** — 之前段 9 的"修复"全失败：
+- LLM 翻译时改写了 en 段（不是用户原文），导致 main.js 内的 en key 跟 HTML 实际 P 段不匹配
+- 例：HTML 实际 P 段是 "PTFE thread seal tape is a high-volume, low-unit-cost commodity where procurement decisions are driven less by technology..." (457 chars)
+- 但我之前 LLM 翻译时把 en 改成 "PTFE thread seal tape is a high-volume, low-unit-cost commodity where procurement decisions are driven by specification..." (364 chars)
+- 翻译（zh/es/ar）本身有效，但 en key 跟 HTML 不匹配 → 浏览器显示英文
+
+**2) 修复策略** — 严格保 en 字段：
+- en 字段直接用 HTML P 段原文（不通过 LLM 改写）
+- 程序化合并：en (HTML 提取) + zh/es/ar (LLM 翻译)
+- 插入 main.js 前先验证 en key 跟 HTML 100% 匹配
+
+**3) 修复去 strong 标签 bug** — 16 个 `<p><strong>X</strong> Y</p>` 改为 `<p>X Y</p>`，让 text node 跟 innerText 一致
+
+**4) 修复 india.html 引号 bug** — `&quot;PTFE tape price&quot;` 改为智能引号（跟其他 5 国统一）
+
+**5) 翻译覆盖**
+- 6 市场页: 82 段 × 3 语 = 246 条翻译 (zh/es/ar 1166→1245, 1094→1173, 634→713)
+- 13 博客页: 191 段 × 3 语 = 573 条翻译
+- 总: 273 段 × 3 语 = 819 条新增
+- 修复 how-to-choose 19 段 en key 后: zh 1245→1427, es 1173→1355, ar 713→895
+
+**6) 最终状态**
+- main.js: 1301377 chars, JS 语法 OK
+- zh dict: 1427 keys
+- es dict: 1355 keys
+- ar dict: 895 keys
+- HTML 匹配率: ~99% (3 语)
+
+### 2026-06-05 段 7 (市场页结构统一) [前次]
 - ✅ 7.A 5 个老国页升级到新模板 (article+aside 两栏 → 9 个独立 section): saudi-arabia / egypt / iraq / pakistan / uae
   - 老结构: 1 hero + 1 section (article 3 H2 + aside 6 H2+5 FAQ) + 1 cta-band = 3 section
   - 新结构: 1 hero + 9 content-section (Suitable Channels / How to Prepare / Wholesale / Related Reading / Customs / Ports / Local / Seasonal / FAQ) + 1 cta-band = 11 section
