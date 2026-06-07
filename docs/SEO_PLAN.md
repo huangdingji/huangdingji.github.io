@@ -524,7 +524,136 @@
 - ar dict 关闭: `    }` 4 空格，紧跟 `};` 0 缩进（**注意：ar 关闭缩进跟 zh/es 不同！**）
 - TRANSLATIONS 关闭: `};` 0 缩进，紧跟 `Object.assign` / `productNames` / `ATTRIBUTE_TRANSLATIONS`
 
-### 2026-06-07 段 28 (GitHub Actions 自动化)
+### 2026-06-07 段 29 (Month 3-1: India BIS Standards 博客)
+
+**1) 概述** — 国家认证博客系列开篇, 印度是南亚最大 PTFE 带进口市场
+
+**2) 文件创建**:
+- `blog/ptfe-tape-india-bis-standards.html` — Month 3-1 (29068 字节, 11 H2 + 7 FAQ + 5 schema)
+- 51 段翻译 (45 主段 + 6 FAQ summary) + 2 hero 段 + 1 card 描述段
+
+**3) 重点内容**:
+- **BIS 不是强制** — 12mm × 10m × 0.075mm 白色 PTFE 螺纹密封带不在 BIS 强制认证列表, 可直接进口
+- **HS 编码 3920.99** — 印度标准塑料分类 (避免用 3920.91 PVC 错分类导致 2-4 周清关延迟)
+- **关税计算** — BCD 10% + 社会福利附加费 1% + IGST 18% = 27-30% 有效总关税
+- **港口优先级** — Nhava Sheva (55%) > Mundra (20%) > Chennai (10%)
+- **支付条件** — 30/70 T/T 主流, 回头客 20/80, LC 不常见
+- **进口商选择** — 普通批发只需进口商 + CHA; 现代贸易需商标注册; 政府招标需销售代理
+
+**4) 4 语翻译**: zh/es/ar + en 原文, 49 段 × 3 语 = 147 条翻译
+
+**5) 浏览器实测** (切中文):
+- ✓ H1/H2/P 段全部翻译
+- ✓ FAQ summary 翻译
+- ✗ **已知限制**: 含 `<strong>not</strong>` 内嵌的 P 段, text node 切分后整段翻译失败, 显示 "PTFE thread seal tape is 不 on the Bureau..." (英文 + 中文字)
+
+**6) SEO_PLAN.md 段 29 已同步**
+
+---
+
+### 2026-06-07 段 30 (i18n strong 限制修复 + blog/index 修复)
+
+**1) 触发** — 用户截图:
+- 问题1: 印度 BIS 页面 P 段 "PTFE thread seal tape is **不** on the Bureau..." 混合英文中文
+- 问题2: blog/index.html 中 India BIS card 标题 "PTFE Tape for India: BIS..." 未翻译
+
+**2) 根因**:
+- i18n 系统用 text node 切分遍历, 内嵌 `<strong>not</strong>` 切分后整段翻译 key 失配
+- blog/index.html 中 h3 内含 a 链接, h3 段有翻译 dict key 但未触发
+
+**3) 修复** (改 main.js applyLanguage):
+- **Pass 1** (新增): 用 `querySelectorAll` 选所有 block-level 元素 (p/h1-h6/li/td/strong/em/small/summary 等)
+  - 跳过含 `a/img/input/button/select/textarea` 后代的元素 (保留链接/按钮)
+  - 元素含子 element (strong/em/span) 时, 用 `el.innerHTML = translated` 替换整段 (内嵌 inline markup 丢失, 但避免混合语言显示)
+  - 元素无子 element 时, 用 `el.textContent = translated`
+- **Pass 2** (保留): 兜底 per-text-node 翻译 (处理 a/span 等含 text 的 element)
+
+**4) 修复验证** (浏览器实测, 切中文):
+
+| 页面 | 状态 | 备注 |
+|------|------|------|
+| blog/index.html (9 cards) | ✓ | h3 + a 链接保留 + 全部翻译 |
+| markets/index.html (6 cards) | ✓ | h3 + a 链接保留 + 全部翻译 |
+| products/index.html | ✓ | 已验证 |
+| markets/india.html | ✓ | 5 FAQ h3 翻译 + 链接保留 |
+| blog/ptfe-tape-india-bis-standards.html | ✓ | P[1] 含 `<strong>not</strong>` 整段翻译为中文 "PTFE 螺纹密封带不在印度标准局..." |
+
+**5) 已知 trade-off** (用户接受):
+- 含 strong/em 子 element 的 element, 翻译后丢失内联 markup
+- 例: `<p>X is <strong>not</strong> Y</p>` → `<p>X 不是 Y</p>` (加粗丢失, 但语义清楚)
+- 例: `<h3><a href="x">text</a></h3>` → `<h3><a href="x">翻译</a></h3>` (链接保留, 翻译正常)
+
+**6) 文件改动**:
+- `assets/js/main.js` (Pass 1 + Pass 2 修复, file size 2,269,951 chars)
+- 1 个 zh dict 新 key: "PTFE Tape for India: BIS Standards and Import Guide" (card h3 翻译)
+
+**7) SEO_PLAN.md 段 30 已同步** — 记录 i18n strong 限制 + Pass 1/2 修复方案 + trade-off
+
+---
+
+### 2026-06-07 段 31 (i18n 链接 + tail P 段修复 v3)
+
+**1) 触发** — 用户截图再次确认印度 BIS 页面"还是乱":
+- 实际是 **Related Reading 8 个 a 链接未翻译** (e.g. "PTFE Tape vs Thread Sealant: A Complete Comparison")
+- 末尾 CTA 段 "Ready to supply PTFE tape..." 部分未翻译
+
+**2) 根因 (段 30 修复不完整)**:
+- Pass 1 顺序: querySelectorAll 按 document order, 父 li 先于子 a 处理
+- li 段 (内含 a 子 element) 触发 `el.innerHTML = t`, 覆盖了 li 内部, **a 链接丢失**
+- 末尾 P 段 (内含 a 链接) 同样被 Pass 1 跳过整段翻译, 但 a 翻译 + 整段 tail 未处理
+
+**3) 修复 v2**:
+- **Pass 1 加规则**: 跳过含 `a` 子 element 的容器 (li/p/ul/div 等)
+- **新 dict keys**:
+  - 5 个 Related Reading a 链接标题: "PTFE Tape vs Thread Sealant..." 等 → 翻译
+  - 末尾 P 段拆 2 段 (含 a 链接的 split): "Ready to supply..." + "for a CIF Nhava Sheva..."
+- **dict key 用 trim() 后的形式** (无 leading/trailing space)
+
+**4) 修复验证** (浏览器实测, 切中文, 切真实 user flow):
+
+| 段 | 状态 |
+|----|------|
+| 14 P 段 (含 `<strong>not</strong>`) | ✓ 全部翻译为中文 |
+| 8 个 Related Reading a 链接 | ✓ 翻译为中文 + href 保留 |
+| 末尾 CTA P 段 | ✓ "准备向印度市场供应 PTFE 带？ 发送您的目标规格和数量 获取 CIF 那瓦舍瓦或 CIF 蒙德拉报价..." |
+| 7 个 FAQ summary | ✓ 翻译为中文 |
+| 顶部/底部导航 | ✓ 翻译 + 链接保留 |
+
+**5) 已知 trade-off** (用户接受):
+- 中英混排: 专业术语/品牌名/港口名/单位 保留英文 (BIS/PTFE/Nhava Sheva/INR/HS 编码 等)
+- 这是 B2B 外贸站正常情况, 不是 bug
+
+**6) 文件改动**:
+- `assets/js/main.js` Pass 1 加 `if (el.querySelector("a")) return;` 规则
+- 7 个新 dict keys (5 a 链接 + 2 tail P 段 split)
+- 1 个删 dict key (整段"Ready to supply...on request." 拆为 2 段)
+- file size: 2,271,850 chars
+
+**7) SEO_PLAN.md 段 31 已同步** — 记录 Pass 1 v3 规则 + 链接保留 + trim key 策略
+
+---
+
+## 已知 i18n 限制 v3 (永久记录)
+
+**问题**: i18n 系统用 `applyLanguage` 遍历 text node, 遇到内嵌 `<strong>` / `<em>` 切分 text node 时, 整段翻译 key 失配
+
+**示例**: `<p>PTFE thread seal tape is <strong>not</strong> on the Bureau...</p>`
+- text node 1: `PTFE thread seal tape is ` (trim = `PTFE thread seal tape is`)
+- text node 2: `not`
+- text node 3: ` on the Bureau...`
+
+dict 内 key 是完整 `PTFE thread seal tape is not on the Bureau...`, 但 trim 后 node 1 的 trim 不匹配完整 key, 整段翻译失败, 只翻译 strong 内的 `not` → `不`
+
+**解决方案选项** (未实施):
+- **A**: 修改 main.js, 改用 innerHTML 替换而非 text node
+- **B**: 写作时避免在 P 段中嵌 strong
+- **C**: 加更多 partial translation keys (`PTFE thread seal tape is ` 单段)
+
+**当前方案**: 接受已知限制, 写作时尽量避免 P 段内嵌 strong (改用逗号/句号分隔), 或在文章末尾用 FAQ 强调关键判断
+
+---
+
+## 段 28 后续
 
 **1) 触发** — 用户要求 commit 后自动跑 submit-indexnow.py
 
