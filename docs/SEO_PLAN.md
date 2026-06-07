@@ -524,7 +524,48 @@
 - ar dict 关闭: `    }` 4 空格，紧跟 `};` 0 缩进（**注意：ar 关闭缩进跟 zh/es 不同！**）
 - TRANSLATIONS 关闭: `};` 0 缩进，紧跟 `Object.assign` / `productNames` / `ATTRIBUTE_TRANSLATIONS`
 
-### 2026-06-07 段 25 (Title/Description 长度优化)
+### 2026-06-07 段 26 (og:title / og:description 长度优化)
+
+**1) 触发** — SEO 工具报告 og:description 超长（截图显示 `FuJianTeflonTape is a China PTFE thread seal tape...` 178 chars 仍超 160）
+
+**2) 漏扫根因**:
+- 段 25 修复只扫了 `<title>` 和 `<meta name="description">`
+- 漏了 `<meta property="og:title">` 和 `<meta property="og:description">`
+- 同一 title 改短了，og:title 跟 meta description 实际值没改
+
+**3) 优化**:
+- 11 个 og:description 全部 ≤ 160 字符
+- 3 个 og:title 全部 ≤ 70 字符
+- **全站 37 页面 4 项 meta 长度审计 0 警告** (title/description/og:title/og:description)
+
+**4) 修复页面**:
+| 页面 | og:title 优化前/后 | og:description 优化前/后 |
+|------|-------------------|--------------------------|
+| index.html | OK | 178→156 |
+| guides/ptfe-thread-seal-tape-guide.html | 71→54 | 181→154 |
+| guides/how-to-choose-ptfe-tape.html | OK | 243→154 |
+| blog/ptfe-tape-colors.html | 72→52 | OK |
+| blog/is-ptfe-tape-the-same-as-teflon-tape.html | OK | 265→154 |
+| blog/ptfe-tape-for-cold-water.html | OK | 190→154 |
+| blog/ptfe-tape-for-hot-water.html | OK | 172→154 |
+| blog/ptfe-tape-shelf-life.html | OK | 213→154 |
+| blog/ptfe-tape-specifications.html | OK | 166→153 |
+| blog/ptfe-tape-temperature-range.html | OK | 237→154 |
+| blog/ptfe-tape-vs-thread-sealant.html | OK | 203→154 |
+| markets/saudi-arabia.html | 72→53 | OK |
+| markets/india.html | OK | 190→154 |
+
+**5) 教训 (永久记录)**:
+- SEO meta 长度审计需要同时检查 4 个 tag: `<title>` / `<meta name="description">` / `<meta property="og:title">` / `<meta property="og:description">`
+- 改 title 时必须同时改 og:title, 改 description 时必须同时改 og:description
+- 自动扫描脚本应该同时扫 4 个 tag, 不应漏
+
+**6) 全站 37 页面 SEO 审计最终状态**:
+- Title: 全部 ≤ 70 chars
+- Description: 全部 ≤ 160 chars
+- OG Title: 全部 ≤ 70 chars
+- OG Description: 全部 ≤ 160 chars
+- 0 警告通过
 
 **1) 触发** — SEO 审计工具检测到 6 个页面 title 超 70 字符
 
