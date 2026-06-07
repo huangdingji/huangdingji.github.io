@@ -524,7 +524,76 @@
 - ar dict 关闭: `    }` 4 空格，紧跟 `};` 0 缩进（**注意：ar 关闭缩进跟 zh/es 不同！**）
 - TRANSLATIONS 关闭: `};` 0 缩进，紧跟 `Object.assign` / `productNames` / `ATTRIBUTE_TRANSLATIONS`
 
-### 2026-06-06 段 22 (blog/index.html 翻译补全)
+### 2026-06-06 段 24 (全站 i18n 完整扫描修复)
+
+**1) 触发** — 用户截图指出 blog/index.html card 7 (Pressure Rating) 未翻译
+
+**2) 扫描发现 279 段未翻译 (182 unique)**:
+- 短段 117 (数字 + 按钮 + toc + 规格)
+- 中段 26 (CTA + 卡片描述)
+- 长段 46 (28 段 a 包装标签已翻译, 18 段 P/H2 段 LLM 改 en key)
+
+**3) 之前漏扫的根本原因**:
+- "全扫"模式只看了 article 内的 P/H2/H3/li/td
+- **没扫全 main 内所有可翻译 tag**: a/th/label/button/span/strong
+- 漏了 footer/header/CTA/form 内的所有 link 文本
+- LLM 翻译时反复改 en key（加句尾标点、改缩写）, 程序化 en 失配检测没起作用
+
+**4) 修复**:
+- 76 短段 × 3 语 = 228 条
+- 26 中段 × 3 语 = 78 条
+- 18 长 P 段 × 3 语 = 54 条
+- 24 真实 HTML 段 × 3 语 = 72 条
+- 20 最终修补 × 3 语 = 60 条
+- **总计 164 unique 段 × 3 语 = 492 条翻译**
+
+**5) 关键修复**:
+- blog/index.html card 7 描述
+- products/index/markets/index/about/index/contact/index 各 list 页面
+- 全部产品页 (6 pages) Quick Inquiry 段 + 介绍段
+- 全部 5 国页 (india/iraq/pakistan/uae/egypt) 残余 P 段
+- guides 2 页残余 P 段
+- 表格 th/tc 全翻译 (6 张表, 43 段)
+- footer 内 link 文本
+- form label (Name/Company/Country)
+- 短规格段（数字+单位）保留原文不翻译（数字通用）
+- a 包装标签 (h2+p 合并) 不需要独立翻译（h2/p 已翻译）
+
+**6) 教训 (永久记录)**:
+- 完整 tag 清单: P/H1/H2/H3/LI/TH/TD/A/LABEL/BUTTON/SPAN/STRONG
+- 必须**先扫所有 tag 看实际遗漏**才能补
+- a 标签长段（>= 500 chars）通常是卡片包装 h2+p 合并, 不需独立翻译
+- 数字段（仅数字+单位字符）不需翻译
+- LLM 改 en key 反复违例 → 必须从 HTML 实际段机械提取, 程序化 en 失配检测
+- 短段 (< 80 chars) 翻译不会出 LLM 改写问题, 优先批量处理
+
+**7) main.js 当前状态**:
+- 2,178,259 chars
+- zh 独立 key 数: ~1792
+- es/ar 各 ~1792 keys
+- JS 语法: OK
+
+**1) 范围** — 新博客 `blog/ptfe-tape-pressure-rating.html` (1500-2000 字) 4 语全翻译
+
+**2) 大纲**:
+- H1: PTFE Tape Pressure Rating: 0.075mm vs 0.1mm vs 0.2mm
+- H2: 压力等级含义 / 跟管道压力区别 / 三种标准厚度 / 压力对比表 / 0.075 应用 / 0.1 应用 / 0.2 应用 / 密度作用 / 接头几何形状 / 常见错误 / FAQ
+- 7 FAQ + FAQPage schema
+- 11 行压力对比表 (厚度 × 密度 × 应用 × 成本)
+- Related Reading 链回 8 博客 + 2 产品页
+- **表格 43 段 th/tc 翻译补全**（避免上次被截图"还有英文"问题）
+
+**3) 与已存在 `blog/ptfe-tape-thickness-guide.html` 的区别**:
+- Thickness Guide: width/density/specification 角度
+- Pressure Rating: **pressure rating + 0.075/0.1/0.2 对比** 角度, 工业买家导向
+
+**4) Month 2 完成状态**:
+- ✓ 2-1 Yellow vs White (1900 字)
+- ✓ 2-2 Hot Water (2200 字)
+- ✓ 2-3 Pressure Rating (1700 字)
+- (✓ 2-4 Color Guide 已存在 — 跳过)
+
+Month 2 问题关键词进攻 100% 完成.
 
 **1) 范围** — 用户截图发现 `blog/index.html` 切 zh 时未翻译（H1/H3 card/Read Guide 按钮）
 
