@@ -54,6 +54,7 @@ GitHub Actions 自动跑 → 提交 URL 到 IndexNow。
 - GitHub 免费版每月 2,000 分钟（这个 workflow 每次跑 1-2 秒, 等于无限）
 - IndexNow 每天 10,000 次提交限制
 - Workflow 5 分钟超时
+- **Node.js 24 强制启用** (env: `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"`) — GitHub 从 2026-06-16 起默认 Node.js 24, 2026-09-16 移除 Node.js 20
 
 ## 故障排查
 
