@@ -524,7 +524,43 @@
 - ar dict 关闭: `    }` 4 空格，紧跟 `};` 0 缩进（**注意：ar 关闭缩进跟 zh/es 不同！**）
 - TRANSLATIONS 关闭: `};` 0 缩进，紧跟 `Object.assign` / `productNames` / `ATTRIBUTE_TRANSLATIONS`
 
-### 2026-06-06 段 24 (全站 i18n 完整扫描修复)
+### 2026-06-07 段 25 (Title/Description 长度优化)
+
+**1) 触发** — SEO 审计工具检测到 6 个页面 title 超 70 字符
+
+**2) 优化**:
+- 6 个 title 全部 ≤ 70 字符 (71-76 → 45-57)
+- 15 个 description 全部 ≤ 160 字符 (163-313 → 154-158)
+- 0 警告通过
+
+**3) 优化前/后对比**:
+| 页面 | title 优化前/后 | desc 优化前/后 |
+|------|----------------|---------------|
+| guides/ptfe-thread-seal-tape-guide.html | 71→54 | 181→154 |
+| markets/saudi-arabia.html | 72→53 | OK |
+| blog/ptfe-tape-colors.html | 72→52 | OK |
+| blog/yellow-vs-white-ptfe-tape.html | 76→45 | 173→154 |
+| products/high-density-ptfe-tape.html | 71→49 | OK |
+| products/oem-ptfe-tape.html | 71→55 | OK |
+| blog/is-ptfe-tape-the-same-as-teflon-tape.html | OK | 265→154 |
+| blog/ptfe-tape-for-cold-water.html | OK | 190→154 |
+| blog/ptfe-tape-for-hot-water.html | OK | 208→154 |
+| blog/ptfe-tape-pressure-rating.html | OK | 204→155 |
+| blog/ptfe-tape-shelf-life.html | OK | 213→154 |
+| blog/ptfe-tape-specifications.html | OK | 166→153 |
+| blog/ptfe-tape-temperature-range.html | OK | 237→154 |
+| blog/ptfe-tape-vs-thread-sealant.html | OK | 203→155 |
+| guides/how-to-choose-ptfe-tape.html | OK | 243→154 |
+| index.html | OK | 178→155 |
+| markets/egypt.html | OK | 265→154 |
+| markets/india.html | OK | 313→157 |
+| markets/iraq.html | OK | 263→154 |
+| markets/pakistan.html | OK | 271→154 |
+| markets/uae.html | OK | 261→154 |
+
+**4) 全站 36 页面 SEO 审计 0 警告**:
+- Title: 全部 ≤ 70 chars (实际 45-67 chars 区间)
+- Description: 全部 ≤ 160 chars (实际 133-158 chars 区间)
 
 **1) 触发** — 用户截图指出 blog/index.html card 7 (Pressure Rating) 未翻译
 
