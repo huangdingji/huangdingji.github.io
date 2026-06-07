@@ -524,7 +524,57 @@
 - ar dict 关闭: `    }` 4 空格，紧跟 `};` 0 缩进（**注意：ar 关闭缩进跟 zh/es 不同！**）
 - TRANSLATIONS 关闭: `};` 0 缩进，紧跟 `Object.assign` / `productNames` / `ATTRIBUTE_TRANSLATIONS`
 
-### 2026-06-07 段 26 (og:title / og:description 长度优化)
+### 2026-06-07 段 27 (IndexNow 集成)
+
+**1) 概述** — 集成 Microsoft Bing + Yandex + Naver + Seznam 共同支持的 IndexNow push API
+
+**2) 关键教训 - 不能 AI 自行生成 key**:
+- 第一轮 AI 自作主张生成 `d8avdsfitumq657r` key
+- 用户纠正: 实际 key 是 `4637e368e9bc47008f9ee8f6ae24ef3c` (来自 Bing 站长工具)
+- **已删除 d8avdsfitumq657r.txt + 重新用用户实际 key 提交**
+
+**3) 文件创建**:
+- `4637e368e9bc47008f9ee8f6ae24ef3c.txt` — API key 验证文件 (用户已提供)
+- `tools/indexnow-config.json` — 配置 (已用用户 key 更新)
+- `tools/submit-indexnow.sh` — 提交脚本 (chmod +x)
+- `tools/INDEXNOW.md` — 使用文档
+- `d8avdsfitumq657r.txt` — 已删除 (AI 错误生成)
+
+**4) API key**: `4637e368e9bc47008f9ee8f6ae24ef3c` (来自 Bing Webmasters, 32 字符 UUID)
+
+**5) 提交结果**:
+- 36 唯一 URL 提交到 `https://api.indexnow.org/indexnow`
+- **HTTP 202 Accepted** (Bing 接收, 待抓取)
+- 预期 24-72 小时内 Bing 完成首次抓取
+
+**6) 部署后验证**:
+- 访问 `https://www.qzjy.store/4637e368e9bc47008f9ee8f6ae24ef3c.txt` 应返回 `4637e368e9bc47008f9ee8f6ae24ef3c` (纯文本)
+- 部署后 Bing 会在 5-10 分钟内验证 key
+
+**7) 使用流程**:
+| 场景 | 命令 |
+|------|------|
+| 全量提交 (每月) | `./tools/submit-indexnow.sh` |
+| 单个 URL | `./tools/submit-indexnow.sh https://www.qzjy.store/blog/new.html` |
+| 多个 URL | `./tools/submit-indexnow.sh URL1 URL2 URL3` |
+
+**8) 集成优势**:
+- 不需要注册账号 (跟 GSC 不同)
+- 跨搜索引擎: Bing / Yandex / Naver / Seznam 都接收
+- 比 sitemap 被动抓取快 10-20 倍
+- 24-72 小时首次抓取 vs sitemap 几周-几月
+
+**9) 跟 GSC 关系**:
+- **GSC** 适用于 Google (不支持 IndexNow)
+- **IndexNow** 适用于 Bing/Yandex/Naver/Seznam
+- 两个独立, 都需要提交
+
+**10) Git commit 包含文件**:
+- `4637e368e9bc47008f9ee8f6ae24ef3c.txt` (用户文件, 确认存在)
+- `tools/indexnow-config.json` (新)
+- `tools/submit-indexnow.sh` (新)
+- `tools/INDEXNOW.md` (新)
+- **不需要** `d8avdsfitumq657r.txt` (已删除)
 
 **1) 触发** — SEO 工具报告 og:description 超长（截图显示 `FuJianTeflonTape is a China PTFE thread seal tape...` 178 chars 仍超 160）
 
