@@ -7416,6 +7416,109 @@ for (const lang of Object.keys(OEM_PAGE_TRANSLATIONS)) {
   };
 }
 
+const FACTORY_PAGE_TRANSLATIONS = {
+  zh: {
+    "PTFE thread seal tape China factory": "中国 PTFE 螺纹密封带工厂",
+    "PTFE Thread Seal Tape Factory": "PTFE 螺纹密封带工厂",
+    "FuJianTeflonTape supports overseas importers, wholesalers and OEM brand customers with PTFE tape production, slitting, winding, sample checking, packaging and export carton preparation.": "FuJianTeflonTape 为海外进口商、批发商和 OEM 品牌客户提供 PTFE 生料带生产、分切、缠绕、样品确认、包装和出口装箱支持。",
+    "Send Factory Inquiry": "发送工厂询盘",
+    "Factory capability": "工厂能力",
+    "Built for repeat B2B supply": "为长期 B2B 复购供应而准备",
+    "A reliable PTFE tape factory should make specification, packaging and delivery details easy to confirm. Our work is organized around stable SKU production, OEM packaging preparation and clear pre-production communication.": "可靠的 PTFE 生料带工厂应让规格、包装和交付细节容易确认。我们的工作围绕稳定 SKU 生产、OEM 包装准备和生产前清晰沟通展开。",
+    "Customers can discuss standard PTFE thread seal tape, high density PTFE tape, gas line PTFE tape, water pipe seal tape and OEM private label programs. Before production, we confirm tape width, length, thickness, density or target roll weight, tape color, spool color, packing method and carton information.": "客户可沟通常规 PTFE 螺纹密封带、高密度 PTFE 生料带、燃气管道 PTFE 带、水管密封带和 OEM 私有标签方案。生产前，我们会确认宽度、长度、厚度、密度或目标单卷重量、带子颜色、轮芯颜色、包装方式和纸箱信息。",
+    "Production and packing": "生产与包装",
+    "What overseas buyers can verify": "海外买家可以确认哪些内容",
+    "For B2B orders, buyers usually care about whether the factory can keep the same specification across repeat shipments. These are the points we confirm before and during production.": "对于 B2B 订单，买家通常关心工厂能否在复购发货中保持一致规格。以下是我们在生产前和生产中会确认的要点。",
+    "Slitting and Winding": "分切与缠绕",
+    "PTFE film is prepared into the required width and wound according to the confirmed roll length and spool style.": "PTFE 膜按所需宽度分切，并根据确认的卷长和轮芯样式缠绕。",
+    "Specification Check": "规格检查",
+    "Width, length, thickness, tape weight, color and winding appearance are checked against the order requirement.": "按订单要求检查宽度、长度、厚度、带重、颜色和缠绕外观。",
+    "OEM Packing": "OEM 包装",
+    "Private label, barcode, display box, shrink wrap, bag packing and carton mark can be arranged for OEM orders.": "OEM 订单可安排私有标签、条码、展示盒、收缩膜、袋装和纸箱唛头。",
+    "Factory process": "工厂流程",
+    "From sample confirmation to bulk shipment": "从样品确认到批量发货",
+    "We try to reduce uncertainty before production. For new buyers, the first order usually starts with sample or photo confirmation, then quotation by SKU, then packaging confirmation before bulk production.": "我们会尽量在生产前降低不确定性。新客户首单通常先确认样品或图片，再按 SKU 报价，之后确认包装并安排批量生产。",
+    "1. Requirement": "1. 需求",
+    "Confirm tape size, thickness, density or roll weight, color, packing method and quantity per SKU.": "确认带子尺寸、厚度、密度或单卷重量、颜色、包装方式和每个 SKU 数量。",
+    "2. Sample": "2. 样品",
+    "Factory sample or reference photo can be checked before order confirmation.": "下单前可确认工厂样品或参考图片。",
+    "3. Packaging": "3. 包装",
+    "Confirm label, barcode, display box, bag, shrink wrap, carton mark and carton quantity.": "确认标签、条码、展示盒、袋装、收缩膜、纸箱唛头和装箱数量。",
+    "4. Production": "4. 生产",
+    "Arrange slitting, winding, packing and internal checking according to confirmed details.": "按确认细节安排分切、缠绕、包装和内部检查。",
+    "5. Shipment": "5. 发货",
+    "Check carton details, packing list and export packing before dispatch.": "发货前检查纸箱细节、装箱单和出口包装。",
+    "Suitable customers": "适合客户",
+    "Who usually works with us": "通常哪些客户与我们合作",
+    "Our factory page is prepared for buyers who need a stable supplier rather than a retail shopping experience.": "工厂页面向需要稳定供应商的买家，而不是零售购物体验。",
+    "Importers and Wholesalers": "进口商和批发商",
+    "Standard SKUs, carton packing and repeat shipment support for hardware and building material channels.": "为五金和建材渠道提供常规 SKU、纸箱包装和复购发货支持。",
+    "Plumbing and Hardware Brands": "水暖和五金品牌",
+    "Private label, custom spool color, custom tape color, barcode label and retail display packing.": "支持私有标签、定制轮芯颜色、定制带子颜色、条码标签和零售展示包装。",
+    "Project and Industrial Supply": "工程和工业供应",
+    "Wider, thicker or higher density PTFE tape options for specific application and project requirements.": "可按特定应用和项目要求提供更宽、更厚或更高密度 PTFE 生料带。",
+    "Ask for Factory Quotation and Carton Details": "询问工厂报价和装箱细节",
+    "Please send tape size, quantity, packing method, OEM requirement and target market. We can reply with price, MOQ, carton details, sample option and estimated lead time.": "请发送带子尺寸、数量、包装方式、OEM 要求和目标市场。我们可回复价格、MOQ、装箱细节、样品方案和预计交期。"
+  },
+  es: {
+    "PTFE thread seal tape China factory": "Fábrica china de cinta selladora PTFE",
+    "PTFE Thread Seal Tape Factory": "Fábrica de cinta selladora PTFE",
+    "Send Factory Inquiry": "Enviar consulta de fábrica",
+    "Factory capability": "Capacidad de fábrica",
+    "Built for repeat B2B supply": "Preparado para suministro B2B repetido",
+    "Production and packing": "Producción y empaque",
+    "What overseas buyers can verify": "Qué pueden verificar los compradores",
+    "Slitting and Winding": "Corte y bobinado",
+    "Specification Check": "Revisión de especificación",
+    "OEM Packing": "Empaque OEM",
+    "Factory process": "Proceso de fábrica",
+    "From sample confirmation to bulk shipment": "De muestra confirmada a envío masivo",
+    "1. Requirement": "1. Requisito",
+    "2. Sample": "2. Muestra",
+    "3. Packaging": "3. Empaque",
+    "4. Production": "4. Producción",
+    "5. Shipment": "5. Envío",
+    "Suitable customers": "Clientes adecuados",
+    "Who usually works with us": "Quién suele trabajar con nosotros",
+    "Importers and Wholesalers": "Importadores y mayoristas",
+    "Plumbing and Hardware Brands": "Marcas de plomería y ferretería",
+    "Project and Industrial Supply": "Suministro industrial y de proyectos",
+    "Ask for Factory Quotation and Carton Details": "Solicite cotización de fábrica y detalles de cartón"
+  },
+  ar: {
+    "PTFE thread seal tape China factory": "مصنع صيني لشريط إحكام القلاوظ PTFE",
+    "PTFE Thread Seal Tape Factory": "مصنع شريط إحكام القلاوظ PTFE",
+    "Send Factory Inquiry": "إرسال استفسار للمصنع",
+    "Factory capability": "قدرة المصنع",
+    "Built for repeat B2B supply": "مجهز لتوريد B2B المتكرر",
+    "Production and packing": "الإنتاج والتغليف",
+    "What overseas buyers can verify": "ما يمكن للمشترين التحقق منه",
+    "Slitting and Winding": "القص واللف",
+    "Specification Check": "فحص المواصفات",
+    "OEM Packing": "تغليف OEM",
+    "Factory process": "عملية المصنع",
+    "From sample confirmation to bulk shipment": "من تأكيد العينة إلى الشحن الكمي",
+    "1. Requirement": "1. المتطلبات",
+    "2. Sample": "2. العينة",
+    "3. Packaging": "3. التغليف",
+    "4. Production": "4. الإنتاج",
+    "5. Shipment": "5. الشحن",
+    "Suitable customers": "العملاء المناسبون",
+    "Who usually works with us": "من يعمل معنا عادة",
+    "Importers and Wholesalers": "المستوردون وتجار الجملة",
+    "Plumbing and Hardware Brands": "علامات السباكة والأدوات",
+    "Project and Industrial Supply": "توريد المشاريع والصناعة",
+    "Ask for Factory Quotation and Carton Details": "اطلب عرض سعر المصنع وتفاصيل الكرتون"
+  }
+};
+
+for (const lang of Object.keys(FACTORY_PAGE_TRANSLATIONS)) {
+  EXTRA_TRANSLATIONS[lang] = {
+    ...(EXTRA_TRANSLATIONS[lang] || {}),
+    ...FACTORY_PAGE_TRANSLATIONS[lang],
+  };
+}
+
 function getTranslation(lang, text) {
   if (lang === "en") return text;
   const extra = EXTRA_TRANSLATIONS[lang]?.[text];
