@@ -1,0 +1,36 @@
+name: IndexNow Auto-Submit
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**.html"
+      - "sitemap*.xml"
+      - "tools/indexnow-config.json"
+      - ".github/workflows/indexnow.yml"
+
+  workflow_dispatch:
+    # Allow manual trigger from the Actions tab
+
+jobs:
+  submit:
+    name: Submit URLs to IndexNow
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Submit all URLs to IndexNow
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          echo "Submitting URLs to IndexNow..."
+          python3 tools/submit-indexnow.py

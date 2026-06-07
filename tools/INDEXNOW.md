@@ -8,7 +8,7 @@
 
 - `4637e368e9bc47008f9ee8f6ae24ef3c.txt` — API key 验证文件（用户从 Bing Webmasters 导出, 放在站点根目录）
 - `tools/indexnow-config.json` — IndexNow 配置
-- `tools/submit-indexnow.sh` — 提交脚本
+- `tools/submit-indexnow.py` — 提交脚本（Python 3, chmod +x）
 
 ## 配置
 
@@ -21,19 +21,24 @@
 
 ## 使用方法
 
-### 1. 首次部署（已完成）
+### 1. 首次部署
 
 将 `4637e368e9bc47008f9ee8f6ae24ef3c.txt` 提交到 GitHub Pages 后，访问 `https://www.qzjy.store/4637e368e9bc47008f9ee8f6ae24ef3c.txt` 应当返回纯文本 `4637e368e9bc47008f9ee8f6ae24ef3c`。
 
 ### 2. 提交 URL
 
 ```bash
-# 提交所有 sitemap 中的 URL
-./tools/submit-indexnow.sh
+# 提交所有 sitemap 中的 URL（去重后）
+python3 tools/submit-indexnow.py
+
+# 或（因为 chmod +x）
+./tools/submit-indexnow.py
 
 # 提交特定 URL
-./tools/submit-indexnow.sh https://www.qzjy.store/blog/ptfe-tape-for-hot-water.html
+python3 tools/submit-indexnow.py https://www.qzjy.store/blog/ptfe-tape-for-hot-water.html
 ```
+
+要求：Python 3.6+, curl
 
 ### 3. HTTP 状态码
 
@@ -52,12 +57,12 @@
 
 1. 写完 HTML，commit + push 部署
 2. 等 GitHub Pages 部署完成（~1 分钟）
-3. 跑 `./tools/submit-indexnow.sh https://www.qzjy.store/path/to/new-page.html`
+3. 跑 `python3 tools/submit-indexnow.py https://www.qzjy.store/path/to/new-page.html`
 4. 24-72 小时内 Bing 抓取新页面
 
 ### 每月全量提交
 
-每月底跑一次 `./tools/submit-indexnow.sh`（无参数），自动从 5 个 sitemap 读取所有 URL 并提交。
+每月底跑一次 `python3 tools/submit-indexnow.py`（无参数），自动从所有 sitemap 读取 URL 并去重后提交。
 
 ## 限制
 
@@ -68,3 +73,13 @@
 ## 验证
 
 提交后 5-10 分钟，到 [Bing Webmasters](https://www.bing.com/webmasters) → 索引检查 → URL 检查 输入 URL 看是否被收录。
+
+## 自动化（GitHub Actions）
+
+`.github/workflows/indexnow.yml` 在 `push` 到 `main` 时自动跑（仅当 HTML/sitemap/config 变更时）。
+
+**一次性配置**：在 GitHub repo 的 Settings → Secrets and variables → Actions 添加：
+- Name: `INDEXNOW_KEY`
+- Value: `4637e368e9bc47008f9ee8f6ae24ef3c`
+
+详见 [`.github/README.md`](../.github/README.md)。

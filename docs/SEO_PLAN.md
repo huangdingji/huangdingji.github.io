@@ -524,7 +524,42 @@
 - ar dict 关闭: `    }` 4 空格，紧跟 `};` 0 缩进（**注意：ar 关闭缩进跟 zh/es 不同！**）
 - TRANSLATIONS 关闭: `};` 0 缩进，紧跟 `Object.assign` / `productNames` / `ATTRIBUTE_TRANSLATIONS`
 
-### 2026-06-07 段 27 (IndexNow 集成)
+### 2026-06-07 段 28 (GitHub Actions 自动化)
+
+**1) 触发** — 用户要求 commit 后自动跑 submit-indexnow.py
+
+**2) 文件创建**:
+- `.github/workflows/indexnow.yml` — workflow 配置
+- `.github/README.md` — 配置 + 故障排查文档
+- `tools/indexnow-config.json` — key 字段清空 (改为读 env)
+- `tools/submit-indexnow.py` — 优先读 `INDEXNOW_KEY` 环境变量
+
+**3) Workflow 设计**:
+- 触发: `on: push` 到 `main` 分支
+- 路径过滤: `*.html` / `sitemap*.xml` / `tools/indexnow-config.json` / `.github/workflows/indexnow.yml`
+- 手动触发: `workflow_dispatch`
+- 超时: 5 分钟
+- Runner: ubuntu-latest, Python 3.11
+
+**4) 安全设计**:
+- API key 不在 git 仓库 (config `key` 字段为空)
+- GitHub Secret `INDEXNOW_KEY` 在 workflow 运行时作为环境变量注入
+- 本地开发兼容: `export INDEXNOW_KEY=...` 后跑脚本
+
+**5) 用户一次性配置**:
+- GitHub repo → Settings → Secrets and variables → Actions → New repository secret
+- Name: `INDEXNOW_KEY`
+- Value: `4637e368e9bc47008f9ee8f6ae24ef3c`
+
+**6) 测试结果**:
+- 模拟 CI 跑: `INDEXNOW_KEY=... python3 tools/submit-indexnow.py` → HTTP 200 OK
+- 无环境变量时: 正确报错并提示
+- 有环境变量时: 36 URLs 提交成功
+
+**7) 效果**:
+- 改 HTML/sitemap 后 git push → GitHub Actions 自动跑 → IndexNow 收到
+- 无需手动跑 `submit-indexnow.py`
+- 24-72 小时内 Bing 抓取新内容
 
 **1) 概述** — 集成 Microsoft Bing + Yandex + Naver + Seznam 共同支持的 IndexNow push API
 

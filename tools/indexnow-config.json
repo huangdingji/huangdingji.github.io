@@ -1,9 +1,8 @@
 {
   "host": "www.qzjy.store",
-  "key": "4637e368e9bc47008f9ee8f6ae24ef3c",
+  "key": "",
   "keyLocation": "https://www.qzjy.store/4637e368e9bc47008f9ee8f6ae24ef3c.txt",
   "endpoint": "https://api.indexnow.org/indexnow",
-  "note": "IndexNow is shared by Bing, Yandex, Naver, Seznam and other participating search engines. Key is provided by the user (originally generated in Bing Webmasters).",
-  "providedBy": "user",
-  "keyFileName": "4637e368e9bc47008f9ee8f6ae24ef3c.txt"
+  "keyFileName": "4637e368e9bc47008f9ee8f6ae24ef3c.txt",
+  "note": "The 'key' field is intentionally left empty for security. The script will read INDEXNOW_KEY from environment (set via GitHub Actions secret). For local development, set it in your shell: export INDEXNOW_KEY=4637e368e9bc47008f9ee8f6ae24ef3c"
 }
