@@ -361,8 +361,29 @@ h2 { margin: 0; color: var(--navy); font-size: clamp(28px, 3vw, 40px); line-heig
 .contact-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 28px; align-items: start; }
 .contact-box { padding: 24px; border: 1px solid #cfe0ee; border-radius: var(--radius); background: #f2f7fb; }
 .contact-box p { margin: 8px 0; }
+.contact-methods { display: grid; gap: 10px; margin: 22px 0; }
+.contact-method {
+  display: grid;
+  gap: 3px;
+  padding: 14px;
+  border: 1px solid #c7d8e7;
+  border-radius: 6px;
+  background: #fff;
+}
+.contact-method strong { color: var(--navy); }
+.contact-method span { color: var(--blue); font-weight: 800; overflow-wrap: anywhere; }
+.template-box {
+  margin-top: 20px;
+  padding: 16px;
+  border-left: 4px solid var(--green);
+  border-radius: 6px;
+  background: #fff;
+}
+.template-box h3 { margin: 0 0 8px; color: var(--navy); font-size: 18px; }
+.template-box p { color: #405466; font-size: 14px; }
 .form { display: grid; gap: 14px; }
 .form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.form-row.single-field { grid-template-columns: 1fr; }
 .form label { display: grid; gap: 7px; color: #4c5d6f; font-size: 14px; font-weight: 700; }
 .form input, .form select, .form textarea {
   width: 100%;
