@@ -7784,15 +7784,19 @@ function applyLanguage(lang) {
     if (el.children.length > 0) {
       const full = el.innerText.trim().replace(/\s+/g, " ");
       if (!full) return;
-      const t = getTranslation(activeLang, full);
-      if (t === full) return;
+      if (!el.dataset.originalText) el.dataset.originalText = full;
+      const original = el.dataset.originalText;
+      const t = getTranslation(activeLang, original);
+      if (t === el.innerText.trim().replace(/\s+/g, " ")) return;
       el.innerHTML = t;
       return;
     }
     // leaf text node element (including <a>link</a>)
     const full = el.textContent.trim();
     if (!full) return;
-    const t = getTranslation(activeLang, full);
+    if (!el.dataset.originalText) el.dataset.originalText = full;
+    const original = el.dataset.originalText;
+    const t = getTranslation(activeLang, original);
     if (t === full) return;
     el.textContent = t;
   });
