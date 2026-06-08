@@ -448,6 +448,56 @@ h2 { margin: 0; color: var(--navy); font-size: clamp(28px, 3vw, 40px); line-heig
   width: 120px;
   white-space: nowrap;
 }
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+.profile-table th {
+  width: 220px;
+}
+.quote-example {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #cfe0ee;
+  border-left: 4px solid var(--green);
+  border-radius: var(--radius);
+  background: #fff;
+}
+.quote-example h3 {
+  margin: 0 0 12px;
+  color: var(--navy);
+}
+.quote-example p {
+  margin: 7px 0;
+  color: var(--muted);
+}
+.market-note {
+  margin: 18px 0 20px;
+  padding: 18px 20px;
+  border: 1px solid #d9e7f2;
+  border-left: 4px solid var(--blue);
+  border-radius: 8px;
+  background: #f8fbfe;
+}
+.market-note h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 20px;
+}
+.market-note p {
+  margin: 0;
+  color: var(--muted);
+}
+.priority-method {
+  border-color: rgba(17, 140, 95, .35);
+  background: #f0fbf6;
+}
+.optional-label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 .internal-links,
 .related-links {
   display: flex;
