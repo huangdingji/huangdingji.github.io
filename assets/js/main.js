@@ -8610,11 +8610,86 @@ if (menuToggle && mainNav) {
 }
 
 document.querySelectorAll(".nav-more").forEach((button) => {
+  const dropdown = button.closest(".nav-dropdown");
+  if (!dropdown) return;
+
+  dropdown.addEventListener("mouseenter", () => {
+    if (dropdown.classList.contains("closing")) return;
+    dropdown.classList.add("hover-open");
+    button.setAttribute("aria-expanded", "true");
+  });
+
+  dropdown.addEventListener("mouseleave", () => {
+    dropdown.classList.remove("hover-open", "closing");
+    if (!dropdown.classList.contains("open")) {
+      button.setAttribute("aria-expanded", "false");
+    }
+  });
+
   button.addEventListener("click", () => {
-    const dropdown = button.closest(".nav-dropdown");
-    if (!dropdown) return;
-    const open = dropdown.classList.toggle("open");
-    button.setAttribute("aria-expanded", String(open));
+    const isOpen = dropdown.classList.contains("open");
+    document.querySelectorAll(".nav-dropdown.open, .nav-dropdown.hover-open").forEach((item) => {
+      if (item !== dropdown) {
+        item.classList.remove("open", "hover-open", "closing");
+        item.querySelector(".nav-more")?.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    if (isOpen) {
+      dropdown.classList.remove("open", "hover-open");
+      dropdown.classList.add("closing");
+      button.setAttribute("aria-expanded", "false");
+      return;
+    }
+
+    dropdown.classList.remove("closing");
+    dropdown.classList.add("open");
+    button.setAttribute("aria-expanded", "true");
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (event.target.closest(".nav-dropdown")) return;
+  document.querySelectorAll(".nav-dropdown.open, .nav-dropdown.hover-open, .nav-dropdown.closing").forEach((dropdown) => {
+    dropdown.classList.remove("open", "hover-open", "closing");
+    dropdown.querySelector(".nav-more")?.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.addEventListener("mousemove", (event) => {
+  if (window.matchMedia("(max-width: 980px)").matches) return;
+
+  document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
+    const button = dropdown.querySelector(".nav-more");
+    const menu = dropdown.querySelector(".nav-dropdown-menu");
+    if (!button || !menu) return;
+
+    const buttonRect = button.getBoundingClientRect();
+    const menuRect = menu.getBoundingClientRect();
+    const inButton =
+      event.clientX >= buttonRect.left - 2 &&
+      event.clientX <= buttonRect.right + 2 &&
+      event.clientY >= buttonRect.top - 2 &&
+      event.clientY <= buttonRect.bottom + 8;
+    const inMenu =
+      menuRect.width > 0 &&
+      event.clientX >= menuRect.left - 2 &&
+      event.clientX <= menuRect.right + 2 &&
+      event.clientY >= menuRect.top - 8 &&
+      event.clientY <= menuRect.bottom + 2;
+
+    if (inButton || inMenu) {
+      if (!dropdown.classList.contains("closing")) {
+        dropdown.classList.add("hover-open");
+        button.setAttribute("aria-expanded", "true");
+      }
+      return;
+    }
+
+    dropdown.classList.remove("hover-open", "closing");
+    if (!dropdown.classList.contains("open")) {
+      button.setAttribute("aria-expanded", "false");
+    }
   });
 });
 
