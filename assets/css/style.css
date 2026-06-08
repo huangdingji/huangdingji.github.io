@@ -488,6 +488,22 @@ h2 { margin: 0; color: var(--navy); font-size: clamp(28px, 3vw, 40px); line-heig
   margin: 0;
   color: var(--muted);
 }
+.buyer-note {
+  margin: 34px 0;
+  padding: 24px;
+  border: 1px solid rgba(17, 140, 95, .28);
+  border-left: 4px solid var(--green);
+  border-radius: var(--radius);
+  background: #f2fbf6;
+}
+.buyer-note h2 {
+  margin: 0 0 12px;
+  font-size: clamp(24px, 2.4vw, 32px);
+}
+.buyer-note p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
 .priority-method {
   border-color: rgba(17, 140, 95, .35);
   background: #f0fbf6;
