@@ -190,6 +190,8 @@ a { color: inherit; text-decoration: none; }
 .btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); }
 .btn-outline { color: var(--navy); background: #fff; border-color: #b9c8d6; }
 .btn-outline:hover { border-color: var(--blue); background: #f1f7fc; transform: translateY(-1px); }
+.btn-secondary { color: var(--navy); background: #fff; border-color: #b9c8d6; box-shadow: 0 8px 18px rgba(15, 38, 61, .08); }
+.btn-secondary:hover { border-color: var(--blue); background: #f1f7fc; transform: translateY(-1px); }
 .btn-light { color: var(--navy); background: #fff; box-shadow: 0 8px 18px rgba(15, 38, 61, .08); }
 .btn-light:hover { transform: translateY(-1px); }
 .btn + .btn {
@@ -249,17 +251,16 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Form status messages: hidden by default, only shown via JS after submit result */
-.form-status,
-.form-success,
-.form-error,
+.form-status {
+  display: none;
+}
+
 .form-success[hidden],
 .form-error[hidden] {
   display: none;
 }
 
-.form-status.is-visible,
-.form-success.is-visible,
-.form-error.is-visible {
+.form-status.is-visible {
   display: block;
   margin-top: 16px;
   padding: 14px 16px;
