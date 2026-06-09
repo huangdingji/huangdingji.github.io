@@ -8837,6 +8837,7 @@ if (quoteForm) {
       if (response.ok) {
         quoteForm.hidden = true;
         if (successBox) successBox.hidden = false;
+        if (errorBox) errorBox.hidden = true;
         if (typeof successBox !== "undefined" && successBox && successBox.scrollIntoView) {
           successBox.scrollIntoView({ behavior: "smooth", block: "center" });
         }
@@ -8848,6 +8849,7 @@ if (quoteForm) {
         submitBtn.disabled = false;
         submitBtn.textContent = defaultBtnText;
       }
+      if (successBox) successBox.hidden = true;
       if (errorBox) errorBox.hidden = false;
     }
   });
