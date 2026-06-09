@@ -8810,6 +8810,19 @@ if (quoteForm) {
   const errorBox = document.querySelector(".form-error");
   const submitBtn = quoteForm.querySelector('button[type="submit"]');
   const defaultBtnText = submitBtn ? submitBtn.textContent : "Send Inquiry";
+  const hideStatus = (box) => {
+    if (!box) return;
+    box.hidden = true;
+    box.classList.remove("is-visible");
+  };
+  const showStatus = (box) => {
+    if (!box) return;
+    box.hidden = false;
+    box.classList.add("is-visible");
+  };
+
+  hideStatus(successBox);
+  hideStatus(errorBox);
 
   quoteForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -8818,7 +8831,8 @@ if (quoteForm) {
       const sendingLabel = getTranslation(localStorage.getItem("siteLanguage") || "en", "Sending...");
       submitBtn.textContent = sendingLabel || "Sending...";
     }
-    if (errorBox) errorBox.hidden = true;
+    hideStatus(successBox);
+    hideStatus(errorBox);
 
     const data = new FormData(quoteForm);
 
@@ -8836,8 +8850,8 @@ if (quoteForm) {
 
       if (response.ok) {
         quoteForm.hidden = true;
-        if (successBox) successBox.hidden = false;
-        if (errorBox) errorBox.hidden = true;
+        showStatus(successBox);
+        hideStatus(errorBox);
         if (typeof successBox !== "undefined" && successBox && successBox.scrollIntoView) {
           successBox.scrollIntoView({ behavior: "smooth", block: "center" });
         }
@@ -8849,8 +8863,8 @@ if (quoteForm) {
         submitBtn.disabled = false;
         submitBtn.textContent = defaultBtnText;
       }
-      if (successBox) successBox.hidden = true;
-      if (errorBox) errorBox.hidden = false;
+      hideStatus(successBox);
+      showStatus(errorBox);
     }
   });
 }
