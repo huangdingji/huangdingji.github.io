@@ -3,10 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="preload" as="script" href="../assets/js/main.js?v=20260608-blogfix1">
   <link rel="preload" as="style" href="../assets/css/style.css?v=20260608-blogfix1"><title>How to Choose PTFE Tape: B2B Buyer's Guide | Import, OEM, Bulk</title>
   <meta name="description" content="Step-by-step B2B buyer's guide to choosing PTFE thread seal tape: application, specification, suppliers, MOQ, price, OEM packaging, audit, logistics, customs.">
@@ -30,13 +26,30 @@
 <meta name="twitter:title" content="How to Choose PTFE Tape: B2B Buyer's Guide | Import, OEM, Bulk">
 <meta name="twitter:description" content="A step-by-step B2B buyer's guide to choosing PTFE thread seal tape: define your application, select the right specification, evaluate suppliers, negotiate MOQ and price, manage OEM packaging, factory audit, logistics and customs documentation.">
 <meta name="twitter:image" content="https://www.qzjy.store/assets/images/og/og-guide-how-to-choose.jpg">
-  <!-- Google Analytics: replace the ID here if you change GA4 property later. -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBQK90EKV4"></script>
+  <!-- Google Analytics: loads only on production domains. -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config", "G-GBQK90EKV4");
+    (function () {
+      var allowedHosts = ['qzjy.store', 'www.qzjy.store'];
+      var currentHost = window.location.hostname;
+
+      if (allowedHosts.indexOf(currentHost) === -1) {
+        console.info('[Analytics] GA4 disabled on non-production host:', currentHost || window.location.protocol);
+        return;
+      }
+
+      var gaId = 'G-GBQK90EKV4';
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+      document.head.appendChild(gaScript);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ window.dataLayer.push(arguments); }
+      window.gtag = gtag;
+
+      gtag('js', new Date());
+      gtag('config', gaId);
+    })();
   </script>
   <link rel="stylesheet" href="../assets/css/style.css?v=20260608-blogfix1">
 <script type="application/ld+json">
