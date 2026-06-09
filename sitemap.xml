@@ -265,6 +265,17 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.qzjy.store/markets/egypt.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.qzjy.store/markets/egypt.html"/>
   </url>
+  <url>
+    <loc>https://www.qzjy.store/markets/qatar.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.qzjy.store/markets/qatar.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.qzjy.store/markets/qatar.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.qzjy.store/markets/qatar.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.qzjy.store/markets/qatar.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.qzjy.store/markets/qatar.html"/>
+  </url>
 
   <url>
     <loc>https://www.qzjy.store/guides/ptfe-thread-seal-tape-guide.html</loc>
@@ -414,5 +425,27 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.qzjy.store/blog/how-to-choose-ptfe-tape-for-wholesale-orders.html"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.qzjy.store/blog/how-to-choose-ptfe-tape-for-wholesale-orders.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.qzjy.store/blog/how-to-choose-ptfe-tape-for-wholesale-orders.html"/>
+  </url>
+  <url>
+    <loc>https://www.qzjy.store/blog/sourcing-ptfe-tape-from-china.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.qzjy.store/blog/sourcing-ptfe-tape-from-china.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.qzjy.store/blog/sourcing-ptfe-tape-from-china.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.qzjy.store/blog/sourcing-ptfe-tape-from-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.qzjy.store/blog/sourcing-ptfe-tape-from-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.qzjy.store/blog/sourcing-ptfe-tape-from-china.html"/>
+  </url>
+  <url>
+    <loc>https://www.qzjy.store/blog/oem-ptfe-tape-packaging-guide.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.qzjy.store/blog/oem-ptfe-tape-packaging-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.qzjy.store/blog/oem-ptfe-tape-packaging-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.qzjy.store/blog/oem-ptfe-tape-packaging-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.qzjy.store/blog/oem-ptfe-tape-packaging-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.qzjy.store/blog/oem-ptfe-tape-packaging-guide.html"/>
   </url>
 </urlset>
