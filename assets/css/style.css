@@ -214,7 +214,57 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.08;
 }
 .hero p, .page-hero p { max-width: 760px; margin: 20px 0 0; color: #e7f2fc; font-size: 18px; }
-.hero-actions, .section-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.cta-row,
+.hero-actions,
+.section-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-top: 28px;
+}
+
+/* Form status messages: hidden by default, only shown via JS after submit result */
+.form-success[hidden],
+.form-error[hidden] {
+  display: none;
+}
+
+.form-success:not([hidden]),
+.form-error:not([hidden]) {
+  display: block;
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.form-success:not([hidden]) {
+  background: #e7f4ec;
+  border: 1px solid #2f7a4d;
+  color: #1f5a37;
+}
+
+.form-error:not([hidden]) {
+  background: #fbeaea;
+  border: 1px solid #b94a48;
+  color: #8a2b29;
+}
+
+.cta-row .btn,
+.hero-actions .btn,
+.section-actions .btn {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .cta-row,
+  .hero-actions,
+  .section-actions {
+    gap: 10px;
+  }
+}
 .hero-facts { display: grid; grid-template-columns: repeat(4, minmax(120px, 1fr)); gap: 12px; margin-top: 34px; }
 .hero-facts div { padding: 16px; background: rgba(255,255,255,.1); border-left: 3px solid #76bdf3; }
 .hero-facts strong { display: block; font-size: 18px; }
