@@ -1,6 +1,45 @@
 // Replace these two values with your real contact information before publishing.
 const CONTACT_EMAIL = "fujianteflontape1@gmail.com";
 const WHATSAPP_NUMBER = "+852 6895 4159";
+// Temporary Meta Pixel ID. Replace this with the real Pixel ID before running ads.
+const TEMP_META_PIXEL_ID = "123456789012345";
+const PRODUCTION_HOSTS = ["qzjy.store", "www.qzjy.store"];
+
+function isProductionHost() {
+  return typeof window !== "undefined" && PRODUCTION_HOSTS.includes(window.location.hostname);
+}
+
+function initMetaPixel() {
+  if (!isProductionHost()) {
+    console.info("[Meta Pixel] Disabled on non-production host:", window.location.hostname || window.location.protocol);
+    return;
+  }
+
+  if (!TEMP_META_PIXEL_ID || TEMP_META_PIXEL_ID === "REPLACE_WITH_META_PIXEL_ID") return;
+  if (typeof window.fbq === "function") return;
+
+  (function (f, b, e, v, n, t, s) {
+    if (f.fbq) return;
+    n = f.fbq = function () {
+      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = true;
+    n.version = "2.0";
+    n.queue = [];
+    t = b.createElement(e);
+    t.async = true;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s);
+  })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+
+  window.fbq("init", TEMP_META_PIXEL_ID);
+  window.fbq("track", "PageView");
+}
+
+initMetaPixel();
 
 const LANGUAGES = {
   en: "English",
@@ -8694,12 +8733,34 @@ document.addEventListener("mousemove", (event) => {
 });
 
 function trackEvent(eventName, params = {}) {
-  if (typeof window.gtag !== "function") return;
-  window.gtag("event", eventName, {
+  const eventParams = {
     page_path: window.location.pathname,
-    transport_type: "beacon",
     ...params,
-  });
+  };
+
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, {
+      transport_type: "beacon",
+      ...eventParams,
+    });
+  }
+
+  if (typeof window.fbq === "function") {
+    window.fbq("trackCustom", eventName, eventParams);
+
+    if ([
+      "whatsapp_inquiry_click",
+      "email_inquiry_click",
+      "request_quote_click",
+      "inquiry_cta_click",
+      "inquiry_form_submit",
+    ].includes(eventName)) {
+      window.fbq("track", "Lead", {
+        content_name: eventName,
+        ...eventParams,
+      });
+    }
+  }
 }
 
 document.addEventListener("click", (event) => {
