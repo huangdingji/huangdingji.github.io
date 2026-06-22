@@ -131,9 +131,9 @@ http://localhost:8000
    ```
    把 `YOUR_FORM_ID` 替换成实际 form ID（如 `xyzabc123`）
    > 当前已配置的 form ID 是 `mjgdvpzv`。如需更换，重新走一遍 Step 2-3 即可。
-5. 在 formspree dashboard **Settings** 里设置收件邮箱为 `fujianteflontape1@gmail.com`
+5. 在 formspree dashboard **Settings** 里设置收件邮箱为 `fujianteflontape@gmail.com`
 6. 提交测试询盘，验证邮件是否到达
 
 ### 失败 fallback
 
-如果 formspree 服务不可用，JS 会显示错误提示并让用户直接发邮件到 `fujianteflontape1@gmail.com`，不会丢询盘。
+如果 formspree 服务不可用，JS 会显示错误提示并让用户直接发邮件到 `fujianteflontape@gmail.com`，不会丢询盘。

@@ -19,7 +19,7 @@ Export markets:   Middle East, South Asia, Africa, South America, Eastern Europe
 Annual revenue:   USD 1-5 million (private, optional)
 Certs:            ISO 9001, FDA, CE, RoHS, REACH (申请中)
 Trade shows:      Canton Fair 137th/138th booth
-Contact:          fujianteflontape1@gmail.com / +852-6895-4159 (WhatsApp)
+Contact:          fujianteflontape@gmail.com / +852-6895-4159 (WhatsApp)
 Languages:        English, Chinese, Spanish, Arabic
 ```
 
@@ -111,7 +111,7 @@ Why choose us:
 6. After-sales support — replacement for defective goods
 
 Contact:
-- Email: fujianteflontape1@gmail.com
+- Email: fujianteflontape@gmail.com
 - WhatsApp: +852-6895-4159
 - Website: https://www.qzjy.store
 - Address: Quanzhou, Fujian, China
