@@ -400,8 +400,8 @@
           <h1>Get Wholesale PTFE Tape Quote</h1>
           <p>Fast response within 12 hours. OEM &amp; bulk orders available worldwide.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#rfq-form">Get Instant Quote</a>
-            <a class="btn btn-secondary" href="https://wa.me/85268954159?text=Hello%2C%20I%20need%20a%20wholesale%20PTFE%20tape%20quote.%20Please%20send%20me%20price%2C%20MOQ%20and%20packing%20details." rel="noopener noreferrer" data-track="whatsapp" data-location="hero">WhatsApp Us</a>
+            <a class="btn btn-primary" href="https://wa.me/85268954159?text=Hello%2C%20I%20need%20a%20wholesale%20PTFE%20tape%20quote.%20Please%20send%20me%20price%2C%20MOQ%20and%20packing%20details." rel="noopener noreferrer" data-track="whatsapp" data-location="hero">WhatsApp Quote</a>
+            <a class="btn btn-secondary" href="#rfq-form">Get Instant Quote</a>
           </div>
         </div>
         <aside class="hero-card" aria-label="PTFE tape wholesale supply">
@@ -496,7 +496,7 @@
       <div class="container quote-layout">
         <aside class="quote-aside">
           <h2>Request Factory Quote</h2>
-          <p>Fill in what you know. If you are not sure about specification, send a reference product photo or market requirement in the message field.</p>
+          <p>Fill in what you know. Only your name and one contact method are required. If you are not sure about the specification, send a reference product photo or market requirement in the message field.</p>
           <p><strong>WhatsApp:</strong><br><a href="https://wa.me/85268954159?text=Hello%2C%20I%20need%20a%20wholesale%20PTFE%20tape%20quote.%20Please%20send%20me%20price%2C%20MOQ%20and%20packing%20details." rel="noopener noreferrer" data-track="whatsapp" data-location="form">+852 6895 4159</a></p>
           <p><strong>Email:</strong><br><a href="mailto:fujianteflontape@gmail.com" data-track="email" data-location="form">fujianteflontape@gmail.com</a></p>
         </aside>
@@ -509,12 +509,13 @@
             <label>Company Name<input name="company" type="text" autocomplete="organization"></label>
           </div>
           <div class="form-row">
-            <label>Country<input name="country" type="text" autocomplete="country-name" required></label>
+            <label>Country <span class="optional-label">optional</span><input name="country" type="text" autocomplete="country-name" placeholder="Where you plan to sell"></label>
             <label>Email or WhatsApp<input name="contact" type="text" autocomplete="email" required></label>
           </div>
           <div class="form-row">
             <label>Product Size
               <select name="product_size">
+                <option selected>Not sure / need recommendation</option>
                 <option>10m</option>
                 <option>12m</option>
                 <option>15m</option>
@@ -524,8 +525,9 @@
             </label>
             <label>Width
               <select name="width">
+                <option selected>Not sure / need recommendation</option>
                 <option>9mm</option>
-                <option selected>12mm</option>
+                <option>12mm</option>
                 <option>19mm</option>
                 <option>25mm</option>
                 <option>Custom width</option>
@@ -535,7 +537,8 @@
           <div class="form-row">
             <label>Thickness
               <select name="thickness">
-                <option selected>0.075mm</option>
+                <option selected>Not sure / need recommendation</option>
+                <option>0.075mm</option>
                 <option>0.1mm</option>
                 <option>Custom thickness</option>
               </select>
@@ -561,7 +564,7 @@
             </label>
           </div>
           <label>Message<textarea name="message" placeholder="Tell us your target specification, packing requirement, destination country or sample request."></textarea></label>
-          <p class="form-note">We will reply with available specification, MOQ and packing details as soon as possible.</p>
+          <p class="form-note">Only your name and contact are required. We will help confirm the specification, MOQ and packing details after your first message.</p>
           <button class="btn btn-primary" type="submit">Get Instant Quote</button>
           <div class="status status-success" id="successMessage">Thank you. Your quote request has been submitted. We will contact you soon.</div>
           <div class="status status-error" id="errorMessage">Sorry, the quote request could not be sent. Please contact us by WhatsApp or email.</div>

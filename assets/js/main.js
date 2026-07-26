@@ -1069,6 +1069,7 @@ if (quoteForm) {
   const validationMessages = {
     name: "Please enter your name or company name.",
     email: "Please enter a valid email address.",
+    contact: "Please enter an email address or WhatsApp number.",
   };
 
   quoteForm.querySelectorAll("input, select, textarea").forEach((field) => {
