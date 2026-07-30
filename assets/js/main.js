@@ -985,7 +985,7 @@ document.addEventListener("click", (event) => {
   const label = (link.textContent || "").trim();
   const href = link.getAttribute("href") || "";
 
-  if (link.matches("[data-whatsapp]") || href.includes("wa.me")) {
+  if (link.matches("[data-whatsapp]") || href.includes("wa.me") || href.includes("whatsapp.com/send")) {
     trackEvent("whatsapp_inquiry_click", { link_text: label });
     return;
   }
@@ -1054,7 +1054,15 @@ document.querySelectorAll("[data-whatsapp]").forEach((link) => {
   const cleanNumber = WHATSAPP_NUMBER.replace(/\D/g, "");
 
   if (cleanNumber.length >= 8) {
-    link.href = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
+    const encodedMessage = encodeURIComponent(message);
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+
+    // WhatsApp Web avoids the wa.me -> api.whatsapp.com redirect on desktop.
+    link.href = isDesktop
+      ? `https://web.whatsapp.com/send?phone=${cleanNumber}&text=${encodedMessage}`
+      : `https://wa.me/${cleanNumber}?text=${encodedMessage}`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
     return;
   }
 
