@@ -318,22 +318,28 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: minmax(0, .92fr) minmax(360px, .78fr);
   gap: clamp(32px, 6vw, 84px);
   align-items: center;
-  min-height: 630px;
-  padding: 70px 0;
+  min-height: 590px;
+  padding: 58px 0;
 }
 .home-hero .eyebrow { color: #1664a3; }
 .home-hero h1 { max-width: 720px; margin: 0; font-size: clamp(42px, 5.15vw, 68px); line-height: 1.04; letter-spacing: 0; }
 .home-hero .hero-copy { max-width: 620px; margin: 22px 0 0; color: #52677b; font-size: 19px; line-height: 1.62; }
 .home-hero-visual { position: relative; min-width: 0; }
-.home-hero-visual > img { width: 100%; min-height: 450px; max-height: 540px; object-fit: cover; object-position: center; border-radius: 8px; box-shadow: 0 20px 50px rgba(15, 44, 67, .18); }
+.home-hero-visual > img { width: 100%; min-height: 430px; max-height: 520px; object-fit: cover; object-position: center; border-radius: 8px; box-shadow: 0 20px 50px rgba(15, 44, 67, .18); }
 .hero-image-note { position: absolute; right: 18px; bottom: 18px; margin: 0; padding: 10px 13px; border: 1px solid rgba(255,255,255,.6); border-radius: 6px; color: #fff; font-size: 12px; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; background: rgba(9, 36, 61, .78); }
 .home-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 34px; }
 .home-facts div { padding: 13px 0; border-top: 1px solid #cbdbe7; }
 .home-facts strong { display: block; color: var(--navy); font-size: 14px; }
 .home-facts span { display: block; margin-top: 4px; color: #617488; font-size: 13px; line-height: 1.4; }
-.home-product-card .product-specs { margin: 14px 0 8px; color: #34526c; font-size: 14px; font-weight: 800; }
-.home-product-card .buyer-type { min-height: 42px; margin: 0 0 18px; color: #65788a; font-size: 14px; }
-.home-product-card .btn { width: 100%; justify-content: center; }
+.home-product-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.home-product-card { display: flex; flex-direction: column; border-radius: 8px; box-shadow: none; }
+.home-product-card > a:first-child { display: block; background: #f5f8fa; }
+.home-product-card img { aspect-ratio: 1 / .82; object-fit: contain; }
+.home-product-card .product-body { display: flex; flex: 1; flex-direction: column; padding: 18px; }
+.home-product-card h3 { font-size: 18px; }
+.home-product-card .product-specs { margin: 12px 0 8px; color: #34526c; font-size: 13px; font-weight: 800; }
+.home-product-card .buyer-type { min-height: 58px; margin: 0 0 18px; color: #65788a; font-size: 13px; line-height: 1.45; }
+.home-product-card .btn { width: 100%; margin-top: auto; justify-content: center; }
 .advantage-card { position: relative; padding: 28px 24px 24px 68px; }
 .advantage-card .advantage-index { position: absolute; top: 25px; left: 24px; color: var(--blue); font-size: 14px; font-weight: 900; }
 .production-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
@@ -935,6 +941,7 @@ h2 { margin: 0; color: var(--navy); font-size: clamp(28px, 3vw, 40px); line-heig
   [dir="rtl"] .language-switch { margin-left: 0; margin-right: auto; }
   .hero-facts, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid-3, .grid-2, .split, .image-grid, .contact-layout, .content-layout, .footer-grid, .packaging-grid { grid-template-columns: 1fr; }
+  .home-product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .home-hero-grid, .export-grid { grid-template-columns: 1fr; }
   .home-hero-grid { min-height: auto; }
   .home-hero-visual { max-width: 680px; }
@@ -983,6 +990,12 @@ h2 { margin: 0; color: var(--navy); font-size: clamp(28px, 3vw, 40px); line-heig
   .home-facts { grid-template-columns: 1fr; gap: 0; margin-top: 24px; }
   .home-facts strong { font-size: 13px; }
   .home-facts span { font-size: 12px; }
+  .home-product-grid { grid-template-columns: 1fr; gap: 12px; }
+  .home-product-card { flex-direction: row; }
+  .home-product-card > a:first-child { width: 38%; flex: 0 0 38%; }
+  .home-product-card img { width: 100%; height: 100%; aspect-ratio: auto; }
+  .home-product-card .product-body { min-width: 0; padding: 16px; }
+  .home-product-card .buyer-type { min-height: 0; margin-bottom: 14px; }
   .production-grid, .oem-home-list, .export-list { grid-template-columns: 1fr; }
   .oem-home > img { min-height: 260px; max-height: 330px; }
   .hero h1, .page-hero h1 { font-size: clamp(34px, 10vw, 42px); }
