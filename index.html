@@ -45,7 +45,137 @@
       gtag('config', gaId);
     })();
   </script>
-  <link rel="stylesheet" href="assets/css/style.css?v=20260823-home5">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260824-home-oem">
+  <style>
+    /* Homepage OEM section: a compact production-program view, not a retail card wall. */
+    .home-oem-panel {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(68px, 8vw, 112px) 0;
+      background: #0b2035;
+    }
+    .home-oem-panel::before {
+      position: absolute;
+      inset: 0 0 auto;
+      height: 2px;
+      content: "";
+      background: linear-gradient(90deg, #21b88d 0 18%, rgba(255, 255, 255, .18) 18% 100%);
+    }
+    .home-oem-panel .home-oem-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(340px, .96fr);
+      gap: clamp(34px, 5.5vw, 84px);
+      align-items: center;
+      overflow: visible;
+      border: 0;
+      background: transparent;
+    }
+    .home-oem-panel .home-oem-copy {
+      padding: 0;
+    }
+    .home-oem-panel .section-kicker {
+      margin: 0 0 14px;
+      color: #57dfb5;
+    }
+    .home-oem-panel h2 {
+      max-width: 650px;
+      margin: 0;
+      color: #fff;
+      font-size: clamp(36px, 4.1vw, 60px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+    .home-oem-panel .home-oem-intro {
+      max-width: 610px;
+      margin: 22px 0 0;
+      color: #b6c9d7;
+      font-size: clamp(16px, 1.45vw, 19px);
+      line-height: 1.6;
+    }
+    .home-oem-panel .home-oem-flow {
+      display: grid;
+      gap: 0;
+      margin: 34px 0 30px;
+      border-top: 1px solid rgba(186, 213, 228, .25);
+    }
+    .home-oem-panel .home-oem-step {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 15px;
+      align-items: start;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(186, 213, 228, .25);
+    }
+    .home-oem-panel .home-oem-step span {
+      color: #57dfb5;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+    .home-oem-panel .home-oem-step strong,
+    .home-oem-panel .home-oem-step p {
+      display: block;
+      margin: 0;
+    }
+    .home-oem-panel .home-oem-step strong { color: #fff; font-size: 16px; }
+    .home-oem-panel .home-oem-step p { margin-top: 4px; color: #aac0cf; font-size: 14px; line-height: 1.5; }
+    .home-oem-panel .cta-row { margin-top: 0; }
+    .home-oem-panel .btn-outline {
+      border-color: rgba(255, 255, 255, .62);
+      color: #fff;
+    }
+    .home-oem-panel .btn-outline:hover {
+      border-color: #fff;
+      color: #0b2035;
+      background: #fff;
+    }
+    .home-oem-panel .home-oem-visual {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      background: #123c58;
+      border: 1px solid rgba(255, 255, 255, .18);
+      box-shadow: 18px 18px 0 #155f86;
+    }
+    .home-oem-panel .home-oem-visual img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1.22 / 1;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(.92) contrast(1.03);
+    }
+    .home-oem-panel .home-oem-visual figcaption {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      max-width: 82%;
+      padding: 14px 18px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      background: #08765b;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .home-oem-panel .home-oem-copy { animation: home-rise .65s .06s cubic-bezier(.2,.8,.2,1) both; }
+      .home-oem-panel .home-oem-visual { animation: home-rise .75s .14s cubic-bezier(.2,.8,.2,1) both; }
+      .home-oem-panel .home-oem-step { transition: transform .22s ease, background-color .22s ease; }
+      .home-oem-panel .home-oem-step:hover { transform: translateX(7px); background: rgba(255, 255, 255, .045); }
+    }
+    @media (max-width: 900px) {
+      .home-oem-panel .home-oem-layout { grid-template-columns: 1fr; }
+      .home-oem-panel .home-oem-visual { max-width: 720px; }
+      .home-oem-panel .home-oem-visual img { aspect-ratio: 1.55 / 1; }
+    }
+    @media (max-width: 640px) {
+      .home-oem-panel { padding: 62px 0 68px; }
+      .home-oem-panel h2 { font-size: 36px; }
+      .home-oem-panel .home-oem-flow { margin: 28px 0 26px; }
+      .home-oem-panel .home-oem-visual { box-shadow: 10px 10px 0 #155f86; }
+      .home-oem-panel .home-oem-visual img { aspect-ratio: 1.18 / 1; }
+      .home-oem-panel .home-oem-visual figcaption { max-width: 100%; padding: 11px 13px; font-size: 12px; }
+    }
+  </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -168,8 +298,24 @@
 
     <section class="section home-oem-panel" id="oem-packaging">
       <div class="container home-oem-layout">
-        <img src="assets/images/product-oem.webp" alt="Colored PTFE thread seal tape for OEM packaging programs" loading="lazy">
-        <div><p class="section-kicker">OEM packaging</p><h2>Turn a confirmed tape specification into your own shelf-ready SKU</h2><p>Coordinate the visible parts of the product range after you choose the tape specification.</p><div class="home-oem-list"><span>Custom label</span><span>Barcode label</span><span>Spool color</span><span>Display box</span><span>Carton design</span><span>Export carton mark</span></div><div class="cta-row"><a class="btn btn-primary" href="oem-odm.html">Explore OEM Options</a><a class="btn btn-outline" href="get-quote/">Get Factory Quote</a></div></div>
+        <div class="home-oem-copy">
+          <p class="section-kicker">Private label program</p>
+          <h2>OEM PTFE tape built around your market.</h2>
+          <p class="home-oem-intro">Once the tape specification is confirmed, we help bring the visible parts of your wholesale SKU into one coordinated program for sample review and bulk packing.</p>
+          <div class="home-oem-flow" aria-label="OEM PTFE tape process">
+            <div class="home-oem-step"><span>01</span><div><strong>Tape and spool selection</strong><p>Confirm size, thickness, density and spool color for the target sales channel.</p></div></div>
+            <div class="home-oem-step"><span>02</span><div><strong>Label and retail presentation</strong><p>Coordinate private label, barcode label, display box or blister card details.</p></div></div>
+            <div class="home-oem-step"><span>03</span><div><strong>Carton-ready delivery</strong><p>Prepare export carton marks and mixed-SKU packing information before bulk production.</p></div></div>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="oem-odm.html">Explore OEM Options</a>
+            <a class="btn btn-outline" href="get-quote/">Get Factory Quote</a>
+          </div>
+        </div>
+        <figure class="home-oem-visual">
+          <img src="assets/images/factory-sample-display.webp" alt="PTFE tape sample display with color and spool options for OEM programs" loading="lazy">
+          <figcaption>Sample range review before packaging decisions</figcaption>
+        </figure>
       </div>
     </section>
 
