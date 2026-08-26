@@ -46,6 +46,59 @@
     })();
   </script>
   <link rel="stylesheet" href="assets/css/style.css?v=20260730-factory-proof">
+  <style>
+    /* Factory page: real production proof in the same compact industrial language as OEM. */
+    .factory-page{background:#f3f7f6;color:#102a42;overflow-x:clip}
+    .factory-page .factory-hero{background:#0b263e;color:#fff;position:relative;padding:clamp(58px,6.5vw,88px) 0 60px;isolation:isolate}
+    .factory-page .factory-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,30,49,.98) 0%,rgba(8,30,49,.94) 43%,rgba(8,30,49,.58) 100%);z-index:-1}
+    .factory-page .factory-hero-grid{display:grid;grid-template-columns:minmax(0,.72fr) minmax(540px,1.28fr);gap:clamp(32px,5vw,68px);align-items:center}
+    .factory-page .factory-eyebrow,.factory-page .factory-section-label{color:#53d9b0;font-size:.82rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;margin:0 0 16px}
+    .factory-page .factory-hero h1{max-width:500px;margin:0;font-size:clamp(2.5rem,3.7vw,4.25rem);letter-spacing:0;line-height:1.02}
+    .factory-page .factory-hero-copy{max-width:470px;margin:20px 0 25px;color:#c6d6e4;font-size:clamp(1rem,1.18vw,1.12rem);line-height:1.62}
+    .factory-page .factory-hero .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .factory-page .factory-hero .btn-outline{background:transparent!important;border-color:#9eb4c8;color:#fff}
+    .factory-page .factory-hero .btn-outline:hover{background:#fff;color:#102a42}
+    .factory-page .factory-hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}
+    .factory-page .factory-hero-tags span,.factory-page .factory-hero-tags a{border:1px solid rgba(163,193,211,.42);color:#d6e4ee;padding:8px 11px;font-size:.86rem;text-decoration:none;transition:background-color .2s ease,border-color .2s ease,color .2s ease}
+    .factory-page .factory-hero-tags a:hover,.factory-page .factory-hero-tags a:focus-visible{background:rgba(83,217,176,.13);border-color:#53d9b0;color:#fff}
+    .factory-page .factory-hero-visual{margin:0;position:relative;min-height:430px;background:#143c58;border:1px solid rgba(190,218,234,.42);padding:7px}
+    .factory-page .factory-hero-visual img,.factory-page .factory-hero-visual video{display:block;width:100%;height:100%;min-height:414px;object-fit:cover;object-position:center}
+    .factory-page .factory-hero-visual figcaption{position:absolute;left:19px;bottom:18px;margin:0;background:#0c2a42;color:#fff;padding:10px 13px;font-size:.84rem;font-weight:700}
+    .factory-page .factory-info{padding:clamp(42px,5vw,64px) 0;background:#edf4f2}
+    .factory-page .factory-section-heading{display:grid;grid-template-columns:minmax(0,.95fr) minmax(300px,.75fr);gap:30px;align-items:end;margin-bottom:28px}
+    .factory-page .factory-section-heading h2,.factory-page .factory-process-copy h2,.factory-page .factory-check-copy h2{font-size:clamp(2.1rem,3.5vw,3.65rem);line-height:1.05;letter-spacing:0;margin:0;color:#102a42}
+    .factory-page .factory-section-heading p:last-child{max-width:520px;margin:0;color:#577085;font-size:1.04rem;line-height:1.65}
+    .factory-page .factory-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid #cbdce1;background:#f9fcfb}
+    .factory-page .factory-fact{padding:20px 22px 22px;border-right:1px solid #cbdce1;border-bottom:1px solid #cbdce1;min-height:138px}
+    .factory-page .factory-fact:nth-child(3n){border-right:0}.factory-page .factory-fact:nth-last-child(-n+3){border-bottom:0}
+    .factory-page .factory-fact-index{display:block;color:#139a75;font-size:.78rem;font-weight:800;letter-spacing:.1em;margin-bottom:14px}
+    .factory-page .factory-fact h3{margin:0 0 10px;font-size:1.16rem;color:#102a42}.factory-page .factory-fact p{margin:0;color:#557085;line-height:1.55}
+    .factory-page .factory-process{background:#112f47;color:#fff;padding:clamp(46px,5.5vw,72px) 0}
+    .factory-page .factory-process-layout{display:grid;grid-template-columns:minmax(280px,.68fr) minmax(480px,1.3fr);gap:clamp(45px,7vw,110px);align-items:start}
+    .factory-page .factory-process-copy{position:sticky;top:110px}.factory-page .factory-process-copy h2{color:#fff}.factory-page .factory-process-copy p:last-child{color:#c7d8e4;line-height:1.7;font-size:1.06rem;max-width:420px}
+    .factory-page .factory-process-list{border-top:1px solid rgba(184,210,223,.38)}
+    .factory-page .factory-process-item{display:grid;grid-template-columns:72px minmax(180px,.7fr) minmax(250px,1.3fr);gap:20px;padding:21px 0;border-bottom:1px solid rgba(184,210,223,.38);align-items:start}
+    .factory-page .factory-process-item span{color:#54d7b0;font-weight:800;font-size:.83rem;padding-top:5px}.factory-page .factory-process-item h3{margin:0;color:#fff;font-size:1.35rem}.factory-page .factory-process-item p{margin:0;color:#c6d7e4;line-height:1.58}
+    .factory-page .factory-evidence{background:#fff;padding:clamp(48px,5.5vw,76px) 0}
+    .factory-page .factory-evidence-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:30px}
+    .factory-page .factory-evidence-feature,.factory-page .factory-evidence-small{margin:0;position:relative;overflow:hidden;background:#dce8eb}
+    .factory-page .factory-evidence-feature{min-height:470px}.factory-page .factory-evidence-stack{display:grid;grid-template-rows:1fr 1fr;gap:18px}.factory-page .factory-evidence-small{min-height:226px}
+    .factory-page .factory-evidence img{width:100%;height:100%;display:block;object-fit:cover;filter:saturate(.86) contrast(1.03)}
+    .factory-page .factory-evidence-feature img{object-position:center}.factory-page .factory-evidence-small img{object-position:center}
+    .factory-page .factory-evidence figcaption{position:absolute;left:0;right:0;bottom:0;padding:42px 24px 22px;color:#fff;background:linear-gradient(transparent,rgba(7,30,47,.88));font-weight:750;font-size:1.07rem}
+    .factory-page .factory-check{background:#dbeee8;padding:clamp(44px,5vw,68px) 0}
+    .factory-page .factory-check-layout{display:grid;grid-template-columns:minmax(0,.95fr) minmax(320px,.85fr);gap:clamp(42px,7vw,105px);align-items:start}
+    .factory-page .factory-check-copy p:last-child{color:#4e6e80;line-height:1.68;max-width:630px;font-size:1.04rem}
+    .factory-page .factory-check-list{margin:0;padding:0;list-style:none;border-top:1px solid #accbc4}
+    .factory-page .factory-check-list li{display:grid;grid-template-columns:36px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid #accbc4;color:#193c50;line-height:1.5}
+    .factory-page .factory-check-list span{color:#139a75;font-weight:800}.factory-page .factory-check-list strong{font-weight:720}
+    .factory-page .factory-final{background:#0b263e;color:#fff;padding:clamp(42px,4.8vw,62px) 0}
+    .factory-page .factory-final-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:36px;align-items:center}.factory-page .factory-final h2{margin:0 0 12px;color:#fff;font-size:clamp(2rem,3.4vw,3.4rem);letter-spacing:0;line-height:1.08}.factory-page .factory-final p{margin:0;color:#c5d7e3;max-width:720px;line-height:1.65}
+    .factory-page .factory-final .cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}.factory-page .factory-final .btn-light{background:transparent;color:#fff;border:1px solid #91aabc}
+    @media (prefers-reduced-motion:no-preference){@keyframes factory-reveal{from{opacity:.55;transform:translateY(14px)}to{opacity:1;transform:none}}.factory-page.factory-motion-ready .factory-reveal.is-visible{animation:factory-reveal .52s cubic-bezier(.2,.75,.25,1) both}.factory-page.factory-motion-ready .factory-fact:nth-child(2).is-visible,.factory-page.factory-motion-ready .factory-process-item:nth-child(2).is-visible{animation-delay:.07s}.factory-page.factory-motion-ready .factory-fact:nth-child(3).is-visible,.factory-page.factory-motion-ready .factory-process-item:nth-child(3).is-visible{animation-delay:.13s}.factory-page.factory-motion-ready .factory-fact:nth-child(4).is-visible,.factory-page.factory-motion-ready .factory-process-item:nth-child(4).is-visible{animation-delay:.19s}.factory-page.factory-motion-ready .factory-fact:nth-child(5).is-visible{animation-delay:.25s}.factory-page.factory-motion-ready .factory-fact:nth-child(6).is-visible{animation-delay:.31s}}
+    @media (max-width:920px){.factory-page .factory-hero-grid,.factory-page .factory-process-layout,.factory-page .factory-check-layout,.factory-page .factory-section-heading{grid-template-columns:1fr}.factory-page .factory-hero-visual{min-height:350px}.factory-page .factory-hero-visual img,.factory-page .factory-hero-visual video{min-height:326px}.factory-page .factory-process-copy{position:static}.factory-page .factory-final-inner{grid-template-columns:1fr}.factory-page .factory-final .cta-row{justify-content:flex-start}}
+    @media (max-width:700px){.factory-page .factory-hero{padding:64px 0 54px}.factory-page .factory-facts{grid-template-columns:1fr}.factory-page .factory-fact,.factory-page .factory-fact:nth-child(3n),.factory-page .factory-fact:nth-last-child(-n+3){border-right:0;border-bottom:1px solid #cbdce1;min-height:auto}.factory-page .factory-fact:last-child{border-bottom:0}.factory-page .factory-process-item{grid-template-columns:38px 1fr;gap:8px 14px}.factory-page .factory-process-item p{grid-column:2}.factory-page .factory-evidence-grid{grid-template-columns:1fr}.factory-page .factory-evidence-feature{min-height:380px}.factory-page .factory-evidence-stack{grid-template-columns:1fr 1fr;grid-template-rows:auto}.factory-page .factory-evidence-small{min-height:180px}.factory-page .factory-evidence figcaption{padding:32px 15px 14px;font-size:.92rem}}
+  </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -100,7 +153,7 @@
 }
 </script>
 </head>
-<body>
+<body class="factory-page">
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="index.html"><strong>FuJianTeflonTape</strong><span>PTFE thread seal tape factory</span></a>
@@ -125,121 +178,96 @@
     </div>
   </header>
   <main>
-    <section class="factory-proof-hero">
-      <div class="container factory-proof-hero-grid">
-        <div>
-          <p class="eyebrow">Quanzhou, Fujian, China</p>
-          <h1>PTFE Tape Factory for Wholesale and OEM Supply</h1>
-          <p class="factory-proof-lead">A practical factory overview for importers, hardware distributors and private-label buyers checking production, packing and sample confirmation before an order.</p>
-          <div class="hero-actions">
+    <section class="factory-hero">
+      <div class="container factory-hero-grid">
+        <div class="factory-reveal">
+          <p class="factory-eyebrow">Quanzhou, Fujian, China</p>
+          <h1>PTFE Tape Factory in China</h1>
+          <p class="factory-hero-copy">Production, sample review and packing support for wholesale, OEM and repeat-order PTFE thread seal tape programs.</p>
+          <div class="cta-row">
             <a class="btn btn-primary" href="https://wa.me/85268954159?text=Hello%2C%20I%20would%20like%20to%20request%20factory%20information%20and%20a%20PTFE%20tape%20quotation.%20My%20product%20type%20and%20packing%20plan%20are%3A" data-whatsapp>WhatsApp Quote</a>
-            <a class="btn btn-outline" href="#factory-facts">View Factory Facts</a>
+            <a class="btn btn-outline" href="#factory-information">View Factory Information</a>
           </div>
-          <div class="factory-proof-tags" aria-label="Factory supply scope">
-            <span>PTFE thread seal tape</span><span>Wholesale / OEM / ODM</span><span>Export packing support</span>
-          </div>
+          <div class="factory-hero-tags" aria-label="Factory supply scope"><a href="#factory-information">PTFE thread seal tape</a><a href="#production-process">Wholesale / OEM / ODM</a><a href="#packing-and-checks">Export packing support</a></div>
         </div>
-        <figure class="factory-proof-hero-image">
-          <img src="assets/images/factory-packed-goods.webp" alt="Packed PTFE thread seal tape rolls prepared in a China factory" decoding="async">
-          <figcaption>On-site finished-roll preparation</figcaption>
+        <figure class="factory-hero-visual factory-reveal">
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/images/factory/factory-production-floor-poster.webp" aria-label="PTFE thread seal tape factory production floor">
+            <source src="assets/videos/factory-production-floor.mp4" type="video/mp4">
+          </video>
+          <figcaption>Factory production site</figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="section" id="factory-facts">
+    <section class="factory-info" id="factory-information">
       <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">Factory information for buyers</p>
-          <h2>Clear supply information before quotation</h2>
-          <p>These are the details a buyer can use to decide whether to request a sample, discuss OEM packing or compare a repeat-order program.</p>
+        <div class="factory-section-heading factory-reveal">
+          <div><p class="factory-section-label">Factory information for buyers</p><h2>Supply details before a quotation</h2></div>
+          <p>Use these practical details to decide whether to compare a sample, discuss private-label packing or prepare a repeat-order program.</p>
         </div>
-        <div class="factory-facts-grid">
-          <article><span>01</span><h3>Location</h3><p>Quanzhou, Fujian, China</p></article>
-          <article><span>02</span><h3>Main product</h3><p>PTFE thread seal tape</p></article>
-          <article><span>03</span><h3>Supply type</h3><p>Wholesale / OEM / ODM</p></article>
-          <article><span>04</span><h3>Packing support</h3><p>Shrink wrap, bag, display box, blister card and export carton</p></article>
-          <article><span>05</span><h3>Sample checking</h3><p>Available by product photo or physical sample comparison</p></article>
-          <article><span>06</span><h3>Lead-time planning</h3><p>Confirmed by specification, packing artwork and order quantity</p></article>
+        <div class="factory-facts">
+          <article class="factory-fact factory-reveal"><span class="factory-fact-index">01</span><h3>Location</h3><p>Quanzhou, Fujian, China</p></article>
+          <article class="factory-fact factory-reveal"><span class="factory-fact-index">02</span><h3>Main product</h3><p>PTFE thread seal tape</p></article>
+          <article class="factory-fact factory-reveal"><span class="factory-fact-index">03</span><h3>Supply type</h3><p>Wholesale, OEM and ODM</p></article>
+          <article class="factory-fact factory-reveal"><span class="factory-fact-index">04</span><h3>Packing support</h3><p>Shrink wrap, bag, display box, blister card and export carton.</p></article>
+          <article class="factory-fact factory-reveal"><span class="factory-fact-index">05</span><h3>Sample review</h3><p>Photo comparison or physical sample checking when needed.</p></article>
+          <article class="factory-fact factory-reveal"><span class="factory-fact-index">06</span><h3>Production planning</h3><p>Confirmed by the selected specification, packing artwork and order quantity.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section section-light">
+    <section class="factory-process" id="production-process">
+      <div class="container factory-process-layout">
+        <div class="factory-process-copy factory-reveal">
+          <p class="factory-section-label">Production sequence</p>
+          <h2>From confirmed tape basis to prepared cartons</h2>
+          <p>Each stage is reviewed against the agreed SKU, reference sample and chosen retail or export packing presentation.</p>
+        </div>
+        <div class="factory-process-list">
+          <article class="factory-process-item factory-reveal"><span>01</span><h3>Confirm the tape basis</h3><p>Align width, length, thickness, density or target roll weight, tape color and spool format before production planning.</p></article>
+          <article class="factory-process-item factory-reveal"><span>02</span><h3>Prepare and wind</h3><p>Set up the tape conversion and winding format around the confirmed item rather than a generic catalogue assumption.</p></article>
+          <article class="factory-process-item factory-reveal"><span>03</span><h3>Review the visible details</h3><p>Check roll appearance, label placement and selected retail packing against the approved product reference.</p></article>
+          <article class="factory-process-item factory-reveal"><span>04</span><h3>Organize carton preparation</h3><p>Confirm carton quantity, marks and mixed-SKU details before the shipping plan is released.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="factory-evidence">
       <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">Production evidence</p>
-          <h2>Actual production and finished-roll handling</h2>
-          <p>These real factory photographs show the working stages buyers usually ask about: tape processing, winding equipment and prepared finished rolls.</p>
+        <div class="factory-section-heading factory-reveal">
+          <div><p class="factory-section-label">On-site production proof</p><h2>Real stages, not stock factory imagery</h2></div>
+          <p>These photographs focus on the working areas buyers usually want to understand: winding equipment, wider-format production and finished stock preparation.</p>
         </div>
         <div class="factory-evidence-grid">
-          <figure class="factory-evidence-card factory-evidence-tall">
-            <img src="assets/images/factory-slitting-machine.webp" alt="PTFE tape slitting equipment in the production area" loading="lazy">
-            <figcaption><strong>Slitting</strong><span>Prepare tape to the confirmed width.</span></figcaption>
-          </figure>
-          <figure class="factory-evidence-card">
-            <img src="assets/images/factory-winding-machine.webp" alt="PTFE thread seal tape winding machine in operation" loading="lazy">
-            <figcaption><strong>Winding</strong><span>Set roll format and spool presentation.</span></figcaption>
-          </figure>
-          <figure class="factory-evidence-card">
-            <img src="assets/images/factory-warehouse-rolls.webp" alt="Rows of finished PTFE tape rolls prepared for packing" loading="lazy">
-            <figcaption><strong>Finished rolls</strong><span>Organize rolls before the selected packing method.</span></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container factory-check-layout">
-        <figure class="factory-check-image">
-          <img src="assets/images/factory-wide-tape-machine.webp" alt="PTFE tape production equipment for wider tape rolls" loading="lazy">
-          <figcaption>Equipment and product details are checked against the confirmed order requirement.</figcaption>
-        </figure>
-        <div>
-          <p class="section-kicker">Order confirmation points</p>
-          <h2>What we confirm before bulk production</h2>
-          <p class="lead">The purpose is not to make a universal technical promise. It is to align the supplied PTFE tape and packing details with the buyer's approved SKU or reference sample.</p>
-          <ul class="factory-check-list">
-            <li><strong>Product specification</strong><span>Width, length, thickness, density or target roll weight, tape color and spool type.</span></li>
-            <li><strong>Sample reference</strong><span>Factory sample or photo comparison before an initial order when needed.</span></li>
-            <li><strong>OEM presentation</strong><span>Label, barcode, display box, shrink wrap, bag, carton mark and carton quantity.</span></li>
-            <li><strong>Finished-roll appearance</strong><span>Winding appearance, label placement and selected packing format.</span></li>
-            <li><strong>Carton preparation</strong><span>Carton quantity and marking details based on the confirmed shipping plan.</span></li>
-          </ul>
-          <div class="section-actions">
-            <a class="btn btn-primary" href="https://wa.me/85268954159?text=Hello%2C%20I%20would%20like%20to%20compare%20a%20PTFE%20tape%20sample%20or%20packing%20requirement.%20My%20details%20are%3A" data-whatsapp>Discuss Sample or Packing</a>
-            <a class="btn btn-outline" href="oem-odm.html">View OEM Options</a>
+          <figure class="factory-evidence-feature factory-reveal"><img src="assets/images/factory-winding-machine.webp" alt="PTFE tape winding equipment in the factory" loading="lazy"><figcaption>Winding equipment and tape conversion</figcaption></figure>
+          <div class="factory-evidence-stack">
+            <figure class="factory-evidence-small factory-reveal"><img src="assets/images/factory-wide-tape-machine.webp" alt="PTFE tape equipment for wider tape roll formats" loading="lazy"><figcaption>Wider-format equipment</figcaption></figure>
+            <figure class="factory-evidence-small factory-reveal"><img src="assets/images/factory-warehouse-rolls.webp" alt="Finished PTFE tape stock prepared for packing" loading="lazy"><figcaption>Finished stock before packing</figcaption></figure>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-light">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">Working process</p>
-          <h2>From a buyer requirement to export packing</h2>
-          <p>For a first or repeat wholesale order, the working sequence stays clear and easy to review.</p>
+    <section class="factory-check" id="packing-and-checks">
+      <div class="container factory-check-layout">
+        <div class="factory-check-copy factory-reveal">
+          <p class="factory-section-label">Buyer confirmation</p>
+          <h2>Keep the purchase basis clear before bulk production</h2>
+          <p>The goal is to match tape and packing details with the buyer's approved SKU or reference, then make it simple to check the visible result before dispatch.</p>
         </div>
-        <div class="factory-order-steps">
-          <article><span>01</span><h3>Send requirement</h3><p>Share a required size, photo, sample reference or target packing if available.</p></article>
-          <article><span>02</span><h3>Confirm SKU and packing</h3><p>Review specification, private label artwork, carton quantity and order details.</p></article>
-          <article><span>03</span><h3>Arrange production</h3><p>Prepare slitting, winding and packing according to the confirmed order information.</p></article>
-          <article><span>04</span><h3>Check and prepare cartons</h3><p>Review product appearance, packing quantity and carton mark before dispatch.</p></article>
-        </div>
+        <ul class="factory-check-list factory-reveal">
+          <li><span>01</span><strong>Product specification, spool format and tape color</strong></li>
+          <li><span>02</span><strong>Sample reference or photo comparison where needed</strong></li>
+          <li><span>03</span><strong>Label, barcode, retail pack and carton mark</strong></li>
+          <li><span>04</span><strong>Roll appearance and chosen packing quantity</strong></li>
+        </ul>
       </div>
     </section>
 
-    <section class="cta-band">
-      <div class="container cta-wrap">
-        <div>
-          <h2>Ask for Factory Quotation and Carton Details</h2>
-          <p>Please send product type, packing method, OEM requirement and target market. We can reply with price, MOQ, carton details, sample option and estimated lead time.</p>
-          <p>Email: <a href="mailto:fujianteflontape@gmail.com">fujianteflontape@gmail.com</a> · WhatsApp: <a href="https://wa.me/85268954159?text=Hello%2C%20I%20would%20like%20to%20request%20factory%20information%20and%20a%20PTFE%20tape%20quotation.%20Product%20type%3A%20__%2C%20packing%3A%20__%2C%20size%20or%20quantity%20if%20known%3A%20__.">+852 6895 4159</a></p>
-        </div>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://wa.me/85268954159?text=Hello%2C%20I%20would%20like%20to%20request%20a%20PTFE%20tape%20quotation.%20Size%2C%20quantity%20and%20packing%20details%20are%20available%20if%20needed." data-whatsapp>WhatsApp Quote</a>
-          <a class="btn btn-light" href="mailto:fujianteflontape@gmail.com?subject=PTFE%20Tape%20Quotation%20Request">Email Quote</a>
-        <a class="btn btn-light" href="contact/index.html">Contact Form</a></div>
+    <section class="factory-final">
+      <div class="container factory-final-inner factory-reveal">
+        <div><p class="factory-section-label">Start an inquiry</p><h2>Request factory information and carton details</h2><p>Send your product type, packing method and OEM requirement. We will reply with a practical quotation path, sample option and production planning notes.</p></div>
+        <div class="cta-row"><a class="btn btn-primary" href="https://wa.me/85268954159?text=Hello%2C%20I%20would%20like%20to%20request%20factory%20information%20and%20a%20PTFE%20tape%20quotation.%20Product%20type%3A%20__%2C%20packing%3A%20__%2C%20size%20or%20quantity%20if%20known%3A%20__." data-whatsapp>WhatsApp Quote</a><a class="btn btn-light" href="contact/index.html">Contact Form</a></div>
       </div>
     </section>
 
@@ -253,6 +281,26 @@
     </div>
     <div class="footer-bottom"><div class="container">© 2026 FuJianTeflonTape.</div></div>
   </footer>
+  <script>
+    (function () {
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var page = document.body;
+      var items = document.querySelectorAll('.factory-reveal');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (item) { item.classList.add('is-visible'); });
+        return;
+      }
+      page.classList.add('factory-motion-ready');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12 });
+      items.forEach(function (item) { observer.observe(item); });
+    })();
+  </script>
   <script src="assets/js/main.min.js?v=20260730-whatsapp-web1"></script>
 </body>
 </html>
