@@ -46,6 +46,60 @@
     })();
   </script>
   <link rel="stylesheet" href="../assets/css/style.css?v=20260609-design1">
+  <style>
+    .contact-page { background: #f3f7f8; overflow-x: clip; }
+    .contact-page .contact-hero { position: relative; isolation: isolate; display: flex; min-height: clamp(520px, 63vh, 630px); align-items: center; overflow: hidden; padding: clamp(72px, 7vw, 104px) 0 clamp(66px, 6vw, 90px); color: #fff; background: #0b263e url('../assets/images/contact/contact-ptfe-hero-v2.webp') center / cover no-repeat; }
+    .contact-page .contact-hero::before { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(7, 29, 48, .45) 0%, rgba(7, 29, 48, .18) 44%, rgba(7, 29, 48, 0) 70%); }
+    .contact-page .contact-hero-grid { position: relative; z-index: 1; }
+    .contact-page .contact-hero-copy-wrap { max-width: 790px; }
+    .contact-page .contact-kicker, .contact-page .contact-section-kicker { margin: 0 0 14px; color: #55d8b1; font-size: .82rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    .contact-page .contact-hero h1 { max-width: 720px; margin: 0; color: #fff; font-size: clamp(2.8rem, 4.15vw, 4.8rem); line-height: .98; letter-spacing: 0; text-wrap: balance; }
+    .contact-page .contact-hero-copy { max-width: 510px; margin: 22px 0 0; color: #c9d9e3; font-size: clamp(1rem, 1.25vw, 1.1rem); line-height: 1.64; }
+    .contact-page .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .contact-page .contact-hero .btn-secondary { border-color: rgba(210, 230, 239, .68); color: #fff; background: rgba(5, 25, 41, .22); }
+    .contact-page .contact-hero .btn-secondary:hover { border-color: #fff; background: rgba(255, 255, 255, .1); }
+    .contact-page .contact-hero-meta { display: flex; flex-wrap: wrap; gap: 9px 26px; margin: 28px 0 0; color: #b9d0dc; font-size: .86rem; font-weight: 700; }
+    .contact-page .contact-hero-meta a { color: #dcebf1; text-decoration: none; }
+    .contact-page .contact-hero-meta a:hover { color: #80e5c7; }
+    .contact-page .contact-hero-meta span { position: relative; }
+    .contact-page .contact-hero-meta span::before { content: ""; position: absolute; top: .48em; left: -14px; width: 4px; height: 4px; border-radius: 50%; background: #55d8b1; }
+    .contact-page .contact-main { padding: clamp(46px, 5vw, 68px) 0; color: #fff; background: #0b2a40; }
+    .contact-page .contact-main-grid { max-width: 1120px; }
+    .contact-page .contact-intro h2, .contact-page .contact-form-panel h2, .contact-page .contact-process h2, .contact-page .contact-final h2 { margin: 0; color: #102e45; font-size: clamp(2rem, 3vw, 3.3rem); line-height: 1.06; letter-spacing: 0; }
+    .contact-page .contact-form-panel { padding: 0; }
+    .contact-page .contact-form-heading { display: grid; grid-template-columns: minmax(0, .8fr) minmax(300px, 1fr); gap: 48px; align-items: end; margin-bottom: 30px; }
+    .contact-page .contact-form-heading .lead { margin: 0; }
+    .contact-page .contact-form-panel h2 { color: #fff; font-size: clamp(1.9rem, 2.6vw, 2.8rem); }
+    .contact-page .contact-form-panel .lead { max-width: 650px; margin: 12px 0 25px; color: #b9d0d8; line-height: 1.55; }
+    .contact-page .contact-form-panel .form { gap: 15px; padding: clamp(25px, 3vw, 36px); border: 1px solid rgba(153, 208, 199, .22); background: #12374b; }
+    .contact-page .contact-form-panel .form-row { gap: 15px; }
+    .contact-page .contact-form-panel .form label { color: #dcecef; font-size: .79rem; letter-spacing: .025em; }
+    .contact-page .contact-form-panel .form input, .contact-page .contact-form-panel .form select, .contact-page .contact-form-panel .form textarea { border-color: rgba(190, 219, 219, .62); border-radius: 3px; color: #17384d; background: #f4f9f8; }
+    .contact-page .contact-form-panel .form input:focus, .contact-page .contact-form-panel .form select:focus, .contact-page .contact-form-panel .form textarea:focus { border-color: #0f8a5f; box-shadow: 0 0 0 3px rgba(15, 138, 95, .13); }
+    .contact-page .contact-form-panel .form textarea { min-height: 124px; }
+    .contact-page .contact-form-panel .form .btn { justify-self: start; min-width: 186px; margin-top: 4px; }
+    .contact-page .contact-form-panel .note { margin: -3px 0 0; color: #a9c4cd; }
+    .contact-page .contact-process { padding: 0 0 clamp(42px, 4.5vw, 58px); background: #0b2a40; }
+    .contact-page .contact-process .container { padding-top: clamp(32px, 4vw, 46px); border-top: 1px solid rgba(153, 208, 199, .22); }
+    .contact-page .contact-section-head { display: block; }
+    .contact-page .contact-process h2 { max-width: 620px; color: #fff; font-size: clamp(1.8rem, 2.5vw, 2.6rem); }
+    .contact-page .contact-process-grid { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 30px; }
+    .contact-page .contact-process-grid::before { content: ""; position: absolute; top: 19px; right: 12%; left: 12%; height: 1px; background: rgba(85, 216, 177, .36); }
+    .contact-page .contact-process-step { position: relative; z-index: 1; padding: 0 clamp(18px, 2.5vw, 38px); text-align: center; }
+    .contact-page .contact-process-step span { display: grid; width: 40px; height: 40px; margin: 0 auto 15px; place-items: center; border: 1px solid #55d8b1; border-radius: 50%; color: #55d8b1; background: #0b2a40; font-size: .72rem; font-weight: 800; letter-spacing: .06em; }
+    .contact-page .contact-process-step h3 { margin: 0 0 6px; color: #fff; font-size: 1.08rem; line-height: 1.22; }
+    .contact-page .contact-process-step p { max-width: 310px; margin: 0 auto; color: #a9c4cd; font-size: .88rem; line-height: 1.48; }
+    .contact-page .contact-final { padding: clamp(48px, 5vw, 66px) 0; color: #fff; background: #0f8a5f; }
+    .contact-page .contact-final-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 34px; align-items: center; }
+    .contact-page .contact-final h2 { color: #fff; }
+    .contact-page .contact-final p { max-width: 690px; margin: 12px 0 0; color: #d9f2e8; line-height: 1.64; }
+    .contact-page .contact-final .cta-row { justify-content: flex-end; }
+    .contact-page .contact-final .btn-primary { color: #0c6246; background: #fff; border-color: #fff; }
+    .contact-page .contact-final .btn-secondary { color: #fff; border-color: #b7e1d2; background: transparent; }
+    @media (prefers-reduced-motion:no-preference) { @keyframes contact-rise { from { opacity: .65; transform: translateY(14px); } to { opacity: 1; transform: none; } } .contact-page.contact-motion-ready .contact-reveal.is-visible { animation: contact-rise .52s cubic-bezier(.2,.75,.25,1) both; } }
+    @media (max-width: 920px) { .contact-page .contact-hero { min-height: 0; background-position: center; } .contact-page .contact-hero::before { background: linear-gradient(90deg, rgba(7, 29, 48, .72) 0%, rgba(7, 29, 48, .48) 58%, rgba(7, 29, 48, .08) 100%); } .contact-page .contact-hero-copy-wrap { max-width: 680px; } .contact-page .contact-form-heading { grid-template-columns: 1fr; gap: 12px; } .contact-page .contact-final-inner { grid-template-columns: 1fr; } .contact-page .contact-final .cta-row { justify-content: flex-start; } }
+    @media (max-width: 680px) { .contact-page .contact-hero { min-height: 620px; align-items: center; padding: 58px 0 42px; background-position: 63% center; } .contact-page .contact-hero::before { background: linear-gradient(180deg, rgba(7, 29, 48, .5) 0%, rgba(7, 29, 48, .84) 46%, rgba(7, 29, 48, .98) 100%); } .contact-page .contact-hero h1 { max-width: 480px; font-size: clamp(2.35rem, 11.5vw, 3.35rem); } .contact-page .contact-hero-copy { font-size: .98rem; } .contact-page .contact-hero-meta { display: block; margin-top: 24px; } .contact-page .contact-hero-meta span { display: block; margin-top: 8px; } .contact-page .contact-hero-meta span::before { display: none; } .contact-page .contact-main { padding: 34px 0; } .contact-page .contact-form-panel .form { padding: 24px 20px; } .contact-page .contact-section-head { display: block; } .contact-page .contact-process-grid { grid-template-columns: 1fr; margin-top: 26px; } .contact-page .contact-process-grid::before { top: 20px; bottom: 20px; left: 19px; width: 1px; height: auto; } .contact-page .contact-process-step { display: grid; grid-template-columns: 40px 1fr; column-gap: 15px; padding: 0 0 20px; text-align: left; } .contact-page .contact-process-step:last-child { padding-bottom: 0; } .contact-page .contact-process-step span { grid-row: 1 / span 2; margin: 0; } .contact-page .contact-process-step h3, .contact-page .contact-process-step p { margin-right: 0; margin-left: 0; } .contact-page .contact-actions .btn, .contact-page .contact-final .btn { width: 100%; justify-content: center; } }
+  </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -100,7 +154,7 @@
 }
 </script>
 </head>
-<body>
+<body class="contact-page">
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="../index.html"><strong>FuJianTeflonTape</strong><span>PTFE thread seal tape factory</span></a>
@@ -125,9 +179,19 @@
     </div>
   </header>
   <main>
+    <section class="contact-hero">
+      <div class="container contact-hero-grid">
+        <div class="contact-hero-copy-wrap contact-reveal">
+          <p class="contact-kicker">Wholesale and OEM inquiries</p>
+          <h1>Request a PTFE tape quote.</h1>
+          <p class="contact-hero-copy">Send a product photo, target size or packing idea. We will help identify the practical specification and quotation route for your market.</p>
+          <div class="contact-actions"><a class="btn btn-primary" href="https://wa.me/85268954159?text=Hello%2C%20I%20would%20like%20to%20request%20a%20PTFE%20tape%20quotation.%20Size%2C%20quantity%20and%20packing%20details%20are%20available%20if%20needed." data-whatsapp>WhatsApp Quote</a><a class="btn btn-secondary" href="#inquiry">Open Inquiry Form</a></div>
+        </div>
+        <p class="contact-hero-meta contact-reveal"><a href="mailto:fujianteflontape@gmail.com?subject=PTFE%20Tape%20Quotation%20Request">fujianteflontape@gmail.com</a><span>Quanzhou, Fujian, China</span></p>
+      </div>
+    </section>
 
-    <section class="page-hero" style="--hero-image: url('/assets/images/product-colored.jpg');"><div class="container"><p class="eyebrow">Send inquiry for wholesale or OEM supply</p><h1>Request PTFE Tape Quotation</h1><p>WhatsApp is the fastest way to reach us. You can send a product photo, target size, packing idea or OEM label request, and we will confirm the missing details with you.</p><div class="cta-row"><a class="btn btn-primary" href="https://wa.me/85268954159?text=Hello%2C%20I%20would%20like%20to%20request%20a%20PTFE%20tape%20quotation.%20Size%2C%20quantity%20and%20packing%20details%20are%20available%20if%20needed." data-whatsapp>WhatsApp Quote</a><a class="btn btn-secondary" href="#inquiry">Open Inquiry Form</a></div></div></section>
-    <section class="section" id="inquiry"><div class="container contact-layout"><aside class="contact-box"><h2>Inquiry Details</h2><p>Share any available order information. A product photo or target market is also enough for first contact.</p><ul class="list"><li>Product type or SKU photo</li><li>Width, length, thickness and density if known</li><li>Estimated quantity per SKU if available</li><li>Packaging method or sample photo</li><li>Logo, label or private brand requirement</li><li>Target market if available</li></ul><div class="contact-methods"><a class="contact-method priority-method" href="https://wa.me/85268954159?text=Hello%2C%20I%20would%20like%20to%20request%20a%20PTFE%20tape%20quotation.%20Size%2C%20quantity%20and%20packing%20details%20are%20available%20if%20needed." data-whatsapp><strong>WhatsApp Quote</strong><span>+852 6895 4159</span></a><a class="contact-method" href="mailto:fujianteflontape@gmail.com?subject=PTFE%20Tape%20Quotation%20Request"><strong>Email Quote</strong><span>fujianteflontape@gmail.com</span></a></div><p>Address: Quanzhou, Fujian, China</p><div class="quote-example"><h3>Inquiry template</h3><p>Product:</p><p>Size / thickness / density:</p><p>Tape color / spool color:</p><p>Estimated quantity:</p><p>Packing method:</p><p>OEM label or barcode:</p><p>Target market:</p></div><div class="section-actions"><a class="btn btn-primary" href="https://wa.me/85268954159?text=Hello%2C%20I%20would%20like%20to%20request%20a%20PTFE%20tape%20quotation.%20Size%2C%20quantity%20and%20packing%20details%20are%20available%20if%20needed." data-whatsapp>WhatsApp Quote</a><a class="btn btn-outline" href="mailto:fujianteflontape@gmail.com?subject=PTFE%20Tape%20Quotation%20Request">Email Quote</a></div></aside><div class="panel"><h2>Send Inquiry</h2><p class="lead">Fill in what you already know. Size, quantity and packing details are helpful, but not required for the first message.</p><form class="form" id="quoteForm" action="https://formspree.io/f/mjgdvpzv" method="POST">
+    <section class="contact-main" id="inquiry"><div class="container contact-main-grid"><div class="contact-form-panel contact-reveal"><div class="contact-form-heading"><div><p class="contact-section-kicker">Send inquiry</p><h2>Tell us what you need.</h2></div><p class="lead">Add the details you already know. We can confirm the remaining specification and packing with you.</p></div><form class="form" id="quoteForm" action="https://formspree.io/f/mjgdvpzv" method="POST">
 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 <input type="hidden" name="_subject" value="New PTFE tape inquiry from qzjy.store">
 <div class="form-row">
@@ -150,7 +214,7 @@
 <label>Packing Method <span class="optional-label">optional</span><input type="text" name="packing" placeholder="Shrink wrap, display box, blister card, OEM label"></label>
 </div>
 <label>OEM / Additional Requirements<textarea name="message" rows="5" placeholder="Please include logo, label, barcode, carton mark, sample or delivery requirements."></textarea></label>
-<button class="btn btn-primary" type="submit">Send Inquiry</button><p class="note">Only your name and one contact method are required. For the fastest reply, WhatsApp is recommended.</p>
+<button class="btn btn-primary" type="submit">Send Inquiry</button><p class="note">For an immediate discussion, use WhatsApp above. This form is best for quotation details, product photos and OEM requirements.</p>
 </form>
 <div class="form-status form-success" role="status" aria-live="polite" hidden>
 <h3>Thank you.</h3>
@@ -163,8 +227,9 @@
 <p>Sorry, the inquiry could not be sent right now. Please email us directly at <a href="mailto:fujianteflontape@gmail.com">fujianteflontape@gmail.com</a> or try again later.</p>
 </div></div></div></section>
 
-    <section class="section"><div class="container"><div class="section-head"><p class="section-kicker">Quotation process</p><h2>What happens after you send an inquiry</h2><p>We handle wholesale and OEM inquiries by confirming product specification first, then packaging and delivery details. This avoids wrong quotations caused by different tape weight, density or carton packing.</p></div><div class="grid grid-4 process inquiry-steps"><article class="card"><h3>Confirm requirement</h3><p>We check available size, density, quantity, packing method and target market details.</p></article><article class="card"><h3>Quote by SKU</h3><p>We reply with unit price, MOQ, carton details and estimated lead time.</p></article><article class="card"><h3>Sample or artwork</h3><p>For OEM orders, we confirm label, barcode, box and carton artwork before production.</p></article><article class="card"><h3>Production and packing</h3><p>Bulk production starts after specification and packaging details are confirmed.</p></article></div></div></section>
-    <section class="section section-light"><div class="container"><h2>Order, Packing and Delivery Reference</h2><p>Before placing a bulk order, we recommend confirming both the product specification and the packaging structure in writing.</p><p>Product specification: tape width, tape length, thickness, density, tape color and spool color.</p><p>Packaging structure: single roll packing, inner box or display box, carton quantity, carton dimensions, carton mark, and any barcode or SKU label requirements.</p><p>For OEM PTFE tape, artwork confirmation (logo file, label print, blister card, display box, export carton) is especially important because the label, box and carton design must match the buyer's market. A written approval email is enough to lock the artwork for production.</p><h3>MOQ</h3><p>Depends on specification, packing method and whether OEM materials are required. Standard PTFE tape with common packing usually has a lower MOQ than fully customized private label packaging.</p><h3>Packing Options</h3><p>Loose spool, shrink wrap, individual bag, display box, blister card or custom carton. For export orders, we confirm roll quantity per carton, carton dimensions, carton mark, SKU label and market label if needed before production.</p><h3>Delivery Time</h3><p>Depends on order quantity, packaging material preparation and artwork confirmation. We can discuss sample checking before bulk production when needed. Standard specifications with common packaging can usually be prepared faster than custom display boxes or full private label programs.</p></div></section>
+    <section class="contact-process"><div class="container"><div class="contact-section-head contact-reveal"><p class="contact-section-kicker">What happens next</p><h2>From inquiry to quotation.</h2></div><div class="contact-process-grid"><article class="contact-process-step contact-reveal"><span>01</span><h3>Send a reference</h3><p>Photo, sample, size or target quantity.</p></article><article class="contact-process-step contact-reveal"><span>02</span><h3>Confirm product &amp; packing</h3><p>We align the tape and retail presentation.</p></article><article class="contact-process-step contact-reveal"><span>03</span><h3>Receive the quotation</h3><p>Relevant SKU, packing notes and supply details.</p></article></div></div></section>
+
+    <section class="contact-final"><div class="container contact-final-inner contact-reveal"><div><p class="contact-section-kicker">Need a quick answer?</p><h2>Send the first details directly.</h2><p>WhatsApp is the quickest route for a photo, target size or packing reference. You can also use the inquiry form for a more complete RFQ.</p></div><div class="cta-row"><a class="btn btn-primary" href="https://wa.me/85268954159?text=Hello%2C%20I%20would%20like%20to%20request%20a%20PTFE%20tape%20quotation.%20Size%2C%20quantity%20and%20packing%20details%20are%20available%20if%20needed." data-whatsapp>WhatsApp Quote</a><a class="btn btn-secondary" href="mailto:fujianteflontape@gmail.com?subject=PTFE%20Tape%20Quotation%20Request">Email Quote</a></div></div></section>
   </main>
   <footer class="site-footer">
     <div class="container footer-grid">
@@ -176,5 +241,26 @@
     <div class="footer-bottom"><div class="container">© 2026 FuJianTeflonTape.</div></div>
   </footer>
   <script src="../assets/js/main.min.js?v=20260730-whatsapp-web1"></script>
+  <script>
+    (function () {
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var page = document.body;
+      var items = document.querySelectorAll('.contact-reveal');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (item) { item.classList.add('is-visible'); });
+        return;
+      }
+      page.classList.add('contact-motion-ready');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .14 });
+      items.forEach(function (item) { observer.observe(item); });
+    })();
+  </script>
 </body>
 </html>

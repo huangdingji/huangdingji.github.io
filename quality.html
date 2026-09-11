@@ -47,6 +47,32 @@
     })();
   </script>
   <link rel="stylesheet" href="assets/css/style.css?v=20260609-design1">
+  <style>
+    .quality-page{background:#f3f7f6;color:#102a42;overflow-x:clip}
+    .quality-page .quality-hero{background:#0b263e;color:#fff;padding:clamp(58px,6.5vw,88px) 0 60px}
+    .quality-page .quality-hero-grid{display:grid;grid-template-columns:minmax(0,.76fr) minmax(520px,1.24fr);gap:clamp(32px,5vw,68px);align-items:center}
+    .quality-page .quality-eyebrow,.quality-page .quality-label{margin:0 0 15px;color:#53d9b0;font-size:.82rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+    .quality-page .quality-hero h1{max-width:500px;margin:0;font-size:clamp(2.55rem,3.9vw,4.4rem);line-height:1.02;letter-spacing:0}
+    .quality-page .quality-hero-copy{max-width:480px;margin:20px 0 25px;color:#c6d6e4;font-size:clamp(1rem,1.2vw,1.14rem);line-height:1.62}
+    .quality-page .quality-hero .cta-row{display:flex;flex-wrap:wrap;gap:12px}.quality-page .quality-hero .btn-outline{background:transparent!important;border-color:#9eb4c8;color:#fff}.quality-page .quality-hero .btn-outline:hover{background:#fff;color:#102a42}
+    .quality-page .quality-hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}.quality-page .quality-hero-tags span{border:1px solid rgba(163,193,211,.42);color:#d6e4ee;padding:8px 11px;font-size:.86rem}
+    .quality-page .quality-hero-visual{position:relative;min-height:426px;margin:0;padding:7px;background:#143c58;border:1px solid rgba(190,218,234,.42)}
+    .quality-page .quality-hero-visual img{display:block;width:100%;height:100%;min-height:412px;object-fit:cover;object-position:center}
+    .quality-page .quality-hero-visual figcaption{position:absolute;left:19px;bottom:18px;margin:0;padding:10px 13px;background:#0c2a42;color:#fff;font-size:.84rem;font-weight:700}
+    .quality-page .quality-section{padding:clamp(46px,5.5vw,74px) 0}.quality-page .quality-section-heading{display:grid;grid-template-columns:minmax(0,.95fr) minmax(300px,.75fr);gap:30px;align-items:end;margin-bottom:30px}
+    .quality-page .quality-section-heading h2,.quality-page .quality-control-copy h2,.quality-page .quality-request-copy h2{margin:0;color:#102a42;font-size:clamp(2rem,3.25vw,3.35rem);line-height:1.06;letter-spacing:0}
+    .quality-page .quality-section-heading p:last-child{max-width:530px;margin:0;color:#577085;line-height:1.64;font-size:1.03rem}
+    .quality-page .quality-stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid #cbdce1;background:#f9fcfb}.quality-page .quality-stage{min-height:192px;padding:24px;border-right:1px solid #cbdce1}.quality-page .quality-stage:last-child{border-right:0}
+    .quality-page .quality-stage-index{display:block;margin-bottom:30px;color:#139a75;font-size:.78rem;font-weight:800;letter-spacing:.1em}.quality-page .quality-stage h3{margin:0 0 10px;color:#102a42;font-size:1.28rem}.quality-page .quality-stage p{margin:0;color:#557085;line-height:1.58}
+    .quality-page .quality-control{background:#112f47;color:#fff;padding:clamp(48px,5.6vw,76px) 0}.quality-page .quality-control-layout{display:grid;grid-template-columns:minmax(270px,.65fr) minmax(520px,1.35fr);gap:clamp(42px,7vw,94px);align-items:start}.quality-page .quality-control-copy{position:sticky;top:104px}.quality-page .quality-control-copy h2{color:#fff}.quality-page .quality-control-copy p:last-child{max-width:420px;color:#c7d8e4;font-size:1.05rem;line-height:1.68}
+    .quality-page .quality-control-list{margin:0;border-top:1px solid rgba(184,210,223,.38);padding:0;list-style:none}.quality-page .quality-control-list li{display:grid;grid-template-columns:72px minmax(175px,.68fr) minmax(240px,1.32fr);gap:20px;align-items:start;padding:21px 0;border-bottom:1px solid rgba(184,210,223,.38)}.quality-page .quality-control-list span{padding-top:5px;color:#54d7b0;font-size:.83rem;font-weight:800}.quality-page .quality-control-list h3{margin:0;color:#fff;font-size:1.2rem}.quality-page .quality-control-list p{margin:0;color:#c6d7e4;line-height:1.58}
+    .quality-page .quality-evidence{background:#fff}.quality-page .quality-evidence-grid{display:grid;grid-template-columns:1.16fr .84fr;gap:18px;margin-top:30px}.quality-page .quality-evidence-feature,.quality-page .quality-evidence-small{position:relative;overflow:hidden;margin:0;background:#dce8eb}.quality-page .quality-evidence-feature{min-height:470px}.quality-page .quality-evidence-stack{display:grid;grid-template-rows:1fr 1fr;gap:18px}.quality-page .quality-evidence-small{min-height:226px}.quality-page .quality-evidence img{display:block;width:100%;height:100%;object-fit:cover}.quality-page .quality-evidence figcaption{position:absolute;right:0;bottom:0;left:0;padding:40px 22px 18px;color:#fff;background:linear-gradient(transparent,rgba(7,30,47,.9));font-size:1rem;font-weight:750}
+    .quality-page .quality-request{background:#dbeee8}.quality-page .quality-request-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(340px,.9fr);gap:clamp(42px,7vw,96px);align-items:start}.quality-page .quality-request-copy p:last-child{max-width:650px;color:#4e6e80;font-size:1.04rem;line-height:1.67}.quality-page .quality-request-list{margin:0;padding:0;list-style:none;border-top:1px solid #accbc4}.quality-page .quality-request-list li{display:grid;grid-template-columns:36px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid #accbc4;color:#193c50;line-height:1.5}.quality-page .quality-request-list span{color:#139a75;font-weight:800}.quality-page .quality-request-list strong{font-weight:720}
+    .quality-page .quality-final{background:#0b263e;color:#fff;padding:clamp(42px,4.8vw,62px) 0}.quality-page .quality-final-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:36px;align-items:center}.quality-page .quality-final h2{margin:0 0 12px;color:#fff;font-size:clamp(2rem,3.25vw,3.3rem);line-height:1.08;letter-spacing:0}.quality-page .quality-final p{max-width:720px;margin:0;color:#c5d7e3;line-height:1.65}.quality-page .quality-final p a{color:#fff;text-decoration-color:#53d9b0}.quality-page .quality-final .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}.quality-page .quality-final .btn-light{background:transparent;color:#fff;border:1px solid #91aabc}
+    @media (prefers-reduced-motion:no-preference){@keyframes quality-reveal{from{opacity:.55;transform:translateY(14px)}to{opacity:1;transform:none}}.quality-page.quality-motion-ready .quality-reveal.is-visible{animation:quality-reveal .52s cubic-bezier(.2,.75,.25,1) both}}
+    @media (max-width:920px){.quality-page .quality-hero-grid,.quality-page .quality-control-layout,.quality-page .quality-request-layout,.quality-page .quality-section-heading{grid-template-columns:1fr}.quality-page .quality-hero-visual{min-height:350px}.quality-page .quality-hero-visual img{min-height:336px}.quality-page .quality-control-copy{position:static}.quality-page .quality-final-inner{grid-template-columns:1fr}.quality-page .quality-final .cta-row{justify-content:flex-start}}
+    @media (max-width:700px){.quality-page .quality-hero{padding:58px 0 48px}.quality-page .quality-stages{grid-template-columns:1fr}.quality-page .quality-stage{min-height:auto;border-right:0;border-bottom:1px solid #cbdce1}.quality-page .quality-stage:last-child{border-bottom:0}.quality-page .quality-stage-index{margin-bottom:14px}.quality-page .quality-control-list li{grid-template-columns:38px 1fr;gap:8px 14px}.quality-page .quality-control-list p{grid-column:2}.quality-page .quality-evidence-grid{grid-template-columns:1fr}.quality-page .quality-evidence-feature{min-height:360px}.quality-page .quality-evidence-stack{grid-template-columns:1fr 1fr;grid-template-rows:auto}.quality-page .quality-evidence-small{min-height:170px}.quality-page .quality-evidence figcaption{padding:30px 14px 12px;font-size:.9rem}}
+  </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -96,7 +122,7 @@
 }
   </script>
 </head>
-<body>
+<body class="quality-page">
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="index.html"><strong>FuJianTeflonTape</strong><span>PTFE thread seal tape factory</span></a>
@@ -121,175 +147,91 @@
     </div>
   </header>
   <main>
-    <section class="page-hero" style="--hero-image: url('/assets/images/quality-check.webp');">
+    <section class="quality-hero">
+      <div class="container quality-hero-grid">
+        <div class="quality-reveal">
+          <p class="quality-eyebrow">Repeat-order quality control</p>
+          <h1>PTFE Tape Quality Control</h1>
+          <p class="quality-hero-copy">A practical inspection path for importers, hardware distributors and OEM buyers who need product, packing and carton details to match an agreed SKU.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://wa.me/85268954159?text=Hello%2C%20I%20would%20like%20to%20check%20PTFE%20tape%20quality%20details%20before%20ordering.%20Product%20type%3A%20__%2C%20packing%3A%20__%2C%20size%20or%20quantity%20if%20known%3A%20__." data-whatsapp>WhatsApp Quote</a>
+            <a class="btn btn-outline" href="#quality-checks">View Inspection Points</a>
+          </div>
+          <div class="quality-hero-tags" aria-label="Quality control scope"><span>SKU confirmation</span><span>Production review</span><span>Packing and carton check</span></div>
+        </div>
+        <figure class="quality-hero-visual quality-reveal">
+          <img src="assets/images/quality-bulk-tapes.webp" alt="PTFE tape spool formats for SKU and appearance review" fetchpriority="high" decoding="async">
+          <figcaption>PTFE tape formats for SKU review</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="quality-section">
       <div class="container">
-        <p class="eyebrow">Stable inspection for repeat orders</p>
-        <h1>PTFE Tape Quality Control</h1>
-        <p>We check the details that affect repeat B2B orders: width, length, thickness, roll weight, density, winding appearance, packing labels and final cartons.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://wa.me/85268954159?text=Hello%2C%20I%20would%20like%20to%20request%20a%20PTFE%20tape%20quotation.%20Size%2C%20quantity%20and%20packing%20details%20are%20available%20if%20needed." data-whatsapp>WhatsApp Quote</a>
-          <a class="btn btn-light" href="mailto:fujianteflontape@gmail.com?subject=PTFE%20Tape%20Quotation%20Request">Email Quote</a>
-        <a class="btn btn-light" href="contact/index.html">Contact Form</a></div>
+        <div class="quality-section-heading quality-reveal">
+          <div><p class="quality-label">Order control sequence</p><h2>Keep the agreed SKU visible at every stage</h2></div>
+          <p>For repeat orders, quality means a clear chain from the confirmed tape basis through winding, retail packing and the finished export carton.</p>
+        </div>
+        <div class="quality-stages">
+          <article class="quality-stage quality-reveal"><span class="quality-stage-index">01</span><h3>Confirm the order basis</h3><p>Align width, length, thickness, density or target roll weight, tape color, spool format and packing requirement.</p></article>
+          <article class="quality-stage quality-reveal"><span class="quality-stage-index">02</span><h3>Review during production</h3><p>Compare the visible roll format, winding appearance and agreed item details with the order reference.</p></article>
+          <article class="quality-stage quality-reveal"><span class="quality-stage-index">03</span><h3>Check before dispatch</h3><p>Confirm label, barcode, inner pack, carton mark, carton quantity and photo or sample review where requested.</p></article>
+        </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="quality-control" id="quality-checks">
+      <div class="container quality-control-layout">
+        <div class="quality-control-copy quality-reveal">
+          <p class="quality-label">Inspection points</p>
+          <h2>What wholesale buyers usually compare</h2>
+          <p>These are practical order details, not a one-size-fits-all guarantee. The final inspection basis follows the buyer's confirmed SKU, sample or packing reference.</p>
+        </div>
+        <ul class="quality-control-list">
+          <li class="quality-reveal"><span>01</span><h3>Tape format</h3><p>Width, length, thickness and any target density or roll weight specified for the order.</p></li>
+          <li class="quality-reveal"><span>02</span><h3>Roll appearance</h3><p>Spool format, tape color, winding appearance, edges and other visible details relevant to the selected item.</p></li>
+          <li class="quality-reveal"><span>03</span><h3>Retail presentation</h3><p>Label copy, barcode, shrink wrap, bag, display box or blister card selected for the buyer's channel.</p></li>
+          <li class="quality-reveal"><span>04</span><h3>Carton preparation</h3><p>Carton quantity, carton mark, mixed-SKU information and the packing details requested before dispatch.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="quality-section quality-evidence">
       <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">Quality points</p>
-          <h2>Quality points for PTFE tape orders</h2>
-          <p>For overseas wholesale orders, quality control is not only about the tape itself. Buyers also need stable SKU details, consistent appearance, clear labels and correct carton information for repeat shipments.</p>
+        <div class="quality-section-heading quality-reveal">
+          <div><p class="quality-label">Quality review examples</p><h2>Make the requested inspection points easy to review</h2></div>
+          <p>These visual examples focus the discussion on what buyers commonly compare: tape format, visible roll details and packing presentation.</p>
         </div>
-        <div class="grid grid-4">
-          <article class="card">
-            <h3>Raw Material Condition</h3>
-            <p>Check PTFE material condition before slitting and winding production.</p>
-          </article>
-          <article class="card">
-            <h3>Width Check</h3>
-            <p>Confirm tape width according to the agreed SKU, such as 12mm, 19mm or custom width.</p>
-          </article>
-          <article class="card">
-            <h3>Length Check</h3>
-            <p>Check roll length and winding consistency for standard, long roll and industrial rolls.</p>
-          </article>
-          <article class="card">
-            <h3>Thickness Check</h3>
-            <p>Confirm common thickness such as 0.075mm, 0.1mm, 0.15mm or 0.2mm.</p>
-          </article>
-          <article class="card">
-            <h3>Roll Weight and Density</h3>
-            <p>Review target roll weight or density when the order has specific market requirements.</p>
-          </article>
-          <article class="card">
-            <h3>Winding Appearance</h3>
-            <p>Check tape edge, spool appearance, loose winding and visible defects before packing.</p>
-          </article>
-          <article class="card">
-            <h3>Label and Barcode Check</h3>
-            <p>Confirm OEM label, barcode, SKU label and carton mark before final packing.</p>
-          </article>
-          <article class="card">
-            <h3>Final Carton Check</h3>
-            <p>Check carton quantity, carton dimension, mark and mixed SKU packing details before dispatch.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-light">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">Inspection checklist</p>
-          <h2>PTFE Tape Quality Checklist</h2>
-          <p>This checklist helps importers compare quotations and approve repeat orders with clearer production standards.</p>
-        </div>
-        <div class="table-scroll">
-          <table class="spec-table">
-            <tr><th>Check Item</th><th>What We Check</th></tr>
-            <tr><td>Width</td><td>Confirm actual tape width against the ordered SKU, such as 12mm, 19mm, 25mm or custom width.</td></tr>
-            <tr><td>Length</td><td>Review roll length and winding consistency for standard rolls, long rolls and industrial rolls.</td></tr>
-            <tr><td>Thickness / Density</td><td>Check requested thickness, target density or roll weight according to buyer requirement.</td></tr>
-            <tr><td>Winding Appearance</td><td>Inspect edge condition, loose winding, spool appearance and visible surface defects.</td></tr>
-            <tr><td>Label and Barcode</td><td>Confirm OEM label, barcode, SKU label and carton mark before final packing.</td></tr>
-            <tr><td>Carton Packing</td><td>Check carton quantity, mixed SKU list, carton dimensions and pre-shipment packing photos.</td></tr>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-light">
-      <div class="container split">
-        <div>
-          <p class="section-kicker">Before shipment</p>
-          <h2>What we check before shipment</h2>
-          <p class="lead">Before a bulk order leaves the factory, we can confirm practical details that matter to importers, wholesalers and OEM brand customers.</p>
-          <table class="spec-table">
-            <tr><th>Product spec</th><td>Width, length, thickness, density or target roll weight.</td></tr>
-            <tr><th>Tape roll</th><td>Spool color, tape color, winding appearance, edge condition and roll surface.</td></tr>
-            <tr><th>Packing</th><td>Shrink wrap, bag, blister card, display box, private label and barcode.</td></tr>
-            <tr><th>Carton</th><td>Quantity per carton, carton dimensions, carton mark and mixed SKU list.</td></tr>
-            <tr><th>Documents</th><td>Packing list details and photos needed by buyer before shipment.</td></tr>
-          </table>
-        </div>
-        <div class="factory-pair">
-          <img src="assets/images/quality-check.webp" alt="PTFE tape quality checking before wholesale shipment" loading="lazy" decoding="async">
-          <img src="assets/images/factory-sample-display.webp" alt="PTFE tape samples for specification and packing checking" loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">Inspection workflow</p>
-          <h2>Simple inspection flow for B2B orders</h2>
-          <p>We keep the process practical so buyers can confirm what they need without long paperwork.</p>
-        </div>
-        <div class="grid grid-4">
-          <article class="info-card">
-            <span>1</span>
-            <h3>Confirm Spec</h3>
-            <p>Confirm tape size, color, density or roll weight, packing method and order quantity.</p>
-          </article>
-          <article class="info-card">
-            <span>2</span>
-            <h3>Check Sample or Photo</h3>
-            <p>Use a sample, product photo or packaging proof before bulk production.</p>
-          </article>
-          <article class="info-card">
-            <span>3</span>
-            <h3>Production Check</h3>
-            <p>Check width, length, thickness, winding and appearance during production.</p>
-          </article>
-          <article class="info-card">
-            <span>4</span>
-            <h3>Final Packing Check</h3>
-            <p>Review label, barcode, carton mark, carton quantity and pre-shipment photos.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-light">
-      <div class="container split">
-        <div class="image-grid factory-gallery">
-          <img src="assets/images/factory-slitting-machine.webp" alt="PTFE tape slitting machine for stable width control" loading="lazy">
-          <img src="assets/images/factory-winding-machine.webp" alt="PTFE thread seal tape winding machine for roll production" loading="lazy">
-          <img src="assets/images/warehouse.webp" alt="PTFE tape warehouse cartons before shipment" loading="lazy">
-          <img src="assets/images/quality-bulk-tapes.webp" alt="Bulk PTFE tape rolls for wholesale quality review" loading="lazy">
-        </div>
-        <div>
-          <p class="section-kicker">Buyer support</p>
-          <h2>What buyers can request</h2>
-          <p class="lead">Different markets care about different details. We can prepare the information that helps your team compare products and approve the shipment.</p>
-          <ul class="list">
-            <li>Sample or photo confirmation before bulk order</li>
-            <li>Carton dimensions and quantity per carton</li>
-            <li>Packing quantity for shrink wrap, bag, box or carton</li>
-            <li>Label and barcode proof for OEM orders</li>
-            <li>Mixed SKU packing list for multi-product orders</li>
-            <li>Photos of product, inner packing and export carton before shipment</li>
-          </ul>
-          <div class="section-actions">
-            <a class="btn btn-primary" href="contact/index.html">Send Inquiry</a>
-            <a class="btn btn-outline" href="oem-odm.html">OEM/ODM Support</a>
+        <div class="quality-evidence-grid">
+          <figure class="quality-evidence-feature quality-reveal"><img src="assets/images/quality/ptfe-inspection-check.webp" alt="PTFE thread seal tape inspection setup with caliper" loading="lazy"><figcaption>Visual product inspection setup</figcaption></figure>
+          <div class="quality-evidence-stack">
+            <figure class="quality-evidence-small quality-reveal"><img src="assets/images/quality/ptfe-roll-format-review.webp" alt="PTFE tape rolls and ruler for visual format review" loading="lazy"><figcaption>Tape format and unwinding review</figcaption></figure>
+            <figure class="quality-evidence-small quality-reveal"><img src="assets/images/quality/ptfe-packing-review.webp" alt="PTFE tape shrink wrap and export carton packing review" loading="lazy"><figcaption>Packing and carton presentation review</figcaption></figure>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-band">
-      <div class="container cta-wrap">
-        <div>
-          <h2>Ask for Sample Check Before Bulk Shipment</h2>
-          <p>Please send the product type, packing method, OEM label or barcode requirement if needed, and any sample or photo check you need. We can reply with price, MOQ, carton details and estimated lead time.</p>
-          <p>Email: <a href="mailto:fujianteflontape@gmail.com">fujianteflontape@gmail.com</a> · WhatsApp: <a href="https://wa.me/85268954159?text=Hello%2C%20I%20would%20like%20to%20check%20PTFE%20tape%20quality%20details%20before%20ordering.%20Product%20type%3A%20__%2C%20packing%3A%20__%2C%20size%20or%20quantity%20if%20known%3A%20__.">+852 6895 4159</a></p>
+    <section class="quality-section quality-request">
+      <div class="container quality-request-layout">
+        <div class="quality-request-copy quality-reveal">
+          <p class="quality-label">Buyer-ready information</p>
+          <h2>Request the proof your team needs</h2>
+          <p>Send an existing sample, a target specification or a packaging reference. We can confirm which product and packing details can be checked before bulk production or shipment.</p>
         </div>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://wa.me/85268954159?text=Hello%2C%20I%20would%20like%20to%20request%20a%20PTFE%20tape%20quotation.%20Size%2C%20quantity%20and%20packing%20details%20are%20available%20if%20needed." data-whatsapp>WhatsApp Quote</a>
-          <a class="btn btn-light" href="mailto:fujianteflontape@gmail.com?subject=PTFE%20Tape%20Quotation%20Request">Email Quote</a>
-        <a class="btn btn-light" href="contact/index.html">Contact Form</a></div>
+        <ul class="quality-request-list quality-reveal">
+          <li><span>01</span><strong>Sample reference or product photo comparison</strong></li>
+          <li><span>02</span><strong>Label, barcode, retail pack and carton mark review</strong></li>
+          <li><span>03</span><strong>Carton quantity, mixed-SKU plan and packing list details</strong></li>
+          <li><span>04</span><strong>Product, inner-pack and export-carton photos where requested</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="quality-final">
+      <div class="container quality-final-inner quality-reveal">
+        <div><p class="quality-label">Start an inquiry</p><h2>Confirm your PTFE tape inspection basis</h2><p>Share the product type, required packing and any sample, photo, label or carton detail your team needs to review. Email: <a href="mailto:fujianteflontape@gmail.com">fujianteflontape@gmail.com</a></p></div>
+        <div class="cta-row"><a class="btn btn-primary" href="https://wa.me/85268954159?text=Hello%2C%20I%20would%20like%20to%20check%20PTFE%20tape%20quality%20details%20before%20ordering.%20Product%20type%3A%20__%2C%20packing%3A%20__%2C%20size%20or%20quantity%20if%20known%3A%20__." data-whatsapp>WhatsApp Quote</a><a class="btn btn-light" href="contact/index.html">Contact Form</a></div>
       </div>
     </section>
   </main>
@@ -302,6 +244,26 @@
     </div>
     <div class="footer-bottom"><div class="container">© 2026 FuJianTeflonTape.</div></div>
   </footer>
+  <script>
+    (function () {
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var page = document.body;
+      var items = document.querySelectorAll('.quality-reveal');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (item) { item.classList.add('is-visible'); });
+        return;
+      }
+      page.classList.add('quality-motion-ready');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12 });
+      items.forEach(function (item) { observer.observe(item); });
+    })();
+  </script>
   <script src="assets/js/main.min.js?v=20260730-whatsapp-web1"></script>
 </body>
 </html>
