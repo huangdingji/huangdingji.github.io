@@ -137,3 +137,18 @@ http://localhost:8000
 ### 失败 fallback
 
 如果 formspree 服务不可用，JS 会显示错误提示并让用户直接发邮件到 `fujianteflontape@gmail.com`，不会丢询盘。
+
+## 博客首页自动更新
+
+博客首页不再手工维护文章卡片。新增文章时：
+
+1. 在 `blog/` 新增文章 HTML，并填写 `<title>`、`<meta name="description">` 和结构化数据里的 `datePublished`。
+2. 在项目根目录运行：
+
+   ```bash
+   node scripts/build-blog-index.mjs
+   ```
+
+3. 提交新增文章及自动生成的 `assets/js/blog-posts.js`。
+
+生成脚本会扫描全部博客文章，自动生成标题、摘要、日期、分类和图片数据。首页固定每页显示 9 篇，并提供搜索、分类筛选与分页，因此文章持续增加时不需要继续修改首页结构。
