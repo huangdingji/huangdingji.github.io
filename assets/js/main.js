@@ -63,8 +63,8 @@ function getTranslationData() {
 function getTranslationBundleUrl() {
   const mainScript = document.querySelector('script[src*="assets/js/main.min.js"], script[src*="assets/js/main.js"]');
   return mainScript
-    ? new URL('translations.min.js?v=20260726-perf2', mainScript.src).href
-    : '/assets/js/translations.min.js?v=20260726-perf2';
+    ? new URL('translations.min.js?v=20260915-brand1', mainScript.src).href
+    : '/assets/js/translations.min.js?v=20260915-brand1';
 }
 
 function loadTranslationBundle() {
@@ -598,7 +598,7 @@ function getTranslation(lang, text) {
   const productHero = text.match(/^FuJianTeflonTape supplies (.+) for overseas importers, plumbing distributors, hardware wholesalers and OEM brand customers\. Send size, quantity, packaging method and destination country for a factory quotation\.$/);
   if (productHero) {
     const name = productName(productHero[1]);
-    if (lang === "zh") return `泉州机浴 为海外进口商、水暖经销商、五金批发商和 OEM 品牌客户供应${name}。请发送尺寸、数量、包装方式和目的国家获取工厂报价。`;
+    if (lang === "zh") return `FuJianTeflonTape 为海外进口商、水暖经销商、五金批发商和 OEM 品牌客户供应${name}。请发送尺寸、数量、包装方式和目的国家获取工厂报价。`;
     if (lang === "es") return `FuJianTeflonTape suministra ${name} para importadores, distribuidores de plomería, mayoristas de ferretería y clientes OEM. Envíe tamaño, cantidad, método de empaque y país de destino para cotización de fábrica.`;
     if (lang === "ar") return `توفر FuJianTeflonTape ${name} للمستوردين وموزعي السباكة وتجار الجملة وعملاء OEM. أرسل المقاس والكمية وطريقة التغليف وبلد الوصول للحصول على عرض سعر من المصنع.`;
   }
@@ -614,7 +614,7 @@ function getTranslation(lang, text) {
   const factoryProduct = text.match(/^FuJianTeflonTape is a China PTFE thread seal tape factory supplying (.+) for B2B wholesale and export orders\. This product category is prepared for buyers who need (.+)\. Instead of retail-style selling, our work is organized around repeat order specifications, carton packing, OEM requirements and clear communication before production\.$/);
   if (factoryProduct) {
     const name = productName(factoryProduct[1]);
-    if (lang === "zh") return `泉州机浴 是中国 PTFE 螺纹密封带工厂，为 B2B 批发和出口订单供应${name}。该产品分类面向有明确规格需求的采购商。我们不是零售式销售，而是围绕复购规格、纸箱包装、OEM 要求和生产前清晰沟通来组织工作。`;
+    if (lang === "zh") return `FuJianTeflonTape 是中国 PTFE 螺纹密封带工厂，为 B2B 批发和出口订单供应${name}。该产品分类面向有明确规格需求的采购商。我们不是零售式销售，而是围绕复购规格、纸箱包装、OEM 要求和生产前清晰沟通来组织工作。`;
     if (lang === "es") return `FuJianTeflonTape es una fábrica china de cinta selladora PTFE que suministra ${name} para pedidos B2B mayoristas y de exportación. Esta categoría está preparada para compradores con requisitos claros de especificación. No vendemos con enfoque minorista; organizamos el trabajo alrededor de especificaciones repetibles, empaque en cartón, requisitos OEM y comunicación clara antes de producción.`;
     if (lang === "ar") return `FuJianTeflonTape مصنع صيني لشريط إحكام PTFE يورد ${name} لطلبات الجملة والتصدير B2B. هذه الفئة مخصصة للمشترين ذوي متطلبات مواصفات واضحة. لا نعمل بأسلوب البيع بالتجزئة، بل ننظم العمل حول مواصفات الطلبات المتكررة وتغليف الكرتون ومتطلبات OEM والتواصل الواضح قبل الإنتاج.`;
   }
@@ -694,7 +694,7 @@ function getTranslation(lang, text) {
   const marketBuyer = text.match(/^FuJianTeflonTape supplies PTFE thread seal tape from China for overseas B2B buyers\. We do not claim local customer cases; instead, this page explains how importers, wholesalers and brand owners in (.+) can prepare a clear inquiry for factory quotation\. A useful inquiry should include required width, length, thickness, density, order quantity, packaging method and destination port or country\.$/);
   if (marketBuyer && countries[marketBuyer[1]]) {
     const localizedCountry = country(marketBuyer[1]);
-    if (lang === "zh") return `泉州机浴 从中国为海外 B2B 买家供应 PTFE 螺纹密封带。我们不虚构当地客户案例；本页说明${localizedCountry}进口商、批发商和品牌客户如何准备清晰的工厂报价询盘。一份有效询盘应包含所需宽度、长度、厚度、密度、订单数量、包装方式以及目的港或目的国家。`;
+    if (lang === "zh") return `FuJianTeflonTape 从中国为海外 B2B 买家供应 PTFE 螺纹密封带。我们不虚构当地客户案例；本页说明${localizedCountry}进口商、批发商和品牌客户如何准备清晰的工厂报价询盘。一份有效询盘应包含所需宽度、长度、厚度、密度、订单数量、包装方式以及目的港或目的国家。`;
     if (lang === "es") return `FuJianTeflonTape suministra cinta selladora PTFE desde China para compradores B2B en el extranjero. No inventamos casos locales; esta página explica cómo importadores, mayoristas y dueños de marca en ${localizedCountry} pueden preparar una consulta clara para cotización de fábrica. Una consulta útil debe incluir ancho, largo, espesor, densidad, cantidad, empaque y puerto o país de destino.`;
     if (lang === "ar") return `توفر FuJianTeflonTape شريط إحكام PTFE من الصين لمشتري B2B في الخارج. لا ندعي حالات عملاء محلية؛ تشرح هذه الصفحة كيف يمكن للمستوردين وتجار الجملة وأصحاب العلامات في ${localizedCountry} إعداد استفسار واضح لسعر المصنع. يجب أن يتضمن الاستفسار العرض والطول والسماكة والكثافة والكمية وطريقة التغليف وميناء أو بلد الوصول.`;
   }
@@ -1014,7 +1014,7 @@ document.querySelectorAll("[data-inquiry]").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
     const product = link.getAttribute("data-inquiry") || "PTFE tape";
-    const baseHref = (link.getAttribute("href") || "contact/index.html").split("#")[0];
+    const baseHref = (link.getAttribute("href") || "/contact/").split("#")[0];
     const separator = baseHref.includes("?") ? "&" : "?";
     window.location.href = `${baseHref}${separator}product=${encodeURIComponent(product)}`;
   });
@@ -1054,13 +1054,10 @@ document.querySelectorAll("[data-whatsapp]").forEach((link) => {
   const cleanNumber = WHATSAPP_NUMBER.replace(/\D/g, "");
 
   if (cleanNumber.length >= 8) {
-    const encodedMessage = encodeURIComponent(message);
-    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
-
-    // WhatsApp Web avoids the wa.me -> api.whatsapp.com redirect on desktop.
-    link.href = isDesktop
-      ? `https://web.whatsapp.com/send?phone=${cleanNumber}&text=${encodedMessage}`
-      : `https://wa.me/${cleanNumber}?text=${encodedMessage}`;
+    const currentHref = link.getAttribute("href") || "";
+    if (!currentHref.startsWith(`https://wa.me/${cleanNumber}`)) {
+      link.href = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
+    }
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     return;
