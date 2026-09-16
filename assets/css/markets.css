@@ -1,69 +1,82 @@
 .markets-page {
   color: #244657;
-  background: #fff;
+  background: #f7f9f8;
 }
 
 .markets-page main { overflow: hidden; }
-.markets-page main > section { scroll-margin-top: 64px; }
+.markets-page main > section { scroll-margin-top: 72px; }
 
 .markets-kicker {
   margin: 0 0 15px;
-  color: #0b8d69;
-  font-size: 12px;
+  color: #0a8e69;
+  font-size: 13px;
   font-weight: 850;
   letter-spacing: .14em;
   text-transform: uppercase;
 }
 
 .markets-intro {
-  padding: 72px 0 76px;
+  position: relative;
+  padding: 76px 0 82px;
   color: #d9e7ed;
-  background: #0b2a3d;
+  background:
+    linear-gradient(105deg, rgba(11, 42, 61, .98) 0 62%, rgba(11, 42, 61, .90) 100%),
+    linear-gradient(135deg, transparent 0 68%, rgba(97, 209, 173, .15) 68% 69%, transparent 69% 100%);
+}
+
+.markets-intro::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 31%;
+  height: 5px;
+  background: #5dd3ad;
+  content: "";
 }
 
 .markets-intro-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.22fr) minmax(360px, .78fr);
-  gap: clamp(64px, 9vw, 132px);
+  grid-template-columns: minmax(0, 1.2fr) minmax(330px, .8fr);
+  gap: clamp(58px, 8vw, 122px);
   align-items: end;
 }
 
 .markets-intro .markets-kicker { color: #61d1ad; }
 
 .markets-intro h1 {
-  max-width: 760px;
+  max-width: 790px;
   margin: 0;
   color: #fff;
-  font-size: clamp(52px, 5.4vw, 72px);
-  line-height: 1.01;
-  letter-spacing: -.048em;
+  font-size: clamp(52px, 5.3vw, 74px);
+  line-height: .99;
+  letter-spacing: -.052em;
 }
 
-.markets-intro-copy { padding-bottom: 4px; }
+.markets-intro-copy { padding-bottom: 3px; }
 
 .markets-intro-copy > p {
-  max-width: 470px;
+  max-width: 500px;
   margin: 0;
-  color: #b8ced8;
-  font-size: 17px;
-  line-height: 1.72;
+  color: #bed0d8;
+  font-size: 18px;
+  line-height: 1.68;
 }
 
 .markets-actions {
   display: flex;
-  gap: 24px;
+  gap: 25px;
   align-items: center;
   margin-top: 30px;
 }
 
 .markets-actions .btn {
-  min-height: 47px;
-  padding: 11px 19px;
+  min-height: 48px;
+  padding: 11px 20px;
 }
 
 .markets-inline-link {
-  color: #e5f0f4;
-  font-size: 14px;
+  color: #eef6f7;
+  font-size: 15px;
   font-weight: 800;
 }
 
@@ -71,16 +84,22 @@
   display: inline-block;
   margin-left: 7px;
   color: #61d1ad;
+  transition: transform 180ms ease;
 }
 
-.markets-directory { padding: 60px 0 70px; }
+.markets-inline-link:hover span { transform: translateX(4px); }
+
+.markets-directory {
+  padding: 70px 0 82px;
+  background: #fff;
+}
 
 .markets-directory-head {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, .72fr);
-  gap: clamp(58px, 8vw, 112px);
+  grid-template-columns: minmax(0, 1fr) minmax(340px, .7fr);
+  gap: clamp(54px, 8vw, 112px);
   align-items: end;
-  margin-bottom: 28px;
+  margin-bottom: 38px;
 }
 
 .markets-directory h2,
@@ -88,136 +107,114 @@
 .markets-contact h2 {
   margin: 0;
   color: #0c2d47;
-  font-size: clamp(40px, 4vw, 54px);
-  line-height: 1.06;
-  letter-spacing: -.04em;
+  font-size: clamp(40px, 4vw, 56px);
+  line-height: 1.04;
+  letter-spacing: -.045em;
 }
 
 .markets-directory-head > p {
   max-width: 520px;
   margin: 0 0 4px;
-  color: #5b7480;
-  font-size: 16px;
-  line-height: 1.72;
+  color: #58717d;
+  font-size: 17px;
+  line-height: 1.68;
 }
 
-.markets-more {
-  min-height: 42px;
-  padding: 9px 15px;
-  border: 1px solid #b8cac5;
-  border-radius: 999px;
-  color: #315268;
-  font: inherit;
-  font-size: 14px;
-  font-weight: 780;
-  background: #fff;
-  cursor: pointer;
-}
-
-.markets-more:hover {
-  border-color: #0b8d69;
-  color: #fff;
-  background: #0b8d69;
-}
-
-.markets-groups { margin-top: 4px; }
-
-.market-group {
+.market-priority-grid {
   display: grid;
-  grid-template-columns: 190px minmax(0, 1fr);
-  gap: 34px;
-  padding: 24px 0;
-  border-top: 1px solid #cbd8dc;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid #bfcfd3;
+  border-bottom: 1px solid #bfcfd3;
 }
 
-.market-group:last-child { border-bottom: 1px solid #cbd8dc; }
+.market-brief {
+  display: grid;
+  min-width: 0;
+  min-height: 326px;
+  padding: 28px 29px 26px;
+  grid-template-rows: auto 1fr auto;
+  color: inherit;
+  background: #f5f8f7;
+  border-left: 1px solid #cbd8da;
+  transition: color 220ms ease, background-color 220ms ease, transform 220ms ease;
+}
 
-.market-group-head { padding: 17px 4px 0; }
+.market-brief:first-child { border-left: 0; }
 
-.market-group-head span {
-  display: block;
-  margin-bottom: 7px;
+.market-brief:hover {
+  color: #fff;
+  background: #0e3a51;
+  transform: translateY(-5px);
+}
+
+.market-brief-primary { background: #e8f4ef; }
+
+.market-brief-number {
   color: #0b8d69;
-  font-size: 11px;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+
+.market-brief > div { align-self: center; }
+
+.market-brief p {
+  margin: 0 0 11px;
+  color: #0b8d69;
+  font-size: 12px;
   font-weight: 850;
-  letter-spacing: .1em;
+  letter-spacing: .09em;
   text-transform: uppercase;
 }
 
-.market-group-head h3 {
+.market-brief h3 {
   margin: 0;
-  color: #143d58;
-  font-size: 24px;
-  line-height: 1.2;
-  letter-spacing: -.02em;
+  color: #123b55;
+  font-size: clamp(30px, 3vw, 42px);
+  line-height: 1.06;
+  letter-spacing: -.04em;
 }
 
-.market-group-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(235px, 300px));
-  gap: 12px;
-}
-
-.market-card {
-  display: flex;
-  min-width: 0;
-  min-height: 112px;
-  padding: 19px 20px 18px;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid #d3dfdc;
-  color: inherit;
-  background: #f5f7f5;
-  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
-}
-
-.market-card:hover {
-  border-color: #91bbae;
-  background: #ecf5f1;
-  transform: translateY(-2px);
-}
-
-.market-card h4 {
-  margin: 0;
-  color: #143d58;
-  font-size: 26px;
-  line-height: 1.16;
-  letter-spacing: -.025em;
-}
-
-.market-card > span {
-  margin-top: 17px;
-  color: #315268;
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.market-card b {
-  display: inline-block;
-  margin-left: 7px;
-  color: #0b8d69;
-  font-size: 16px;
-}
-
-.markets-more {
+.market-brief-copy {
   display: block;
-  margin: 26px auto 0;
-  padding-right: 22px;
-  padding-left: 22px;
+  margin-top: 20px;
+  color: #5c7580;
+  font-size: 16px;
+  line-height: 1.58;
 }
 
-.markets-directory [hidden] { display: none !important; }
+.market-brief strong {
+  color: #20485e;
+  font-size: 15px;
+}
+
+.market-brief b {
+  display: inline-block;
+  margin-left: 8px;
+  color: #0b8d69;
+  font-size: 18px;
+  transition: transform 180ms ease;
+}
+
+.market-brief:hover .market-brief-number,
+.market-brief:hover p,
+.market-brief:hover b { color: #61d1ad; }
+
+.market-brief:hover h3,
+.market-brief:hover .market-brief-copy,
+.market-brief:hover strong { color: #fff; }
+.market-brief:hover b { transform: translateX(4px); }
 
 .markets-prepare {
-  padding: 92px 0 98px;
+  padding: 82px 0 88px;
   color: #d9e7ed;
   background: #0f3044;
 }
 
 .markets-prepare-grid {
   display: grid;
-  grid-template-columns: minmax(300px, .84fr) minmax(0, 1.16fr);
-  gap: clamp(70px, 10vw, 150px);
+  grid-template-columns: minmax(300px, .86fr) minmax(0, 1.14fr);
+  gap: clamp(66px, 9vw, 138px);
   align-items: start;
 }
 
@@ -225,72 +222,72 @@
 .markets-prepare h2 { color: #fff; }
 
 .markets-prepare-heading > p:last-child {
-  max-width: 500px;
+  max-width: 510px;
   margin: 23px 0 0;
-  color: #aec6d2;
-  font-size: 16px;
-  line-height: 1.72;
+  color: #b5cbd4;
+  font-size: 17px;
+  line-height: 1.68;
 }
 
 .markets-checklist {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid #3a596c;
+  border-top: 1px solid #3b5c6e;
 }
 
 .markets-checklist div {
   min-width: 0;
-  padding: 25px 24px 28px 0;
-  border-bottom: 1px solid #3a596c;
+  padding: 25px 25px 27px 0;
+  border-bottom: 1px solid #3b5c6e;
 }
 
 .markets-checklist div:nth-child(even) {
   padding-right: 0;
   padding-left: 28px;
-  border-left: 1px solid #3a596c;
+  border-left: 1px solid #3b5c6e;
 }
 
 .markets-checklist span,
 .markets-checklist strong { display: block; }
 
 .markets-checklist span {
-  margin-bottom: 11px;
+  margin-bottom: 10px;
   color: #61d1ad;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 850;
-  letter-spacing: .11em;
+  letter-spacing: .1em;
   text-transform: uppercase;
 }
 
 .markets-checklist strong {
-  color: #edf5f7;
-  font-size: 18px;
-  line-height: 1.42;
+  color: #f0f6f7;
+  font-size: 19px;
+  line-height: 1.4;
 }
 
 .markets-contact {
-  padding: 72px 0 76px;
+  padding: 66px 0 70px;
   background: #e3f1ec;
   border-top: 1px solid #c7ddd5;
 }
 
 .markets-contact-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(290px, .65fr) auto;
-  gap: clamp(34px, 5vw, 72px);
+  grid-template-columns: minmax(0, 1.05fr) minmax(290px, .66fr) auto;
+  gap: clamp(32px, 5vw, 68px);
   align-items: center;
 }
 
 .markets-contact h2 {
-  max-width: 650px;
-  font-size: clamp(35px, 3.5vw, 48px);
+  max-width: 670px;
+  font-size: clamp(35px, 3.5vw, 49px);
 }
 
 .markets-contact-grid > p {
   margin: 0;
-  color: #557568;
-  font-size: 15px;
-  line-height: 1.68;
+  color: #527267;
+  font-size: 16px;
+  line-height: 1.65;
 }
 
 .markets-contact-actions {
@@ -299,16 +296,15 @@
   align-items: center;
 }
 
-.markets-contact-actions .btn { min-height: 47px; }
+.markets-contact-actions .btn { min-height: 48px; }
 .markets-contact-actions .btn + .btn { margin-left: 0; }
 .markets-contact-actions .btn-light { border: 1px solid #abc9be; box-shadow: none; }
 
 @media (max-width: 1040px) {
-  .markets-intro-grid { grid-template-columns: minmax(0, 1fr) minmax(330px, .7fr); gap: 54px; }
-  .markets-directory-head { gap: 60px; }
-  .market-group { grid-template-columns: 160px minmax(0, 1fr); gap: 26px; }
-  .market-group-list { grid-template-columns: repeat(auto-fill, minmax(205px, 300px)); }
-  .markets-prepare-grid { gap: 60px; }
+  .markets-intro-grid { grid-template-columns: minmax(0, 1fr) minmax(310px, .7fr); gap: 52px; }
+  .markets-directory-head { gap: 54px; }
+  .market-brief { min-height: 345px; padding: 26px 24px 24px; }
+  .markets-prepare-grid { gap: 58px; }
   .markets-contact-grid { grid-template-columns: minmax(0, 1fr) minmax(260px, .65fr); }
   .markets-contact-actions { grid-column: 1 / -1; }
 }
@@ -320,57 +316,49 @@
   .markets-contact-grid { grid-template-columns: 1fr; }
 
   .markets-intro { padding: 62px 0 68px; }
-  .markets-intro-grid { gap: 30px; min-height: 0; }
-  .markets-intro-copy { max-width: 640px; }
-  .markets-directory { padding: 58px 0 64px; }
-  .markets-directory-head { gap: 25px; margin-bottom: 28px; }
-  .markets-directory-head > p { max-width: 660px; }
-  .market-group { grid-template-columns: 140px minmax(0, 1fr); gap: 22px; }
-  .market-group-list { grid-template-columns: repeat(auto-fill, minmax(220px, 300px)); }
-  .markets-prepare { padding: 76px 0 82px; }
-  .markets-prepare-grid { gap: 44px; }
-  .markets-prepare-heading { max-width: 660px; }
-  .markets-contact-grid { gap: 25px; }
-  .markets-contact-grid > p { max-width: 620px; }
+  .markets-intro-grid { gap: 30px; }
+  .markets-intro-copy { max-width: 650px; }
+  .markets-directory { padding: 60px 0 68px; }
+  .markets-directory-head { gap: 24px; margin-bottom: 30px; }
+  .market-priority-grid { grid-template-columns: 1fr; }
+  .market-brief { min-height: 230px; border-top: 1px solid #cbd8da; border-left: 0; }
+  .market-brief:first-child { border-top: 0; }
+  .markets-prepare { padding: 72px 0 78px; }
+  .markets-prepare-grid { gap: 42px; }
+  .markets-contact-grid { gap: 24px; }
   .markets-contact-actions { grid-column: auto; }
 }
 
 @media (max-width: 640px) {
-  .markets-kicker { margin-bottom: 13px; font-size: 11px; }
-  .markets-intro { padding: 46px 0 52px; }
-  .markets-intro h1 { font-size: clamp(40px, 11.4vw, 48px); line-height: 1.02; }
-  .markets-intro-copy > p { font-size: 16px; }
-  .markets-actions { gap: 19px; margin-top: 25px; }
+  .markets-kicker { margin-bottom: 12px; font-size: 11px; }
+  .markets-intro { padding: 45px 0 52px; }
+  .markets-intro h1 { font-size: clamp(40px, 11.6vw, 48px); line-height: 1.01; }
+  .markets-intro-copy > p { font-size: 17px; }
+  .markets-actions { gap: 18px; margin-top: 25px; }
   .markets-actions .btn { min-height: 44px; padding: 10px 14px; }
-  .markets-inline-link { font-size: 13px; }
+  .markets-inline-link { font-size: 14px; }
 
-  .markets-directory { padding: 50px 0 56px; }
+  .markets-directory { padding: 48px 0 54px; }
   .markets-directory h2,
   .markets-prepare h2,
-  .markets-contact h2 { font-size: 36px; }
-  .markets-directory-head { gap: 20px; margin-bottom: 24px; }
+  .markets-contact h2 { font-size: 37px; }
+  .markets-directory-head { gap: 19px; margin-bottom: 24px; }
   .markets-directory-head > p { font-size: 16px; }
-  .markets-groups { margin-top: 2px; }
-  .market-group { grid-template-columns: 1fr; gap: 14px; padding: 22px 0; }
-  .market-group-head { padding: 0 2px; }
-  .market-group-head span { margin-bottom: 5px; }
-  .market-group-head h3 { font-size: 23px; }
-  .market-group-list { grid-template-columns: 1fr; gap: 9px; }
-  .market-card { min-height: 101px; padding: 17px 18px 16px; }
-  .market-card h4 { font-size: 27px; }
-  .market-card > span { margin-top: 14px; font-size: 14px; }
+  .market-brief { min-height: 245px; padding: 22px 20px 21px; }
+  .market-brief h3 { font-size: 32px; }
+  .market-brief-copy { margin-top: 15px; font-size: 16px; }
 
-  .markets-prepare { padding: 62px 0 68px; }
-  .markets-prepare-grid { gap: 36px; }
-  .markets-prepare-heading > p:last-child { margin-top: 18px; font-size: 15px; }
+  .markets-prepare { padding: 58px 0 64px; }
+  .markets-prepare-grid { gap: 34px; }
+  .markets-prepare-heading > p:last-child { margin-top: 18px; font-size: 16px; }
   .markets-checklist { grid-template-columns: 1fr; }
   .markets-checklist div,
-  .markets-checklist div:nth-child(even) { padding: 20px 0 22px; border-left: 0; }
-  .markets-checklist strong { font-size: 17px; }
+  .markets-checklist div:nth-child(even) { padding: 19px 0 21px; border-left: 0; }
+  .markets-checklist strong { font-size: 18px; }
 
-  .markets-contact { padding: 58px 0 62px; }
-  .markets-contact-grid { gap: 20px; }
-  .markets-contact-grid > p { font-size: 15px; }
+  .markets-contact { padding: 54px 0 58px; }
+  .markets-contact-grid { gap: 19px; }
+  .markets-contact-grid > p { font-size: 16px; }
   .markets-contact-actions { flex-direction: column; align-items: stretch; margin-top: 4px; }
   .markets-contact-actions .btn { justify-content: center; width: 100%; }
 }

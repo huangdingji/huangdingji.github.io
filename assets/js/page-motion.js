@@ -16,7 +16,7 @@
     selectorGroups = [
       ['.markets-intro-grid > *', ['left', 'right']],
       ['.markets-directory-head > *', ['left', 'right']],
-      ['.market-group', ['up']],
+      ['.market-brief', ['up']],
       ['.markets-prepare-grid > *', ['left', 'right']],
       ['.markets-contact-grid > *', ['up']]
     ];

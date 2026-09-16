@@ -126,7 +126,7 @@ window.BLOG_POSTS = Object.freeze([
     "title": "How to Source PTFE Tape from China",
     "description": "Checklist for importers sourcing PTFE thread seal tape from China, covering specs, factory checks, samples, packing and quotation details.",
     "published": "2026-06-09",
-    "modified": "2026-06-09",
+    "modified": "2026-09-16",
     "category": "packing",
     "categoryLabel": "Packing & OEM"
   },
@@ -206,7 +206,7 @@ window.BLOG_POSTS = Object.freeze([
     "title": "How to Choose PTFE Tape for Wholesale Orders",
     "description": "PTFE tape wholesale buying guide for importers comparing size, thickness, density, packaging, OEM options and quotation details.",
     "published": "2026-06-08",
-    "modified": "2026-06-08",
+    "modified": "2026-09-16",
     "category": "product",
     "categoryLabel": "Product & use"
   },
@@ -243,30 +243,20 @@ window.BLOG_POSTS = Object.freeze([
   {
     "slug": "yellow-vs-white-ptfe-tape",
     "url": "../blog/yellow-vs-white-ptfe-tape.html",
-    "title": "Yellow vs White PTFE Tape: What's the Difference?",
-    "description": "Yellow vs white PTFE tape: a practical comparison for buyers, importers and distributors. Where each color is approved, and how to stock both SKUs.",
+    "title": "Yellow vs White PTFE Tape",
+    "description": "Compare yellow and white PTFE tape by specification, product-line role and packing. Color helps identification but does not prove application approval.",
     "published": "2026-06-06",
-    "modified": "2026-06-06",
-    "category": "product",
-    "categoryLabel": "Product & use"
-  },
-  {
-    "slug": "is-ptfe-tape-the-same-as-teflon-tape",
-    "url": "../blog/is-ptfe-tape-the-same-as-teflon-tape.html",
-    "title": "Is PTFE Tape the Same as Teflon Tape? Brand vs. Generic Explained",
-    "description": "PTFE and Teflon are the same polymer. Teflon is a Chemours trademark. What this means for buyers sourcing Teflon tape or generic PTFE tape.",
-    "published": "2026-06-04",
-    "modified": "2026-06-04",
+    "modified": "2026-09-16",
     "category": "product",
     "categoryLabel": "Product & use"
   },
   {
     "slug": "ptfe-tape-colors",
     "url": "../blog/ptfe-tape-colors.html",
-    "title": "PTFE Tape Colors: White, Yellow, Green, Red, Pink, Blue, Black",
-    "description": "A practical guide to PTFE thread seal tape color codes: what each color means, which applications use it, and how to plan a color mix for your wholesale market.",
+    "title": "PTFE Tape Colors, Spools & OEM Packing",
+    "description": "Plan PTFE tape color, spool color, labels and OEM packing for a wholesale range. Color is an identifier, not proof of performance or compliance.",
     "published": "2026-06-04",
-    "modified": "2026-06-04",
+    "modified": "2026-09-16",
     "category": "specification",
     "categoryLabel": "Specifications"
   },
@@ -293,22 +283,32 @@ window.BLOG_POSTS = Object.freeze([
   {
     "slug": "ptfe-tape-specifications",
     "url": "../blog/ptfe-tape-specifications.html",
-    "title": "PTFE Tape Specifications: Width, Length, Thickness, Density Explained",
-    "description": "Complete PTFE tape specification: width, length, thickness, density, color, spool, packing. With a conversion table and market reference SKUs.",
+    "title": "PTFE Tape Specifications",
+    "description": "How buyers define PTFE tape width, length, thickness, density, roll weight, color, spool and packing for comparable wholesale quotations.",
     "published": "2026-06-04",
-    "modified": "2026-06-04",
+    "modified": "2026-09-16",
     "category": "specification",
     "categoryLabel": "Specifications"
   },
   {
     "slug": "ptfe-tape-temperature-range",
     "url": "../blog/ptfe-tape-temperature-range.html",
-    "title": "PTFE Tape Temperature Range: How Hot and How Cold Can It Go?",
-    "description": "PTFE thread seal tape is rated from -200°C to +260°C. Continuous service temperature, peak temperature, standard vs high-density tape, high-temperature uses.",
+    "title": "PTFE Tape Temperature Range",
+    "description": "PTFE tape temperature limits vary by finished specification and application. Learn what product data, media, pressure and test evidence to confirm before ordering.",
     "published": "2026-06-04",
-    "modified": "2026-06-04",
+    "modified": "2026-09-15",
     "category": "specification",
     "categoryLabel": "Specifications"
+  },
+  {
+    "slug": "is-ptfe-tape-the-same-as-teflon-tape",
+    "url": "../blog/is-ptfe-tape-the-same-as-teflon-tape.html",
+    "title": "PTFE Tape vs Teflon Tape",
+    "description": "PTFE is the material name; Teflon is a trademark used for certain branded products. What wholesale buyers should put on inquiries and private labels.",
+    "published": "2026-06-04",
+    "modified": "2026-09-16",
+    "category": "product",
+    "categoryLabel": "Product & use"
   },
   {
     "slug": "ptfe-tape-vs-thread-sealant",

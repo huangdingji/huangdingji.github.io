@@ -718,6 +718,111 @@ h2 { margin: 0; color: var(--navy); font-size: clamp(28px, 3vw, 40px); line-heig
 .article-side .btn {
   margin-top: 12px;
 }
+
+/* P2 buyer guides: text-first reading pages with a denser, scalable article system. */
+.buyer-guide-page .page-hero {
+  position: relative;
+  overflow: hidden;
+  background: #0b2035;
+}
+.buyer-guide-page .page-hero::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(34vw, 430px);
+  height: 100%;
+  border-left: 1px solid rgba(121, 198, 230, .17);
+  background:
+    linear-gradient(135deg, transparent 0 48%, rgba(71, 183, 157, .12) 48% 49%, transparent 49% 100%),
+    linear-gradient(45deg, transparent 0 70%, rgba(53, 147, 193, .11) 70% 71%, transparent 71% 100%);
+  content: "";
+}
+.buyer-guide-page .page-hero .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  padding: 68px 0 62px;
+}
+.buyer-guide-page .page-hero h1 { max-width: 900px; font-size: clamp(42px, 5vw, 64px); }
+.buyer-guide-page .page-hero p:not(.eyebrow) { max-width: 760px; color: #c7d9e7; font-size: 19px; line-height: 1.62; }
+.buyer-guide-page .blog-article-section,
+.buyer-guide-page .guide-article-section { padding: 60px 0 72px; background: #f4f7f8; }
+.buyer-guide-page .content-layout { grid-template-columns: minmax(0, 1fr) 292px; gap: clamp(30px, 4vw, 54px); }
+.buyer-guide-page .article-body { max-width: 800px; }
+.buyer-guide-page .article-body > p,
+.buyer-guide-page .article-body li,
+.buyer-guide-page .article-summary p { font-size: 18px; line-height: 1.72; }
+.buyer-guide-page .article-body > p { color: #344b5c; }
+.buyer-guide-page .article-body h2 { margin-top: 44px; font-size: clamp(27px, 2.7vw, 36px); line-height: 1.18; }
+.buyer-guide-page .article-body h3 { margin: 28px 0 0; color: var(--navy); font-size: 21px; line-height: 1.3; }
+.buyer-guide-page .article-summary {
+  padding: 24px 26px;
+  border: 0;
+  border-left: 4px solid var(--green);
+  border-radius: 0;
+  box-shadow: none;
+}
+.buyer-guide-page .article-toc { margin: 22px 0 34px; padding: 18px; border-radius: 0; box-shadow: none; }
+.buyer-guide-page .article-toc a { font-size: 15px; }
+.buyer-guide-page .article-side {
+  padding: 22px;
+  border-radius: 0;
+  box-shadow: none;
+}
+.buyer-guide-page .article-side h3 { margin-top: 0; color: var(--navy); font-size: 21px; }
+.buyer-guide-page .article-side p,
+.buyer-guide-page .article-side li { color: #516677; font-size: 15px; line-height: 1.58; }
+.buyer-guide-page .decision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+.buyer-guide-page .decision-grid article {
+  padding: 20px;
+  border: 1px solid #d5e1e8;
+  background: #fff;
+}
+.buyer-guide-page .decision-grid strong { display: block; color: var(--navy); font-size: 17px; }
+.buyer-guide-page .decision-grid p { margin: 7px 0 0; color: #526778; font-size: 15px; line-height: 1.55; }
+.buyer-guide-page .buyer-alert {
+  margin: 28px 0 0;
+  padding: 20px 22px;
+  border-left: 4px solid var(--orange);
+  color: #344b5c;
+  background: #fff8ed;
+}
+.buyer-guide-page .buyer-alert strong { color: var(--navy); }
+.buyer-guide-page .spec-table th,
+.buyer-guide-page .spec-table td { font-size: 16px; line-height: 1.5; }
+.buyer-guide-page .content-section { padding: 62px 0; }
+.buyer-guide-page .content-section .container { max-width: 980px; }
+.buyer-guide-page .content-section details { padding: 18px 20px; }
+.buyer-guide-page .content-section summary { font-size: 18px; }
+.buyer-guide-page .content-section details p { font-size: 17px; line-height: 1.65; }
+
+@media (max-width: 980px) {
+  .buyer-guide-page .content-layout { grid-template-columns: 1fr; }
+  .buyer-guide-page .article-body { max-width: none; }
+  .buyer-guide-page .article-side { position: static; }
+}
+
+@media (max-width: 640px) {
+  .buyer-guide-page .page-hero::after { width: 42%; opacity: .55; }
+  .buyer-guide-page .page-hero .container { padding: 46px 0 42px; }
+  .buyer-guide-page .page-hero h1 { font-size: clamp(36px, 10.8vw, 46px); }
+  .buyer-guide-page .page-hero p:not(.eyebrow) { font-size: 17px; }
+  .buyer-guide-page .blog-article-section,
+  .buyer-guide-page .guide-article-section { padding: 38px 0 50px; }
+  .buyer-guide-page .article-body > p,
+  .buyer-guide-page .article-body li,
+  .buyer-guide-page .article-summary p { font-size: 17px; }
+  .buyer-guide-page .article-summary { padding: 20px 18px; }
+  .buyer-guide-page .article-toc { padding: 14px; }
+  .buyer-guide-page .decision-grid { grid-template-columns: 1fr; }
+  .buyer-guide-page .spec-table th,
+  .buyer-guide-page .spec-table td { padding: 11px 12px; font-size: 14px; }
+}
 .spec-table {
   width: 100%;
   margin-top: 16px;
