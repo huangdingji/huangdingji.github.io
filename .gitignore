@@ -1,0 +1,5 @@
+# Local Google OAuth credentials and tokens
+client_secret_*.apps.googleusercontent.com.json
+.gsc-auth/
+gsc_token*.json
+.gsc-data/
