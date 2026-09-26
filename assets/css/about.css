@@ -132,7 +132,7 @@
 }
 
 .about-section-heading > p:last-child,
-.about-profile-copy > p:last-child {
+.about-profile-copy > p:last-of-type {
   max-width: 470px;
   margin: 24px 0 0;
   color: #5b7480;
@@ -434,7 +434,7 @@
   .about-profile-copy h2,
   .about-contact h2 { font-size: 36px; }
   .about-section-heading > p:last-child,
-  .about-profile-copy > p:last-child { margin-top: 18px; font-size: 15px; }
+  .about-profile-copy > p:last-of-type { margin-top: 18px; font-size: 15px; }
   .about-supply-grid { gap: 36px; }
   .about-detail-list article { grid-template-columns: 38px minmax(0, 1fr); gap: 10px; padding: 22px 0 23px; }
   .about-detail-list h3 { font-size: 19px; }
