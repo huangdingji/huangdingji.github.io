@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>qzjy GSC Export | Read-only Search Console Reporting</title>
+  <meta name="description" content="qzjy GSC Export is a private, read-only reporting tool used by the qzjy.store owner to review Google Search Console performance data.">
+  <link rel="canonical" href="https://www.qzjy.store/gsc-export/">
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #0b2a42;
+      --muted: #536b7c;
+      --green: #078d67;
+      --line: #d7e2e8;
+      --surface: #f5f9f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--navy);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #fff;
+    }
+    main {
+      width: min(880px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(72px, 10vw, 120px) 0;
+    }
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.02;
+      letter-spacing: -.04em;
+    }
+    .lead {
+      max-width: 720px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(18px, 2.4vw, 22px);
+      line-height: 1.65;
+    }
+    .panel {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 54px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--line);
+    }
+    .item { padding: 28px; background: var(--surface); }
+    .item strong { display: block; margin-bottom: 8px; font-size: 17px; }
+    .item span { color: var(--muted); font-size: 15px; line-height: 1.55; }
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 28px;
+      margin-top: 42px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    a { color: var(--green); font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    @media (max-width: 720px) {
+      main { width: min(100% - 28px, 880px); padding: 58px 0; }
+      .panel { grid-template-columns: 1fr; }
+      .item { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Private reporting utility</p>
+    <h1>Read-only Search Console reporting for qzjy.store.</h1>
+    <p class="lead">qzjy GSC Export is an internal tool used by the qzjy.store owner to retrieve and review Google Search Console performance data. It is not offered as a public service and cannot modify Search Console settings or website content.</p>
+
+    <section class="panel" aria-label="How the tool handles data">
+      <div class="item">
+        <strong>Read-only access</strong>
+        <span>The tool requests only the Google Search Console read-only scope.</span>
+      </div>
+      <div class="item">
+        <strong>Owner-operated</strong>
+        <span>Access is used by the verified owner of qzjy.store for internal SEO reporting.</span>
+      </div>
+      <div class="item">
+        <strong>No data resale</strong>
+        <span>Google user data is not sold, shared for advertising, or exposed to other users.</span>
+      </div>
+    </section>
+
+    <footer>
+      <span>qzjy.store</span>
+      <a href="/gsc-export/privacy/">Privacy Policy</a>
+      <a href="mailto:fujianteflontape@gmail.com">Contact</a>
+    </footer>
+  </main>
+</body>
+</html>
