@@ -81,6 +81,16 @@ window.BLOG_POSTS = Object.freeze([
     "categoryLabel": "Buyer channels"
   },
   {
+    "slug": "ptfe-tape-thickness-wholesale",
+    "url": "../blog/ptfe-tape-thickness-wholesale.html",
+    "title": "0.075mm vs 0.1mm PTFE Tape for Wholesale",
+    "description": "Compare 0.075mm and 0.1mm PTFE tape for wholesale orders. Align density, net tape weight, length, tolerance, packing and samples before pricing.",
+    "published": "2026-06-09",
+    "modified": "2026-10-07",
+    "category": "specification",
+    "categoryLabel": "Specifications"
+  },
+  {
     "slug": "12mm-ptfe-tape-wholesale",
     "url": "../blog/12mm-ptfe-tape-wholesale.html",
     "title": "12mm PTFE Tape Wholesale",
@@ -171,16 +181,6 @@ window.BLOG_POSTS = Object.freeze([
     "categoryLabel": "Specifications"
   },
   {
-    "slug": "ptfe-tape-thickness-wholesale",
-    "url": "../blog/ptfe-tape-thickness-wholesale.html",
-    "title": "PTFE Tape Thickness Guide",
-    "description": "PTFE tape thickness guide for wholesale buyers comparing 0.075mm and 0.1mm tape with density, packing and OEM notes.",
-    "published": "2026-06-09",
-    "modified": "2026-06-09",
-    "category": "specification",
-    "categoryLabel": "Specifications"
-  },
-  {
     "slug": "white-ptfe-tape-wholesale",
     "url": "../blog/white-ptfe-tape-wholesale.html",
     "title": "White PTFE Tape Wholesale",
@@ -213,10 +213,10 @@ window.BLOG_POSTS = Object.freeze([
   {
     "slug": "ptfe-tape-india-bis-standards",
     "url": "../blog/ptfe-tape-india-bis-standards.html",
-    "title": "PTFE Tape for India Market: BIS and Import Guide",
-    "description": "PTFE tape for India import: practical notes on BIS/QCO review, customs classification, documents, packing and inquiry details for Indian importers.",
+    "title": "PTFE Tape in India",
+    "description": "India buyer guide for PTFE thread seal tape: understand BIS IS 14643, voluntary certification status, QCO checks, product specs and import documents.",
     "published": "2026-06-07",
-    "modified": "2026-06-07",
+    "modified": "2026-10-07",
     "category": "market",
     "categoryLabel": "Market notes"
   },
@@ -294,9 +294,9 @@ window.BLOG_POSTS = Object.freeze([
     "slug": "ptfe-tape-temperature-range",
     "url": "../blog/ptfe-tape-temperature-range.html",
     "title": "PTFE Tape Temperature Range",
-    "description": "PTFE tape temperature limits vary by finished specification and application. Learn what product data, media, pressure and test evidence to confirm before ordering.",
+    "description": "How to evaluate a PTFE tape temperature range: confirm continuous and peak conditions, media, pressure, finished tape specification and supporting data.",
     "published": "2026-06-04",
-    "modified": "2026-09-15",
+    "modified": "2026-10-07",
     "category": "specification",
     "categoryLabel": "Specifications"
   },
@@ -354,9 +354,9 @@ window.BLOG_POSTS = Object.freeze([
     "slug": "what-is-ptfe-thread-seal-tape",
     "url": "../blog/what-is-ptfe-thread-seal-tape.html",
     "title": "What Is PTFE Thread Seal Tape?",
-    "description": "Learn what PTFE thread seal tape is, how it is used in plumbing, and what importers should check before wholesale sourcing.",
+    "description": "What PTFE thread seal tape is, how it works on threaded connections, common product names, specifications, sample checks and buying information.",
     "published": "2026-06-01",
-    "modified": "2026-06-04",
+    "modified": "2026-10-07",
     "category": "product",
     "categoryLabel": "Product & use"
   },
