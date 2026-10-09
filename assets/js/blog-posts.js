@@ -144,9 +144,9 @@ window.BLOG_POSTS = Object.freeze([
     "slug": "oem-ptfe-tape-packaging-guide",
     "url": "../blog/oem-ptfe-tape-packaging-guide.html",
     "title": "OEM PTFE Tape Packaging Guide",
-    "description": "OEM PTFE tape packaging guide for private label buyers, covering label, barcode, display box, blister card and export carton options.",
+    "description": "Plan OEM PTFE tape packaging from product specification to label, barcode, retail box and export carton. Includes artwork, sample and inquiry checklists.",
     "published": "2026-06-09",
-    "modified": "2026-06-09",
+    "modified": "2026-10-09",
     "category": "packing",
     "categoryLabel": "Packing & OEM"
   },
