@@ -164,9 +164,9 @@ window.BLOG_POSTS = Object.freeze([
     "slug": "ptfe-tape-roll-length",
     "url": "../blog/ptfe-tape-roll-length.html",
     "title": "PTFE Tape Roll Length Guide",
-    "description": "PTFE tape roll length guide for importers comparing 10m, 15m and 20m rolls, packing choices and wholesale quotation checks.",
+    "description": "Compare 10m, 15m and 20m PTFE tape rolls for wholesale buying. Confirm actual length, winding, roll weight, packing, samples and repeat-order checks.",
     "published": "2026-06-09",
-    "modified": "2026-06-09",
+    "modified": "2026-10-10",
     "category": "specification",
     "categoryLabel": "Specifications"
   },
