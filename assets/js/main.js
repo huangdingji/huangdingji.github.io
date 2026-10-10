@@ -43,212 +43,16 @@ function initMetaPixel() {
 
 initMetaPixel();
 
-const LANGUAGES = {
-  en: "English",
-  zh: "中文",
-  ar: "العربية",
-  es: "Español",
-};
-
-const EMPTY_TRANSLATIONS = {
-  TRANSLATIONS: { zh: {}, es: {}, ar: {} },
-  ATTRIBUTE_TRANSLATIONS: { zh: {}, es: {}, ar: {} },
-  EXTRA_TRANSLATIONS: { zh: {}, es: {}, ar: {} },
-};
-
-let translationBundlePromise;
-
-function getTranslationData() {
-  return window.SiteTranslations || EMPTY_TRANSLATIONS;
+// The public site currently ships in English only. Clear any language choice
+// saved by the retired switcher so returning visitors always see the source
+// English content while additional translations are being prepared.
+try {
+  localStorage.removeItem("siteLanguage");
+} catch (error) {
+  // Storage can be unavailable in privacy-restricted browsing contexts.
 }
-
-function getTranslationBundleUrl() {
-  const mainScript = document.querySelector('script[src*="assets/js/main.min.js"], script[src*="assets/js/main.js"]');
-  return mainScript
-    ? new URL('translations.min.js?v=20260916-perf1', mainScript.src).href
-    : '/assets/js/translations.min.js?v=20260916-perf1';
-}
-
-function loadTranslationBundle() {
-  if (window.SiteTranslations) return Promise.resolve();
-  if (translationBundlePromise) return translationBundlePromise;
-
-  translationBundlePromise = new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = getTranslationBundleUrl();
-    script.async = true;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
-
-  return translationBundlePromise;
-}
-
-function setSiteLanguage(lang) {
-  const activeLang = LANGUAGES[lang] ? lang : 'en';
-  localStorage.setItem('siteLanguage', activeLang);
-  document.querySelectorAll('.language-select').forEach((select) => {
-    select.value = activeLang;
-  });
-
-  if (activeLang === 'en') {
-    applyLanguage(activeLang);
-    return;
-  }
-
-  loadTranslationBundle()
-    .then(() => applyLanguage(activeLang))
-    .catch(() => {
-      // Keep the English page usable if a non-essential language bundle fails.
-      console.warn('[Language] Translation bundle could not be loaded.');
-      localStorage.setItem('siteLanguage', 'en');
-      document.querySelectorAll('.language-select').forEach((select) => {
-        select.value = 'en';
-      });
-      applyLanguage('en');
-    });
-}
-
-function getTranslation(lang, text) {
-  if (lang === "en") return text;
-  const { EXTRA_TRANSLATIONS, TRANSLATIONS } = getTranslationData();
-  return EXTRA_TRANSLATIONS[lang]?.[text] || TRANSLATIONS[lang]?.[text] || text;
-}
-
-function addLanguageSelector() {
-  const navWrap = document.querySelector(".nav-wrap");
-  const navQuote = document.querySelector(".nav-quote");
-  if (!navWrap || document.querySelector(".language-select")) return;
-
-  const label = document.createElement("label");
-  label.className = "language-switch";
-  label.setAttribute("data-no-translate", "");
-  label.setAttribute("aria-label", "Language");
-
-  const select = document.createElement("select");
-  select.className = "language-select";
-  Object.entries(LANGUAGES).forEach(([code, name]) => {
-    const option = document.createElement("option");
-    option.value = code;
-    option.textContent = name;
-    select.appendChild(option);
-  });
-
-  select.value = localStorage.getItem("siteLanguage") || "en";
-  select.addEventListener("change", () => {
-    setSiteLanguage(select.value);
-  });
-
-  label.appendChild(select);
-  navWrap.insertBefore(label, navQuote || null);
-}
-
-function setupLanguageSelectors() {
-  const current = localStorage.getItem("siteLanguage") || "en";
-  document.querySelectorAll(".language-select").forEach((select) => {
-    select.value = LANGUAGES[current] ? current : "en";
-    if (select.dataset.languageReady) return;
-    select.dataset.languageReady = "1";
-    select.addEventListener("change", () => {
-      setSiteLanguage(select.value);
-    });
-  });
-}
-
-function applyLanguage(lang) {
-  const activeLang = LANGUAGES[lang] ? lang : "en";
-  if (activeLang === "en" && !document.documentElement.dataset.languageApplied) {
-    document.documentElement.lang = "en";
-    document.documentElement.dir = "ltr";
-    return;
-  }
-  if (activeLang !== 'en' && !window.SiteTranslations) {
-    loadTranslationBundle().then(() => applyLanguage(activeLang));
-    return;
-  }
-  document.documentElement.lang = activeLang === "zh" ? "zh-CN" : activeLang;
-  document.documentElement.dir = activeLang === "ar" ? "rtl" : "ltr";
-
-  if (!document.documentElement.dataset.originalTitle) {
-    document.documentElement.dataset.originalTitle = document.title;
-  }
-  document.title = getTranslation(activeLang, document.documentElement.dataset.originalTitle);
-
-  document.querySelectorAll("input[placeholder], textarea[placeholder]").forEach((field) => {
-    if (!field.dataset.originalPlaceholder) field.dataset.originalPlaceholder = field.placeholder;
-    const { ATTRIBUTE_TRANSLATIONS } = getTranslationData();
-    field.placeholder = ATTRIBUTE_TRANSLATIONS[activeLang]?.[field.dataset.originalPlaceholder] || field.dataset.originalPlaceholder;
-  });
-
-  // Pass 1: try translating each block-level element's full inner text as a single
-  // unit. For elements that contain anchor links / images / inputs (those have
-  // href or src attributes we need to preserve), skip — let the child <a>
-  // translate itself (a.outerHTML keeps its href). For inline-only
-  // <strong>/<em>/<span> we translate via innerHTML (the translation is plain
-  // text, which replaces the inline markup cleanly).
-  const blockSelectors = "p, h1, h2, h3, h4, h5, h6, li, th, td, a, button, label, small, summary, figcaption, blockquote, dt, dd, strong, em";
-  // Walk in document order: child <a> is processed before its parent <li>,
-  // so the <a> text gets translated first, then the parent <li> skip rule
-  // keeps the <a> (and its href) intact.
-  document.querySelectorAll(blockSelectors).forEach((el) => {
-    if (el.closest("[data-no-translate], script, style")) return;
-    if (!el.firstChild) return;
-    // Skip if element has img, input, button, select, textarea child (preserve)
-    if (el.querySelector("img, input, button, select, textarea")) return;
-    // Skip if element has anchor <a> child (let the <a> translate itself, so
-    // the href is preserved; parent containers would overwrite the <a> with
-    // innerHTML and lose the link).
-    if (el.querySelector("a")) return;
-    // Has inline children (strong, em, span, br): translate via innerHTML
-    if (el.children.length > 0) {
-      const full = el.innerText.trim().replace(/\s+/g, " ");
-      if (!full) return;
-      if (!el.dataset.originalText) el.dataset.originalText = full;
-      const original = el.dataset.originalText;
-      const t = getTranslation(activeLang, original);
-      if (t === el.innerText.trim().replace(/\s+/g, " ")) return;
-      el.innerHTML = t;
-      return;
-    }
-    // leaf text node element (including <a>link</a>)
-    const full = el.textContent.trim();
-    if (!full) return;
-    if (!el.dataset.originalText) el.dataset.originalText = full;
-    const original = el.dataset.originalText;
-    const t = getTranslation(activeLang, original);
-    if (t === full) return;
-    el.textContent = t;
-  });
-
-  // Pass 2: per-text-node fallback for any remaining untranslated text (covers
-  // <a>, <span> with single text nodes, and any other element not handled in Pass 1).
-  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-    acceptNode(node) {
-      const parent = node.parentElement;
-      if (!parent || parent.closest("[data-no-translate], script, style")) return NodeFilter.FILTER_REJECT;
-      if (!node.textContent.trim()) return NodeFilter.FILTER_REJECT;
-      return NodeFilter.FILTER_ACCEPT;
-    },
-  });
-
-  const nodes = [];
-  while (walker.nextNode()) nodes.push(walker.currentNode);
-
-  nodes.forEach((node) => {
-    if (!node.originalText) node.originalText = node.textContent;
-    const original = node.originalText;
-    const trimmed = original.trim();
-    const translated = getTranslation(activeLang, trimmed);
-    node.textContent = original.replace(trimmed, translated);
-  });
-
-  document.documentElement.dataset.languageApplied = activeLang;
-}
-
-addLanguageSelector();
-setupLanguageSelectors();
-setSiteLanguage(localStorage.getItem("siteLanguage") || "en");
+document.documentElement.lang = "en";
+document.documentElement.dir = "ltr";
 
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
@@ -507,8 +311,7 @@ if (quoteForm) {
     event.preventDefault();
     if (submitBtn) {
       submitBtn.disabled = true;
-      const sendingLabel = getTranslation(localStorage.getItem("siteLanguage") || "en", "Sending...");
-      submitBtn.textContent = sendingLabel || "Sending...";
+      submitBtn.textContent = "Sending...";
     }
     hideStatus(successBox);
     hideStatus(errorBox);
