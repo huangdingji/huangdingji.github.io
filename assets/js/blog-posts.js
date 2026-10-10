@@ -253,10 +253,10 @@ window.BLOG_POSTS = Object.freeze([
   {
     "slug": "ptfe-tape-colors",
     "url": "../blog/ptfe-tape-colors.html",
-    "title": "PTFE Tape Colors, Spools & OEM Packing",
-    "description": "Plan PTFE tape color, spool color, labels and OEM packing for a wholesale range. Color is an identifier, not proof of performance or compliance.",
+    "title": "PTFE Tape Colors Explained",
+    "description": "Understand PTFE tape colors without assuming a universal color code. Compare tape and spool colors, specifications, labels, samples and OEM packing.",
     "published": "2026-06-04",
-    "modified": "2026-09-16",
+    "modified": "2026-10-10",
     "category": "specification",
     "categoryLabel": "Specifications"
   },
