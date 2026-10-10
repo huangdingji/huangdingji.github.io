@@ -173,10 +173,10 @@ window.BLOG_POSTS = Object.freeze([
   {
     "slug": "ptfe-tape-roll-weight",
     "url": "../blog/ptfe-tape-roll-weight.html",
-    "title": "PTFE Tape Roll Weight Guide",
-    "description": "PTFE tape roll weight guide for importers comparing density, length, thickness, packing cost and wholesale quotation details.",
+    "title": "PTFE Tape Roll Weight",
+    "description": "Compare PTFE tape roll weight correctly. Separate net tape weight from spool and packing weight, align specifications, samples, cartons and inspection methods.",
     "published": "2026-06-09",
-    "modified": "2026-06-09",
+    "modified": "2026-10-10",
     "category": "specification",
     "categoryLabel": "Specifications"
   },
