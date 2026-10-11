@@ -134,9 +134,9 @@ window.BLOG_POSTS = Object.freeze([
     "slug": "sourcing-ptfe-tape-from-china",
     "url": "../blog/sourcing-ptfe-tape-from-china.html",
     "title": "How to Source PTFE Tape from China",
-    "description": "Checklist for importers sourcing PTFE thread seal tape from China, covering specs, factory checks, samples, packing and quotation details.",
+    "description": "Source PTFE tape from China with a practical buyer checklist for specifications, supplier checks, comparable quotes, samples, OEM packing and repeat orders.",
     "published": "2026-06-09",
-    "modified": "2026-09-16",
+    "modified": "2026-10-11",
     "category": "packing",
     "categoryLabel": "Packing & OEM"
   },
