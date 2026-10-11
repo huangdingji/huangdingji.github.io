@@ -323,10 +323,10 @@ window.BLOG_POSTS = Object.freeze([
   {
     "slug": "how-to-use-ptfe-tape",
     "url": "../blog/how-to-use-ptfe-tape.html",
-    "title": "PTFE Tape Application Notes for Wholesale Buyers",
-    "description": "PTFE tape application notes for wholesale buyers comparing specifications, packing, labels, samples and local application requirements before bulk orders.",
+    "title": "How to Use PTFE Tape",
+    "description": "Learn how to use PTFE tape on threaded pipe fittings: check the joint, wrap in the tightening direction, choose the wrap count and avoid common leaks.",
     "published": "2026-06-01",
-    "modified": "2026-06-04",
+    "modified": "2026-10-11",
     "category": "product",
     "categoryLabel": "Product & use"
   },
