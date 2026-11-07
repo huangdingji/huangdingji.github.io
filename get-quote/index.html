@@ -630,7 +630,9 @@
       function trackEvent(name, params) {
         if (typeof window.gtag === 'function') {
           window.gtag('event', name, Object.assign({
-            page_path: window.location.pathname
+            page_path: window.location.pathname,
+            page_title: document.title,
+            page_location: window.location.href
           }, params || {}));
         }
       }
@@ -644,13 +646,21 @@
 
       document.querySelectorAll('[data-track="whatsapp"]').forEach(function (link) {
         link.addEventListener('click', function () {
-          trackEvent('whatsapp_click', { button_location: link.dataset.location || '' });
+          trackEvent('whatsapp_inquiry_click', {
+            inquiry_channel: 'whatsapp',
+            cta_location: link.dataset.location || 'content',
+            link_text: (link.textContent || '').trim()
+          });
         });
       });
 
       document.querySelectorAll('[data-track="email"]').forEach(function (link) {
         link.addEventListener('click', function () {
-          trackEvent('email_click', { button_location: link.dataset.location || '' });
+          trackEvent('email_inquiry_click', {
+            inquiry_channel: 'email',
+            cta_location: link.dataset.location || 'content',
+            link_text: (link.textContent || '').trim()
+          });
         });
       });
 
@@ -686,7 +696,7 @@
         }).then(function (response) {
           if (!response.ok) throw new Error('Form submission failed');
           showStatus(success);
-          trackEvent('quote_form_submit', { form_name: 'get_quote_rfq' });
+          trackEvent('inquiry_form_submit', { form_name: 'get_quote_rfq' });
         }).catch(function () {
           showStatus(error);
         }).finally(function () {

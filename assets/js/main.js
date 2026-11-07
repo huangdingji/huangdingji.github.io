@@ -151,6 +151,8 @@ document.addEventListener("mousemove", (event) => {
 function trackEvent(eventName, params = {}) {
   const eventParams = {
     page_path: window.location.pathname,
+    page_title: document.title,
+    page_location: window.location.href,
     ...params,
   };
 
@@ -179,20 +181,40 @@ function trackEvent(eventName, params = {}) {
   }
 }
 
+function getCtaLocation(element) {
+  if (element.dataset.location) return element.dataset.location;
+  if (element.closest("header")) return "header";
+  if (element.closest("footer")) return "footer";
+  if (element.closest("form")) return "form";
+  if (element.closest(".page-hero, .home-hero, .product-hero, .contact-hero")) return "hero";
+  if (element.closest(".cta-band, .contact-final")) return "cta";
+  if (element.closest("aside")) return "sidebar";
+  return "content";
+}
+
 document.addEventListener("click", (event) => {
   const link = event.target.closest("a, button");
   if (!link) return;
 
   const label = (link.textContent || "").trim();
   const href = link.getAttribute("href") || "";
+  const ctaLocation = getCtaLocation(link);
 
   if (link.matches("[data-whatsapp]") || href.includes("wa.me") || href.includes("whatsapp.com/send")) {
-    trackEvent("whatsapp_inquiry_click", { link_text: label });
+    trackEvent("whatsapp_inquiry_click", {
+      inquiry_channel: "whatsapp",
+      link_text: label,
+      cta_location: ctaLocation,
+    });
     return;
   }
 
   if (href.startsWith("mailto:")) {
-    trackEvent("email_inquiry_click", { link_text: label });
+    trackEvent("email_inquiry_click", {
+      inquiry_channel: "email",
+      link_text: label,
+      cta_location: ctaLocation,
+    });
     return;
   }
 
