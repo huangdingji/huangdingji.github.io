@@ -313,10 +313,10 @@ window.BLOG_POSTS = Object.freeze([
   {
     "slug": "ptfe-tape-vs-thread-sealant",
     "url": "../blog/ptfe-tape-vs-thread-sealant.html",
-    "title": "PTFE Tape vs Thread Sealant Paste: When to Use Which",
-    "description": "PTFE tape vs thread sealant paste: the two main thread sealing options. Sealing performance, application, cost, gas line suitability, when to use both.",
+    "title": "PTFE Tape vs. Thread Sealant Paste: How to Choose",
+    "description": "Compare PTFE tape and thread sealant paste by joint design, material compatibility, cure requirements and combined use. Find the checks to make before choosing.",
     "published": "2026-06-04",
-    "modified": "2026-06-04",
+    "modified": "2026-11-08",
     "category": "product",
     "categoryLabel": "Product & use"
   },
