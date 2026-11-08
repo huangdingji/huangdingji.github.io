@@ -37,13 +37,6 @@
       .replaceAll("'", '&#39;');
   }
 
-  function formatDate(value) {
-    var date = new Date(value + 'T00:00:00');
-    return Number.isNaN(date.getTime())
-      ? ''
-      : new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: 'numeric' }).format(date);
-  }
-
   function filteredPosts() {
     var query = state.query.trim().toLowerCase();
     return posts.filter(function (post) {
@@ -84,7 +77,7 @@
     grid.innerHTML = items.map(function (post) {
       return '<article class="post-card">' +
         '<div class="post-card-body">' +
-          '<div class="post-meta"><span>' + escapeHtml(post.categoryLabel) + '</span><time datetime="' + escapeHtml(post.published) + '">' + escapeHtml(formatDate(post.published)) + '</time></div>' +
+          '<div class="post-meta"><span>' + escapeHtml(post.categoryLabel) + '</span></div>' +
           '<h2><a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.title) + '</a></h2>' +
           '<p>' + escapeHtml(post.description) + '</p>' +
           '<a class="post-read" href="' + escapeHtml(post.url) + '">Read guide <span>→</span></a>' +
