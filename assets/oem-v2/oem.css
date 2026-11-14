@@ -24,9 +24,6 @@
 .oem-hero-visual:before{content:'';position:absolute;z-index:1;bottom:2%;left:6%;right:4%;height:9%;border-radius:50%;background:#4d718a;filter:blur(28px);opacity:.17}
 /* Timed caption bar over the video (mirrors the WebVTT track). */
 .video-caption{position:absolute;z-index:2;left:16px;right:16px;bottom:16px;margin:0;padding:10px 14px;background:rgba(18,35,51,.88);color:#fff;font-size:16px;line-height:1.6;border-radius:2px}
-.oem-hero-visual.captions-off .video-caption{display:none}
-.caption-toggle{position:absolute;z-index:3;top:14px;right:14px;padding:6px 10px;border:1px solid rgba(255,255,255,.7);background:rgba(18,35,51,.72);color:#fff;font-size:13px;font-weight:600;letter-spacing:.5px;line-height:1.4}
-.caption-toggle:hover{background:rgba(18,35,51,.92)}
 /* Framework: white, three numbered cards. */
 .oem-framework{background:#fff}
 .oem-framework-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:34px}

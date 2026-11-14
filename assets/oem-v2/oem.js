@@ -3,8 +3,8 @@
    The video has no audio track, so these are descriptive captions
    (what is on screen), timed to the scene cuts at
    0s / 4.57s / 17.03s / 20.13s / 24.33s / 27s. They mirror the
-   WebVTT track, so captions stay visible even where a browser
-   does not render <track> on a muted autoplay loop. */
+   WebVTT track. The track itself is kept hidden so the browser
+   never renders a second copy of the same line. */
 const cues=[
   [0,'Custom spool colors for your brand.'],
   [4.5,'Winding tape onto your spools.'],
@@ -15,8 +15,6 @@ const cues=[
 ];
 const video=document.querySelector('.oem-hero-visual video');
 const caption=document.getElementById('oemVideoCaption');
-const toggle=document.getElementById('oemCaptionToggle');
-const figure=document.querySelector('.oem-hero-visual');
 if(video&&caption){
   const show=t=>{
     let text=cues[0][1];
@@ -26,19 +24,11 @@ if(video&&caption){
   video.addEventListener('timeupdate',()=>show(video.currentTime||0));
   video.addEventListener('loadedmetadata',()=>show(0));
   show(0);
-  if(toggle){
-    const setCaptions=on=>{
-      figure.classList.toggle('captions-off',!on);
-      toggle.setAttribute('aria-pressed',String(on));
-      toggle.textContent=on?'CC on':'CC off';
-      const track=video.querySelector('track');
-      if(track) track.mode=on?'showing':'disabled';
-    };
-    toggle.addEventListener('click',()=>{
-      setCaptions(figure.classList.contains('captions-off'));
-    });
-    setCaptions(true);
-  }
+  /* Keep the <track> element for screen readers, but never let the
+     browser render it: the caption bar below is the only visible one,
+     otherwise the same line shows twice. */
+  const track=video.querySelector('track');
+  if(track) track.mode='hidden';
 }
 /* Reveal each content group once; reduced-motion users see everything directly. */
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
