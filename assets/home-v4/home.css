@@ -9,3 +9,8 @@
 .hero{background:#2f3b50}.hero-layout{grid-template-columns:.78fr 1.22fr;gap:32px}.hero h1{color:#fff}.hero .eyebrow{color:#adcce8}.hero-description{color:#c8d2df}.hero .button{background:#f4f7fb;border-color:#f4f7fb;color:#173754}.hero .button:hover{background:#dce9f4}.hero .text-link{color:#f4f7fb;border-color:#8b9fb5}.hero .text-link:hover{color:#bddbf5}.hero-visual img{object-fit:contain;object-position:center}.production-grid figcaption{display:flex;align-items:center;gap:12px;font-size:14px}.production-grid figcaption>span{font-size:10px;color:#6486a3;letter-spacing:1px}
 @media(max-width:800px){.hero-layout{grid-template-columns:.9fr 1.1fr;gap:18px}}
 @media(max-width:520px){.hero-layout{display:flex;gap:0}.hero-visual{aspect-ratio:1479/1064}.hero-visual img{object-position:center}.production-grid figcaption{font-size:13px}}
+
+/* Three photographs from the supplied production sheet, excluding its title strips. */
+.production-photo{position:relative;aspect-ratio:892/334;overflow:hidden;background:#dfe6ec}
+.production-grid .production-photo img{position:absolute;width:108.856502%;height:auto;max-width:none;aspect-ratio:auto;left:-4.484305%;object-fit:fill}
+.production-photo-1 img{top:-80.838323%}.production-photo-2 img{top:-205.389222%}.production-photo-3 img{top:-340.718563%}
