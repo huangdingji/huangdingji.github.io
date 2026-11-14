@@ -442,5 +442,7 @@
       "source_file": "SKU图片_40_规格_(25mm*0.1mm*10m｜密度0.25｜净重6.25g).jpg",
       "image": "sku-40.webp"
     }
-  ]
+  ],
+  "hero_source_file": "主图_05.jpg",
+  "hero_image": "product-range-hero.webp"
 }
