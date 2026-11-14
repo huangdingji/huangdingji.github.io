@@ -1,0 +1,59 @@
+/* Unified site header + footer (v6 look), shared by every page.
+   Uses literal colours and .header/.footer-scoped selectors only, so it
+   never restyles a page's body: older pages keep their own stylesheet
+   (and its --blue) for everything below the header. */
+.header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid #e7eaec}
+.header .container,.footer .container{width:min(1200px,calc(100% - 96px));margin:0 auto}
+.nav-row{height:84px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{display:block;position:relative;width:52px;height:50px;overflow:hidden;flex-shrink:0}
+.brand .brand-logo{position:absolute;max-width:none;width:96px;height:96px;left:-22px;top:-18.5px}
+.brand-name{display:flex;flex-direction:column;gap:7px}
+.brand strong{font-size:23px;font-weight:600;letter-spacing:-.6px;line-height:1;color:#27343d}
+.brand small{font-size:14px;color:#435660;letter-spacing:0;line-height:1.4;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:29px;font-size:16px;color:#394a56}
+.nav>a{padding:29px 0;position:relative}
+.nav>a:not(.nav-quote):after{content:'';position:absolute;left:0;bottom:20px;width:0;height:2px;background:#165f96;transition:width .25s}
+.nav>a[aria-current]:after{width:21px}
+.nav>a:hover{color:#165f96}
+.nav>a:not(.nav-quote):hover:after{width:100%}
+.nav .nav-quote{padding:11px 17px;border:1px solid #b9c4cc;display:flex;gap:24px;align-items:center;color:#253038;background:#fff;transition:background-color .22s,color .22s,border-color .22s}
+.nav .nav-quote:hover{background:#f3f7fa}
+.nav .nav-quote--whatsapp{background:#165f96;border-color:#165f96;color:#fff}
+.nav .nav-quote--whatsapp:hover{background:#0f4a75;border-color:#0f4a75}
+.nav .nav-quote .arrow-icon{width:16px;height:16px;flex-shrink:0;transition:transform .22s}
+.nav .nav-quote:hover .arrow-icon{transform:translateX(4px)}
+.menu-toggle{display:none;background:#fff;color:#253038;border:1px solid #dce1e4;font-size:16px;padding:9px 12px}
+.header a:focus-visible,.header button:focus-visible,.footer a:focus-visible{outline:3px solid #4596d1;outline-offset:4px}
+/* Resources dropdown: same classes the older pages' script already drives
+   (.nav-dropdown / .nav-more / .nav-dropdown-menu), restyled to v6. */
+.nav .nav-dropdown{position:relative}
+.nav .nav-dropdown::after{display:none}
+.nav .nav-more{padding:29px 0;background:none;border:0;color:inherit;font:inherit;display:flex;align-items:center;gap:7px;cursor:pointer;position:relative}
+.nav .nav-more::after{content:'';display:block;width:7px;height:7px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin-top:-3px;flex-shrink:0}
+.nav .nav-more:hover{color:#165f96}
+.nav .nav-dropdown.is-current>.nav-more{color:#165f96;font-weight:600}
+.nav .nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:200px;background:#fff;border:1px solid #dce1e4;box-shadow:0 12px 28px rgba(18,35,51,.14);padding:8px 0;display:none;z-index:40}
+.nav .nav-dropdown.open .nav-dropdown-menu,.nav .nav-dropdown.hover-open .nav-dropdown-menu,.nav .nav-dropdown:hover .nav-dropdown-menu,.nav .nav-dropdown:focus-within .nav-dropdown-menu{display:block}
+.nav .nav-dropdown-menu a{display:block;padding:10px 18px;white-space:nowrap;color:#394a56}
+.nav .nav-dropdown-menu a:hover{color:#165f96;background:#f3f7fa}
+.nav .nav-dropdown-menu a[aria-current]{color:#165f96;font-weight:600}
+.footer{background:#1b303f;border-top:0;padding-top:46px;color:#d6e1e8}
+.footer-grid{display:grid;grid-template-columns:1.15fr .7fr .75fr 1.25fr;gap:30px}
+.footer-grid>div{min-width:0}
+.footer h3{font-size:22px;font-weight:500;letter-spacing:-.7px;color:#fff;margin:0 0 15px}
+.footer p{font-size:16px;line-height:1.85;color:#d6e1e8}
+.footer h4{font-size:16px;font-weight:600;letter-spacing:.5px;color:#fff;margin:4px 0 20px}
+.footer ul{margin:0;padding:0;list-style:none}
+.footer li{font-size:16px;margin-bottom:9px;line-height:1.7;color:#d6e1e8}
+.footer a{overflow-wrap:anywhere}
+.footer a:hover{color:#a9d9f7;text-decoration:underline}
+.copyright{border-top:1px solid #ffffff24;color:#bacbd7;margin-top:34px;padding:18px 0;font-size:14px;line-height:1.8}
+.copyright>.container{display:flex;justify-content:space-between;gap:20px;color:#bacbd7}
+@media(min-width:1600px){.header .container,.footer .container{width:min(1280px,calc(100% - 120px))}}
+@media(max-width:1100px){.header .container,.footer .container{width:calc(100% - 56px)}.nav{gap:21px}.brand strong{font-size:21px}}
+@media(max-width:960px){.nav-row{height:80px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:80px;left:0;right:0;padding:15px 28px 25px;background:#fff;border-bottom:1px solid #dce1e4;flex-direction:column;align-items:stretch;gap:0;font-size:15px}.nav.is-open{display:flex}.nav>a{padding:12px 0}.nav>a:after{display:none}.nav .nav-quote{margin-top:8px;justify-content:space-between}.nav .nav-more{width:100%;justify-content:space-between;padding:12px 0}.nav .nav-dropdown-menu{position:static;transform:none;min-width:0;border:0;box-shadow:none;padding:0 0 0 14px}.nav .nav-dropdown-menu a{padding:10px 0}.footer-grid{grid-template-columns:1fr 1fr;gap:30px}}
+@media(max-width:700px){.footer{padding-top:34px}.footer-grid{gap:25px}.footer-grid>div:first-child,.footer-grid>div:last-child{grid-column:1/-1}}
+@media(max-width:520px){.header .container,.footer .container{width:calc(100% - 36px)}.nav-row{height:76px;gap:12px}.nav{top:76px}.brand{gap:8px}.brand-mark{width:44px;height:44px}.brand .brand-logo{width:84px;height:84px;left:-19.5px;top:-16px}.brand strong{font-size:20px}.brand small{font-size:13px}.footer{padding-top:36px}.copyright{margin-top:28px}}
+@media(max-width:380px){.nav-row{gap:12px}.brand strong{font-size:19px}.brand small{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.nav>a:not(.nav-quote):after,.nav .nav-quote,.nav .nav-quote .arrow-icon{transition:none}}
