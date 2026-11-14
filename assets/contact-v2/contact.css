@@ -1,0 +1,80 @@
+/* Contact page, v6 style: light hero, white card form on pale blue-grey,
+   white process steps, dark navy close. Copy, links, form fields and the
+   Formspree submit flow are unchanged; only colours and surfaces move
+   from the old dark/teal/green treatment to the Home palette. */
+.contact-page{background:#fff;overflow-x:clip}
+/* Buttons + form primitives, ported from the old stylesheet with the
+   green primary replaced by brand blue. */
+.contact-page .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 18px;border-radius:8px;border:1px solid transparent;font-size:14px;font-weight:800;cursor:pointer;white-space:nowrap;transition:background-color .22s,color .22s,border-color .22s,transform .22s}
+.contact-page .btn-primary{color:#fff;background:#165f96;box-shadow:0 10px 22px rgba(22,95,150,.18)}
+.contact-page .btn-primary:hover{background:#0f4a75;transform:translateY(-1px)}
+.contact-page .btn-secondary{color:#253038;background:#fff;border-color:#b9c4cc;box-shadow:0 8px 18px rgba(15,38,61,.08)}
+.contact-page .btn-secondary:hover{border-color:#165f96;background:#f3f7fa;transform:translateY(-1px)}
+.contact-page .btn+.btn{margin-left:10px}
+.contact-page .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}
+.contact-page .cta-row .btn{margin-left:0;margin-right:0}
+.contact-page .form{display:grid;gap:14px}
+.contact-page .form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.contact-page .form-row.single-field{grid-template-columns:1fr}
+.contact-page .form label{display:grid;gap:7px;color:#4c5d6f;font-size:14px;font-weight:700}
+.contact-page .form input,.contact-page .form select,.contact-page .form textarea{width:100%;min-height:44px;padding:11px 12px;border:1px solid #c7d3df;border-radius:8px;font:inherit;color:#253038;background:#fff}
+.contact-page .form input:focus,.contact-page .form select:focus,.contact-page .form textarea:focus{outline:0;border-color:#165f96;box-shadow:0 0 0 3px rgba(22,95,150,.13)}
+.contact-page .form textarea{min-height:136px;resize:vertical}
+.contact-page .optional-label{color:#53616b;font-size:12px;font-weight:700;text-transform:uppercase}
+.contact-page .note{color:#53616b;font-size:13px}
+.contact-page .form-status{display:none}
+.contact-page .form-success[hidden],.contact-page .form-error[hidden]{display:none}
+.contact-page .form-status.is-visible{display:block;margin-top:16px;padding:14px 16px;border-radius:6px;font-size:14px;line-height:1.55}
+.contact-page .form-success.is-visible{background:#e7f4ec;border:1px solid #2f7a4d;color:#1f5a37}
+.contact-page .form-error.is-visible{background:#fbeaea;border:1px solid #b94a48;color:#8a2b29}
+/* Hero: light stage, same gradient family as Home. */
+.contact-page .contact-hero{position:relative;display:flex;min-height:clamp(420px,52vh,540px);align-items:center;overflow:hidden;padding:clamp(64px,7vw,96px) 0 clamp(56px,6vw,80px);color:#253038;background:radial-gradient(ellipse at 83% 47%,#cadde9 0%,rgba(212,227,236,.65) 36%,transparent 70%),linear-gradient(112deg,#f8f9f7 3%,#edf3f6 49%,#dfebf2 100%)}
+.contact-page .contact-hero-grid{position:relative;z-index:1}
+.contact-page .contact-hero-copy-wrap{max-width:790px}
+.contact-page .contact-kicker,.contact-page .contact-section-kicker{margin:0 0 14px;color:#165f96;font-size:12px;font-weight:600;letter-spacing:1.1px;line-height:1.5;text-transform:uppercase}
+.contact-page .contact-hero h1{max-width:720px;margin:0;color:#253038;font-size:clamp(2.8rem,4.15vw,4.8rem);font-weight:500;line-height:1.06;letter-spacing:-2px;text-wrap:balance}
+.contact-page .contact-hero-copy{max-width:510px;margin:22px 0 0;color:#53616b;font-size:clamp(1rem,1.25vw,1.1rem);line-height:1.8}
+.contact-page .contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.contact-page .contact-hero-meta{display:flex;flex-wrap:wrap;gap:9px 26px;margin:28px 0 0;color:#53616b;font-size:.86rem;font-weight:700}
+.contact-page .contact-hero-meta a{color:#253038;text-decoration:none}
+.contact-page .contact-hero-meta a:hover{color:#165f96}
+.contact-page .contact-hero-meta span{position:relative}
+.contact-page .contact-hero-meta span::before{content:"";position:absolute;top:.48em;left:-14px;width:4px;height:4px;border-radius:50%;background:#165f96}
+/* Form section: pale blue-grey stage, white card. */
+.contact-page .contact-main{padding:clamp(46px,5vw,68px) 0;background:#edf3f6}
+.contact-page .contact-main-grid{max-width:1120px}
+.contact-page .contact-intro h2,.contact-page .contact-form-panel h2,.contact-page .contact-process h2,.contact-page .contact-final h2{margin:0;color:#253038;font-size:clamp(2rem,3vw,3.3rem);font-weight:500;line-height:1.06;letter-spacing:-1px}
+.contact-page .contact-form-panel{padding:0}
+.contact-page .contact-form-heading{display:grid;grid-template-columns:minmax(0,.8fr) minmax(300px,1fr);gap:48px;align-items:end;margin-bottom:30px}
+.contact-page .contact-form-heading .lead{margin:0}
+.contact-page .contact-form-panel h2{font-size:clamp(1.9rem,2.6vw,2.8rem)}
+.contact-page .contact-form-panel .lead{max-width:650px;margin:12px 0 25px;color:#53616b;line-height:1.55}
+.contact-page .contact-form-panel .form{gap:15px;padding:clamp(25px,3vw,36px);border:1px solid #dce1e4;background:#fff}
+.contact-page .contact-form-panel .form-row{gap:15px}
+.contact-page .contact-form-panel .form label{color:#4c5d6f;font-size:.79rem;letter-spacing:.025em}
+.contact-page .contact-form-panel .form .btn{justify-self:start;min-width:186px;margin-top:4px}
+.contact-page .contact-form-panel .note{margin:-3px 0 0;color:#53616b}
+/* Process: white stage, blue step markers. */
+.contact-page .contact-process{padding:0 0 clamp(42px,4.5vw,58px);background:#fff}
+.contact-page .contact-process .container{padding-top:clamp(32px,4vw,46px);border-top:1px solid #dce1e4}
+.contact-page .contact-section-head{display:block}
+.contact-page .contact-process h2{max-width:620px;font-size:clamp(1.8rem,2.5vw,2.6rem)}
+.contact-page .contact-process-grid{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:30px}
+.contact-page .contact-process-grid::before{content:"";position:absolute;top:19px;right:12%;left:12%;height:1px;background:rgba(22,95,150,.25)}
+.contact-page .contact-process-step{position:relative;z-index:1;padding:0 clamp(18px,2.5vw,38px);text-align:center}
+.contact-page .contact-process-step span{display:grid;width:40px;height:40px;margin:0 auto 15px;place-items:center;border:1px solid #165f96;border-radius:50%;color:#165f96;background:#fff;font-size:.72rem;font-weight:800;letter-spacing:.06em}
+.contact-page .contact-process-step h3{margin:0 0 6px;color:#253038;font-size:1.08rem;line-height:1.22}
+.contact-page .contact-process-step p{max-width:310px;margin:0 auto;color:#53616b;font-size:.88rem;line-height:1.48}
+/* Close: dark navy panel, same as the OEM quote panel. */
+.contact-page .contact-final{padding:clamp(48px,5vw,66px) 0;color:#fff;background:#1b303f}
+.contact-page .contact-final-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:34px;align-items:center}
+.contact-page .contact-final h2{color:#fff}
+.contact-page .contact-final p{max-width:690px;margin:12px 0 0;color:#d6e1e8;line-height:1.64}
+.contact-page .contact-final .cta-row{justify-content:flex-end}
+.contact-page .contact-final .btn-primary{color:#165f96;background:#fff;border-color:#fff;box-shadow:none}
+.contact-page .contact-final .btn-primary:hover{background:#edf3f6}
+.contact-page .contact-final .btn-secondary{color:#fff;border-color:#b7c4cc;background:transparent;box-shadow:none}
+.contact-page .contact-final .btn-secondary:hover{color:#253038;background:#fff}
+@media (prefers-reduced-motion:no-preference){@keyframes contact-rise{from{opacity:.65;transform:translateY(14px)}to{opacity:1;transform:none}}.contact-page.contact-motion-ready .contact-reveal.is-visible{animation:contact-rise .52s cubic-bezier(.2,.75,.25,1) both}}
+@media (max-width:920px){.contact-page .contact-hero{min-height:0}.contact-page .contact-hero-copy-wrap{max-width:680px}.contact-page .contact-form-heading{grid-template-columns:1fr;gap:12px}.contact-page .contact-final-inner{grid-template-columns:1fr}.contact-page .contact-final .cta-row{justify-content:flex-start}}
+@media (max-width:680px){.contact-page .contact-hero{min-height:0;align-items:center;padding:58px 0 42px}.contact-page .contact-hero h1{max-width:480px;font-size:clamp(2.35rem,11.5vw,3.35rem)}.contact-page .contact-hero-copy{font-size:.98rem}.contact-page .contact-hero-meta{display:block;margin-top:24px}.contact-page .contact-hero-meta span{display:block;margin-top:8px}.contact-page .contact-hero-meta span::before{display:none}.contact-page .contact-main{padding:34px 0}.contact-page .contact-form-panel .form{padding:24px 20px}.contact-page .contact-section-head{display:block}.contact-page .contact-process-grid{grid-template-columns:1fr;margin-top:26px}.contact-page .contact-process-grid::before{top:20px;bottom:20px;left:19px;width:1px;height:auto}.contact-page .contact-process-step{display:grid;grid-template-columns:40px 1fr;column-gap:15px;padding:0 0 20px;text-align:left}.contact-page .contact-process-step:last-child{padding-bottom:0}.contact-page .contact-process-step span{grid-row:1/span 2;margin:0}.contact-page .contact-process-step h3,.contact-page .contact-process-step p{margin-right:0;margin-left:0}.contact-page .contact-actions .btn,.contact-page .contact-final .btn{width:100%;justify-content:center}}
