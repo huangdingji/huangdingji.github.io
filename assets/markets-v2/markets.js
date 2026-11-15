@@ -16,17 +16,6 @@ document.addEventListener('click',event=>{
  const type=link.matches('[data-whatsapp]')||href.includes('wa.me')?'whatsapp_inquiry_click':href.startsWith('mailto:')?'email_inquiry_click':href.includes('/contact/')?'inquiry_cta_click':null;
  if(type&&typeof window.gtag==='function')window.gtag('event',type,{transport_type:'beacon',page_path:location.pathname,link_text:link.textContent.trim(),link_url:href,cta_location:link.closest('header')?'header':link.closest('footer')?'footer':'markets'});
 });
-const inquiry=document.querySelector('#marketInquiry');
-if(inquiry){
- inquiry.addEventListener('submit',event=>{
-  event.preventDefault();
-  const destination=inquiry.elements.product.value.trim();
-  const next=new URL(inquiry.action,location.href);
-  next.searchParams.set('product',destination?'Market inquiry — Destination: '+destination:'Market inquiry — PTFE tape wholesale');
-  if(typeof window.gtag==='function')window.gtag('event','inquiry_cta_click',{transport_type:'beacon',page_path:location.pathname,cta_location:'markets_destination'});
-  location.assign(next.href);
- });
-}
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
 const targets=[...document.querySelectorAll('.markets-reveal')],animations=new WeakMap();
 if('IntersectionObserver' in window){
