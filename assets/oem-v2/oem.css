@@ -69,24 +69,23 @@
 @media(max-width:480px){.oem-hero-copy h1{font-size:37px;letter-spacing:-1.1px;line-height:1.16}.oem-hero-copy .actions{gap:16px}.oem-hero-copy .button{gap:17px;padding:12px 17px}.oem-hero-copy .text-link{gap:12px}.oem-process-grid{grid-template-columns:1fr;gap:24px}.oem-process-grid>li{display:grid;grid-template-columns:38px 1fr;gap:0 15px;padding-top:16px}.oem-process-grid>li>span{grid-row:1/3;font-size:29px;margin:0}.oem-process-grid p{margin-top:8px}.oem-brief-actions{gap:17px}.oem-heading h2{font-size:29px}.option-photo img{height:255px}.option-copy h3{font-size:26px}}
 @media(prefers-reduced-motion:reduce){.oem-hero-copy>*,.oem-hero-visual{animation:none!important}.oem-motion-pending{opacity:1!important}.oem-option-tab{transition:none}}
 
-/* Product evidence is grouped with its corresponding customization option. */
+/* Shared frames keep factory photos and product samples visually consistent. */
 .oem-option-panel{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
 .option-photo{margin:0}
-.option-samples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.option-sample{min-width:0;margin:0;background:#f3f6f7}
-.option-sample-photo{display:block;width:100%;height:292px;overflow:hidden}
-.option-photo .option-sample figcaption{font-size:16px;font-weight:500;line-height:1.5;color:#344f62;margin:0;padding:10px 12px;background:#edf3f6}
+.option-samples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}
+.option-sample{display:grid;grid-template-rows:minmax(0,1fr) auto;min-width:0;min-height:0;margin:0;border:1px solid #d9e3e9;background:#f3f6f7;overflow:hidden}
+.option-sample-photo{display:block;width:100%;max-width:100%;min-height:0;height:292px;padding:8px;box-sizing:border-box;overflow:hidden;background:#f3f6f7}
+.option-photo .option-sample figcaption{box-sizing:border-box;min-height:44px;display:flex;align-items:center;font-size:16px;font-weight:500;line-height:1.5;color:#344f62;margin:0;padding:9px 11px;background:#fff;border-top:1px solid #d9e3e9}
 .option-photo-note{font-size:16px;line-height:1.65;color:#536c7b;margin-top:12px}
 .option-samples--checks .option-sample-photo{height:300px}
-.option-samples--checks .option-sample:nth-child(2) .option-sample-photo{background:#fff}
-.option-samples--components{grid-template-columns:1fr;gap:14px}
-.option-samples--components .option-sample-photo{height:175px;background:#292b28}
-.option-samples--branding .option-sample-photo{height:292px;background:#292b28}
-.option-samples--packing{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:14px}
-.option-samples--packing .option-sample--carton{grid-row:span 2;display:flex;flex-direction:column}
-.option-samples--packing .option-sample--carton .option-sample-photo{height:100%;min-height:300px;flex:1;background:#f3f0eb}
-.option-samples--packing .option-sample:not(.option-sample--carton) .option-sample-photo{height:155px;background:#fff}
-@media(max-width:1100px){.oem-options-layout{grid-template-columns:225px minmax(0,1fr)}.oem-option-panel{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.option-samples{gap:10px}.option-photo .option-sample figcaption{padding:9px}.option-samples--branding .option-sample-photo{height:240px}}
+.option-samples--components{grid-template-columns:1fr}
+.option-samples--components .option-sample-photo{height:175px}
+.option-samples--branding .option-sample-photo{height:292px}
+/* Explicit rows prevent the tall carton photo from stretching the thumbnails. */
+.option-samples--packing{height:368px;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:14px}
+.option-samples--packing .option-sample--carton{grid-row:1 / span 2}
+.option-samples--packing .option-sample-photo{height:100%;min-height:0}
+@media(max-width:1100px){.oem-options-layout{grid-template-columns:225px minmax(0,1fr)}.oem-option-panel{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.option-samples{gap:10px}.option-samples--branding .option-sample-photo{height:240px}.option-samples--packing{height:350px}}
 @media(max-width:960px){.oem-options-layout{grid-template-columns:1fr}.oem-option-panel{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.option-samples--checks .option-sample-photo{height:285px}}
-@media(max-width:700px){.oem-option-panel{grid-template-columns:1fr}.option-samples{gap:12px}.option-samples--checks .option-sample-photo{height:280px}.option-samples--components .option-sample-photo{height:auto;aspect-ratio:818/522}.option-samples--branding .option-sample-photo{height:auto;aspect-ratio:1}.option-samples--packing .option-sample--carton .option-sample-photo{min-height:265px}.option-samples--packing .option-sample:not(.option-sample--carton) .option-sample-photo{height:135px}}
-@media(max-width:380px){.option-photo .option-sample figcaption{font-size:16px;padding:9px 7px}.option-samples--checks .option-sample-photo{height:235px}.option-samples--packing{grid-template-columns:1fr 1fr}.option-samples--packing .option-sample--carton{grid-column:1/-1;grid-row:auto}.option-samples--packing .option-sample--carton .option-sample-photo{height:270px;min-height:0}}
+@media(max-width:700px){.oem-option-panel{grid-template-columns:1fr}.option-samples{gap:12px}.option-samples--checks .option-sample-photo{height:280px}.option-samples--components .option-sample-photo{height:auto;aspect-ratio:818/522}.option-samples--branding .option-sample-photo{height:auto;aspect-ratio:1}.option-samples--packing{height:340px}.option-samples--packing .option-sample-photo{height:100%;aspect-ratio:auto}}
+@media(max-width:380px){.option-photo .option-sample figcaption{font-size:16px;padding:9px 7px}.option-samples--checks .option-sample-photo{height:235px}.option-samples--packing{height:auto;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:250px 188px}.option-samples--packing .option-sample--carton{grid-column:1/-1;grid-row:1}.option-samples--packing .option-sample-photo{height:100%;min-height:0}}
