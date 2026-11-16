@@ -25,9 +25,11 @@ if(!hasMainJs){
     const btn=dd.querySelector('.nav-more');
     if(!btn)return;
     btn.addEventListener('click',()=>{
+      dd.classList.remove('closing');
       const open=dd.classList.toggle('open');
       btn.setAttribute('aria-expanded',String(open));
     });
+    dd.addEventListener('mouseleave',()=>dd.classList.remove('closing'));
   });
   document.addEventListener('click',e=>{
     if(e.target.closest('.nav-dropdown'))return;
@@ -38,4 +40,19 @@ if(!hasMainJs){
     });
   });
 }
+// Escape closes Resources as well as the mobile navigation. Explicit state
+// keeps keyboard focus from reopening the dropdown after it has been closed.
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  document.querySelectorAll('.nav-dropdown').forEach(dd=>{
+    const btn=dd.querySelector('.nav-more');
+    const restoreFocus=dd.contains(document.activeElement);
+    dd.classList.remove('open','hover-open');
+    dd.classList.add('closing');
+    if(btn){
+      btn.setAttribute('aria-expanded','false');
+      if(restoreFocus&&!window.matchMedia('(max-width: 960px)').matches)btn.focus();
+    }
+  });
+});
 })();
