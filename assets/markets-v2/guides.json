@@ -1,0 +1,19 @@
+{
+  "regions": [
+    {"id": "middle-east", "name": "Middle East"},
+    {"id": "asia-pacific", "name": "Asia & Pacific"},
+    {"id": "africa", "name": "Africa"},
+    {"id": "europe", "name": "Europe"},
+    {"id": "north-america", "name": "North America"},
+    {"id": "latin-america", "name": "Latin America"}
+  ],
+  "guides": [
+    {"country": "Saudi Arabia", "slug": "saudi-arabia", "region": "middle-east", "focus": "SKU & artwork", "summary": "Define the product range, prepare approved Arabic or bilingual artwork, and agree on packs and carton marks."},
+    {"country": "United Arab Emirates", "slug": "uae", "region": "middle-east", "focus": "Wholesale & private label", "summary": "Compare tape specifications and sample formats, then confirm branding and the packing your buyers will receive."},
+    {"country": "Iraq", "slug": "iraq", "region": "middle-east", "focus": "Specification & carton quantity", "summary": "Prepare measurable tape specifications, pcs per item and carton details for a clearer supplier quotation."},
+    {"country": "Qatar", "slug": "qatar", "region": "middle-east", "focus": "Samples & packing", "summary": "Prepare your tape sizes, sample requirements and packing preferences before discussing your supply plan."},
+    {"country": "India", "slug": "india", "region": "asia-pacific", "focus": "Product range & private label", "summary": "Compare tape widths and weights, then outline the product range, branding and packing for your order."},
+    {"country": "Pakistan", "slug": "pakistan", "region": "asia-pacific", "focus": "Wholesale specifications", "summary": "Set out the tape specifications, order quantities and carton details for your hardware or distribution range."},
+    {"country": "Egypt", "slug": "egypt", "region": "africa", "focus": "Labels & export packing", "summary": "Prepare tape sizes, label artwork and carton quantities to discuss your wholesale or private label order."}
+  ]
+}
