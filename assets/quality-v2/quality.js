@@ -99,6 +99,30 @@
       cta_location: link.closest('header') ? 'header' : link.closest('footer') ? 'footer' : 'quality'
     });
   });
+  const sampleVideo = document.querySelector('#qcSampleVideo');
+  const samplePlay = document.querySelector('[data-qc-video-start]');
+  if (sampleVideo && samplePlay) {
+    sampleVideo.controls = false;
+    sampleVideo.tabIndex = 0;
+    samplePlay.hidden = false;
+    samplePlay.addEventListener('click', async () => {
+      if (samplePlay.disabled) return;
+      samplePlay.disabled = true;
+      samplePlay.querySelector('span').textContent = 'Loading sample video…';
+      try {
+        sampleVideo.controls = true;
+        await sampleVideo.play();
+        samplePlay.hidden = true;
+        sampleVideo.focus({preventScroll: true});
+      } catch (_error) {
+        sampleVideo.controls = false;
+        samplePlay.querySelector('span').textContent = 'Try video again';
+      } finally {
+        samplePlay.disabled = false;
+      }
+    });
+  }
+
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const animations = new Set();
   if ('IntersectionObserver' in window && !reduced.matches) {
