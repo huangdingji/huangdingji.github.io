@@ -20,16 +20,46 @@ const form=document.querySelector('#quoteForm');
 if(!form)return;
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
 const contact=form.elements.contact,reply=form.elements.reply_method,name=form.elements.name;
-const productParam=new URLSearchParams(location.search).get('product');
-if(productParam){
- const reference=productParam.slice(0,5000);
+const params=new URLSearchParams(location.search);
+const param=key=>(params.get(key)||'').trim();
+const reference=param('product').slice(0,5000);
+// New links carry individual fields. Keep older, already shared product links
+// usable by reading only the specification and destination formats we publish.
+const legacySize=reference.match(/\b\d+(?:\.\d+)?\s*mm\s*[x×]\s*\d+(?:\.\d+)?\s*mm\s*[x×]\s*\d+(?:\.\d+)?\s*m\b/i)?.[0]||'';
+const legacyDensity=reference.match(/\bdensity\s+(\d+(?:\.\d+)?\s*g\s*\/\s*cm(?:³|\^?3))/i)?.[1]||'';
+let specification=param('size')||legacySize;
+const density=param('density')||legacyDensity;
+if(density&&!/\bdensity\b/i.test(specification))specification+=(specification?'; ':'')+'density '+density;
+specification=specification.replace(/\s*;\s*/g,'; ').replace(/\s*[x×]\s*(?=\d)/g,' × ');
+const legacyDestination=reference.match(/^Market inquiry\s*[—-]\s*PTFE tape for (.+)$/i)?.[1]||'';
+const countries=['Saudi Arabia','United Arab Emirates','Iraq','Qatar','India','Pakistan','Egypt'];
+const country=param('country')||countries.find(value=>value.toLowerCase()===legacyDestination.toLowerCase())||'';
+const fillEmpty=(key,value)=>{
+ const field=form.elements[key];
+ if(!value||field.value.trim())return;
+ field.value=value.slice(0,field.maxLength>0?field.maxLength:value.length);
+};
+fillEmpty('size',specification);
+fillEmpty('country',country);
+fillEmpty('quantity',param('quantity'));
+fillEmpty('packing',param('packing'));
+fillEmpty('message',[reference&&'Product / requirement: '+reference,param('message')].filter(Boolean).join('\n\n'));
+if(reference){
  document.querySelector('[data-product-selection]').hidden=false;
  document.querySelector('[data-product-reference]').textContent=reference;
- form.elements.product_reference.value=reference;
- if(!form.elements.message.value)form.elements.message.value='Product / requirement: '+reference+'\n\n';
- const ranges=[[/oem|private.label|logo|printing|packing|spool style/i,'OEM branded PTFE tape'],[/gas|yellow/i,'Gas / yellow PTFE tape'],[/high.density/i,'High density PTFE tape'],[/thick/i,'Thick PTFE tape'],[/wide/i,'Wide PTFE tape'],[/standard/i,'Standard PTFE thread seal tape']];
- const matched=ranges.find(([pattern])=>pattern.test(reference));
- form.elements.product.value=matched?matched[1]:'Other custom requirement';
+ fillEmpty('product_reference',reference);
+}
+const ranges=[[/\boem\b|private[ .-]label/i,'OEM branded PTFE tape'],[/gas|yellow/i,'Gas / yellow PTFE tape'],[/high.density/i,'High density PTFE tape'],[/thick/i,'Thick PTFE tape'],[/wide/i,'Wide PTFE tape'],[/standard/i,'Standard PTFE thread seal tape']];
+const range=param('range');
+const validRange=[...form.elements.product.options].some(option=>option.value===range);
+const matched=ranges.find(([pattern])=>pattern.test(reference));
+if(form.elements.product.value==='Not sure yet'){
+ if(validRange)form.elements.product.value=range;
+ else if(matched)form.elements.product.value=matched[1];
+ else if(reference&&!legacyDestination)form.elements.product.value='Other custom requirement';
+}
+if(form.elements.product.value!=='Not sure yet'||form.elements.packing.value)form.querySelector('.contact-extra').open=true;
+if(reference||specification||country||param('quantity')||param('packing')||param('message')||validRange){
  requestAnimationFrame(()=>document.querySelector('.contact-form-panel').scrollIntoView({block:'start',behavior:'instant'}));
 }
 const validateContact=()=>{
