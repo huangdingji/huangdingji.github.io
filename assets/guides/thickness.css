@@ -1,0 +1,36 @@
+/* Local reading aids for the thickness guide; shared Home styling stays in inner.css. */
+body.inner-page.thickness-guide-page .thickness-chart { margin: 22px 0 12px; }
+body.inner-page.thickness-guide-page .thickness-chart table { min-width: 480px; margin: 0; }
+body.inner-page.thickness-guide-page .thickness-chart th { width: auto; }
+body.inner-page.thickness-guide-page .thickness-chart td:last-child { width: 40%; }
+body.inner-page.thickness-guide-page .thickness-chart caption { padding: 0 0 12px; text-align: left; color: #526775; font-size: 15px; }
+body.inner-page.thickness-guide-page .thickness-chart tbody th { white-space: nowrap; background: #e5eef5; color: #355166; }
+body.inner-page.thickness-guide-page .thickness-unit-note { font-size: 16px; }
+.thickness-fields { display: grid; gap: 1px; margin: 22px 0; background: #bfd2df; border: 1px solid #bfd2df; }
+.thickness-fields > div { padding: 18px 20px; background: #e9f1f7; }
+body.inner-page.thickness-guide-page .thickness-fields h3 { font-size: 20px; margin: 0 0 7px; }
+body.inner-page.thickness-guide-page .thickness-fields p { font-size: 16px; margin: 0; }
+.thickness-steps { padding-left: 24px; }
+.thickness-steps li + li { margin-top: 16px; }
+.thickness-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+.thickness-option { min-width: 0; padding: 22px 20px; background: #e6eff6; border: 1px solid #bfd2df; }
+body.inner-page.thickness-guide-page .thickness-option-label { margin: 0 0 10px; font-size: 14px; color: #165f96; }
+body.inner-page.thickness-guide-page .thickness-option h3 { margin: 0 0 12px; font-size: 22px; }
+body.inner-page.thickness-guide-page .thickness-option > p:not(.thickness-option-label) { margin: 0; font-size: 16px; }
+.thickness-option-links { display: grid; gap: 4px; margin-top: 16px; }
+.thickness-option-links a { display: flex; align-items: center; min-height: 44px; font-size: 16px; }
+.thickness-evidence { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 24px; align-items: start; }
+.thickness-evidence figure { min-width: 0; margin: 0; }
+.thickness-evidence figure a { display: block; background: #e3edf4; }
+.thickness-evidence img { display: block; width: 100%; height: auto; max-height: 340px; object-fit: contain; }
+.thickness-evidence figcaption { margin-top: 12px; font-size: 14px; line-height: 1.7; color: #526775; }
+.thickness-evidence > div > p:first-child { margin-top: 0; }
+.thickness-faq details { padding: 17px 0; border-bottom: 1px solid #c2d4e2; }
+.thickness-faq summary { cursor: pointer; color: #355166; font-size: 19px; line-height: 1.6; padding: 5px 0; }
+body.inner-page.thickness-guide-page .thickness-faq details p { margin: 13px 0 3px; }
+@media (max-width: 700px) {
+  .thickness-options, .thickness-evidence { grid-template-columns: 1fr; }
+  .thickness-option { padding: 20px 18px; }
+  .thickness-evidence img { max-height: 360px; }
+  .thickness-faq summary { font-size: 18px; }
+}

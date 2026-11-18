@@ -13,10 +13,10 @@ window.BLOG_POSTS = Object.freeze([
   {
     "slug": "ptfe-tape-thickness-guide",
     "url": "../blog/ptfe-tape-thickness-guide.html",
-    "title": "PTFE Tape Thickness Guide for Wholesale Buyers",
-    "description": "PTFE tape thickness guide for wholesale buyers comparing 0.075mm, 0.1mm, 0.15mm, 0.2mm, density, roll weight and packing.",
+    "title": "PTFE Tape Thickness: How Thick Is It? Chart & Guide",
+    "description": "How thick is PTFE tape? Compare 0.075, 0.10 and 0.20 mm in microns and mils, separate thickness from density, and find matching product options.",
     "published": "2026-06-01",
-    "modified": "2026-06-09",
+    "modified": "2026-11-18",
     "category": "specification",
     "categoryLabel": "Specifications"
   },
