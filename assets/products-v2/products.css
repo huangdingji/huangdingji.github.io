@@ -76,3 +76,16 @@
 @keyframes range-photo-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 @media(max-width:600px){.range-hero{background:linear-gradient(180deg,#edf3f6 0%,#f7fafb 42%,#fff 54%)}.range-visual{padding:0}.range-copy>h1{animation-delay:.15s}.range-copy>.range-intro{animation-delay:.25s}.range-copy>.text-link{animation-delay:.35s}}
 @media(prefers-reduced-motion:reduce){.range-visual,.range-visual img,.range-copy>*,.tape-card{animation:none!important}.motion-pending{opacity:1}}
+/* Catalogue content leads into wholesale order planning. */
+.range-copy h1{white-space:normal;max-width:780px;font-size:clamp(36px,3.5vw,48px)}
+.range-copy h1 span{display:block}
+.range-intro{max-width:660px}
+.range-hero-inner{min-height:420px}
+.range-visual{height:420px}
+.range-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px;margin-top:18px}
+.range-actions .text-link{min-height:44px}
+.range-actions .range-bulk-link{font-size:16px;color:#435967;border-bottom:1px solid #9eb7c8}
+.range-contact p:not(.eyebrow){max-width:740px}
+@media(max-width:900px){.range-copy h1{font-size:38px}}
+@media(max-width:600px){.range-hero-inner{min-height:0}.range-copy h1{font-size:38px}.range-visual{height:290px}.range-actions{gap:4px 22px}}
+@media(max-width:480px){.range-visual{height:255px}.range-copy h1{font-size:36px}}
