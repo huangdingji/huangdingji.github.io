@@ -54,9 +54,9 @@ window.BLOG_POSTS = Object.freeze([
     "slug": "ptfe-tape-roll-weight",
     "url": "../blog/ptfe-tape-roll-weight.html",
     "title": "PTFE Tape Roll Weight",
-    "description": "Compare PTFE tape roll weight correctly. Separate net tape weight from spool and packing weight, align specifications, samples, cartons and inspection methods.",
+    "description": "Compare 4.2g and 5.4g net tape references for 12mm × 10m PTFE tape. Understand roll and tare weight, view an original scale photo and download a blank record.",
     "published": "2026-06-09",
-    "modified": "2026-10-10",
+    "modified": "2026-11-20",
     "category": "specification",
     "categoryLabel": "Specifications"
   },
