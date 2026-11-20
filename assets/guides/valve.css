@@ -1,0 +1,24 @@
+/* Valve-accessory sourcing, product comparison and separate review records. */
+.valve-review-path { display: grid; gap: 1px; margin: 24px 0; border: 1px solid #bfd2df; background: #bfd2df; }
+.valve-review-path section { padding: 18px 20px; background: #e7eff6; }
+body.inner-page.valve-guide-page .valve-review-path h3 { font-size: 21px; margin: 0 0 6px; }
+body.inner-page.valve-guide-page .valve-review-path p { font-size: 16px; margin: 0; }
+.valve-options, .valve-review-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; margin: 26px 0; }
+.valve-option, .valve-review-grid section { min-width: 0; background: #e7eff6; border: 1px solid #bfd2df; }
+.valve-option img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; background: #e3e8f0; }
+.valve-option > div, .valve-review-grid section { padding: 22px 20px; }
+body.inner-page.valve-guide-page .valve-option h3, body.inner-page.valve-guide-page .valve-review-grid h3 { font-size: 23px; line-height: 1.35; margin: 8px 0 14px; }
+body.inner-page.valve-guide-page .valve-option p, body.inner-page.valve-guide-page .valve-review-grid p { font-size: 16px; }
+body.inner-page.valve-guide-page .valve-option .section-kicker { font-size: 14px; color: #165f96; margin: 0; }
+.valve-product-link, .valve-option-inquiry { display: inline-flex; align-items: center; min-height: 44px; font-size: 16px; }
+body.inner-page.valve-guide-page .valve-table { margin: 24px 0 18px; }
+body.inner-page.valve-guide-page .valve-table table { min-width: 500px; margin: 0; }
+body.inner-page.valve-guide-page .valve-sku-table table { min-width: 700px; }
+body.inner-page.valve-guide-page .valve-table th { width: auto; }
+body.inner-page.valve-guide-page .valve-table th:first-child { min-width: 120px; }
+.valve-table caption { text-align: left; font-size: 15px; color: #526775; padding-bottom: 12px; line-height: 1.7; }
+body.inner-page.valve-guide-page .valve-source-note { font-size: 16px; padding-left: 16px; border-left: 3px solid #7ba3bf; }
+.valve-faq details { padding: 18px 0; border-bottom: 1px solid #bfd2df; }
+.valve-faq summary { cursor: pointer; padding: 5px 0; font-size: 19px; line-height: 1.6; color: #355166; }
+body.inner-page.valve-guide-page .valve-faq p { margin: 12px 0 4px; }
+@media (max-width:700px) { .valve-options, .valve-review-grid { grid-template-columns: 1fr; } .valve-option img { max-height: 340px; } .valve-option > div, .valve-review-grid section { padding: 20px 18px; } .valve-faq summary { font-size: 18px; } }

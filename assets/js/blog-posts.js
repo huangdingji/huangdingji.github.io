@@ -94,9 +94,9 @@ window.BLOG_POSTS = Object.freeze([
     "slug": "ptfe-tape-for-valve-distributors",
     "url": "../blog/ptfe-tape-for-valve-distributors.html",
     "title": "PTFE Tape for Valve Distributors",
-    "description": "Wholesale PTFE tape guide for valve distributors. Compare common sizes, packing options, carton quantities, OEM labels, samples and bulk quotation details.",
+    "description": "Prepare a valve connection brief, compare real 19mm PTFE tape options, and link samples to order records. Download a blank valve-accessory sourcing record.",
     "published": "2026-06-14",
-    "modified": "2026-06-14",
+    "modified": "2026-11-20",
     "category": "buyer",
     "categoryLabel": "Buying guides"
   },
