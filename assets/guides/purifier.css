@@ -1,0 +1,37 @@
+/* Purifier-kit pack fit and buyer-entered physical roll counts. */
+.purifier-guide-page [hidden] { display: none !important; }
+.purifier-options { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; margin: 26px 0; }
+.purifier-option { min-width: 0; background: #e7eff6; border: 1px solid #bfd2df; }
+.purifier-option img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; background: #e3e8f0; }
+.purifier-option > div { padding: 22px 20px; }
+body.inner-page.purifier-guide-page .purifier-option h3 { font-size: 23px; line-height: 1.35; margin: 8px 0 14px; }
+body.inner-page.purifier-guide-page .purifier-option p { font-size: 16px; }
+body.inner-page.purifier-guide-page .purifier-option .section-kicker { font-size: 14px; color: #165f96; margin: 0; }
+.purifier-product-link, .purifier-option-inquiry, .purifier-custom-inquiry { display: inline-flex; align-items: center; min-height: 44px; font-size: 16px; }
+body.inner-page.purifier-guide-page .purifier-table { margin: 24px 0 18px; }
+body.inner-page.purifier-guide-page .purifier-table table { min-width: 500px; margin: 0; }
+body.inner-page.purifier-guide-page .purifier-sku-table table { min-width: 700px; }
+body.inner-page.purifier-guide-page .purifier-table th { width: auto; }
+body.inner-page.purifier-guide-page .purifier-table th:first-child { min-width: 120px; }
+.purifier-table caption { text-align: left; font-size: 15px; color: #526775; padding-bottom: 12px; line-height: 1.7; }
+body.inner-page.purifier-guide-page .purifier-source-note { font-size: 16px; padding-left: 16px; border-left: 3px solid #7ba3bf; }
+.purifier-checks { padding-left: 24px; }
+.purifier-checks li + li { margin-top: 15px; }
+.purifier-calculator { margin: 30px 0; padding: 24px; background: #e7eff6; border: 1px solid #bfd2df; }
+body.inner-page.purifier-guide-page .purifier-calculator h2 { margin-top: 0; }
+.purifier-calculator fieldset { padding: 0; margin: 22px 0; border: 0; min-width: 0; }
+.purifier-calculator legend { padding: 0 0 14px; color: #355166; font-size: 17px; }
+.purifier-input-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+.purifier-input-grid label { display: grid; gap: 8px; font-size: 16px; line-height: 1.6; color: #435967; min-width: 0; }
+.purifier-input-grid input { width: 100%; min-width: 0; min-height: 48px; padding: 10px 12px; border: 1px solid #9eb8cb; border-radius: 0; background: #f8fbfd; color: #253038; font: inherit; }
+.purifier-quantity-result { padding: 18px; border-left: 3px solid #7ba3bf; background: #dce9f3; }
+body.inner-page.purifier-guide-page .purifier-quantity-result p { margin: 0 0 10px; font-size: 16px; }
+body.inner-page.purifier-guide-page .purifier-quantity-result p:last-child { margin-bottom: 0; }
+.purifier-quantity-result output { color: #165f96; font-weight: 600; }
+.purifier-calculator-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+body.inner-page.purifier-guide-page .purifier-calculator-note { margin-bottom: 0; font-size: 16px; }
+.purifier-faq details { padding: 18px 0; border-bottom: 1px solid #bfd2df; }
+.purifier-faq summary { cursor: pointer; padding: 5px 0; font-size: 19px; line-height: 1.6; color: #355166; }
+body.inner-page.purifier-guide-page .purifier-faq p { margin: 12px 0 4px; }
+@media (max-width:700px) { .purifier-options { grid-template-columns: 1fr; } .purifier-option img { max-height: 340px; } .purifier-option > div { padding: 20px 18px; } .purifier-calculator { padding: 20px 18px; } .purifier-faq summary { font-size: 18px; } }
+@media (max-width:420px) { .purifier-input-grid { grid-template-columns: 1fr; gap: 16px; } }

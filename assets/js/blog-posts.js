@@ -104,9 +104,9 @@ window.BLOG_POSTS = Object.freeze([
     "slug": "ptfe-tape-for-water-purifier-suppliers",
     "url": "../blog/ptfe-tape-for-water-purifier-suppliers.html",
     "title": "PTFE Tape for Water Purifier Suppliers",
-    "description": "Bulk PTFE tape guide for water purifier suppliers. Compare short-roll options, card packing, common sizes, OEM labels, carton quantities and quotation details.",
+    "description": "Compare real 7m and 10m tape references, check finished-pack dimensions and plan rolls for purifier kits. Download a blank kit record and prepare a clear inquiry.",
     "published": "2026-06-14",
-    "modified": "2026-06-14",
+    "modified": "2026-11-20",
     "category": "buyer",
     "categoryLabel": "Buying guides"
   },
