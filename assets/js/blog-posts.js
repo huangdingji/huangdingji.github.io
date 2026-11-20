@@ -153,10 +153,10 @@ window.BLOG_POSTS = Object.freeze([
   {
     "slug": "ptfe-tape-for-hardware-stores",
     "url": "../blog/ptfe-tape-for-hardware-stores.html",
-    "title": "PTFE Tape for Hardware Stores: Wholesale Buying Guide",
-    "description": "Wholesale PTFE tape buying guide for hardware stores. Learn common sizes, packing options, display-ready packaging, MOQ, carton packing and OEM label options.",
+    "title": "PTFE Tape for Hardware Stores",
+    "description": "Compare three catalogue PTFE tape options for hardware stores. Confirm the selling unit, retail artwork and sample checks, then download a blank assortment record.",
     "published": "2026-06-10",
-    "modified": "2026-06-10",
+    "modified": "2026-11-20",
     "category": "buyer",
     "categoryLabel": "Buying guides"
   },
