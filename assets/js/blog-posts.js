@@ -84,9 +84,9 @@ window.BLOG_POSTS = Object.freeze([
     "slug": "ptfe-tape-carton-packing",
     "url": "../blog/ptfe-tape-carton-packing.html",
     "title": "PTFE Tape Carton Packing",
-    "description": "PTFE tape carton packing guide for importers comparing 100, 250, 500 and 1000 roll cartons, labels and freight planning.",
+    "description": "Confirm PTFE tape inner packs, rolls per carton, outer dimensions, net and gross weight. View original packing photos, calculate CBM and download a blank record.",
     "published": "2026-06-09",
-    "modified": "2026-06-09",
+    "modified": "2026-11-20",
     "category": "packing",
     "categoryLabel": "Packing & OEM"
   },
